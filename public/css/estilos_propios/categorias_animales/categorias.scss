@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.imagen-portada {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 35vh;
+}
+
+.portada-perro {
+    background-image: url('../../Imagenes/perros.jpg');
+}
+
+.portada-gato {
+    background-image: url('../../Imagenes/gato-portada.jpg');
+}
+
+.portada-otros {
+    background-image: url('../../Imagenes/conejo-portada.jpg');
+}
+
+.bg-pink {
+    background-color: pink;
+}
+
+.bg-green {
+    background-color: lightgreen;
+}
+
+.bg-red {
+    background-color: #dd9f92;
+}
+
+.bg-brown {
+    background-color: burlywood;
+}
+
+.bg-azulclaro {
+    background-color: #89d3d0;
+}
+
+.bg-azul {
+    background-color: #2db5ec;
+}
+
+.bg-amarilloclaro {
+    background-color: #fdf6d5;
+}
+
+.bg-verdeoscuro {
+    background-color: #04501a;
+}
+
+.bg-marronoscuro {
+    background-color: #503c32;
+}
+
+.slider-categorias {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+    .swipe-item {
+        display: inline-block;
+        margin: 2em 1em;
+        max-width: 200px;
+        flex: 1 0 0;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

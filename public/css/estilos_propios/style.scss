@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    //Sombra inferior del header
+    box-shadow: 0px 10px 0px -4px rgba(235, 230, 235, 1);
+    //Estilos para nav del logo
+    .navegador-logo {
+        //Tamaño maximo del logo
+        .logo {
+            max-width: 100%;
+        }
+        //Sombras de la imagen del logo
+        .sombra-logo {
+            box-shadow: 10px 10px 0px -3px rgba(217, 210, 217, 1);
+        }
+        //Posicionamiento de la lupa para que aparezca dentro del input search
+        form {
+            position: relative;
+            a {
+                position: absolute;
+                right: 13%;
+            }
+        }
+    }
+}
+
+#carouselExampleIndicators {
+    background-color: #e9ecec;
+    .contenedor-slider {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.circulo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    text-align: center;
+}
+
+
+/**---------   CIRCULO PARA DESCUENTOS O CATEGORIAS    --------**/
+
+.circulo>p {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.imagen-principal {
+    max-width: 100%;
+}
+
+footer {
+    #enlaces_footer {
+        li {
+            list-style-type: none;
+            a {
+                color: white;
+            }
+        }
+    }
+    .eslogan_footer {
+        color: white;
+    }
+    .pie_depagina {
+        p {
+            color: white;
+        }
+    }
+}

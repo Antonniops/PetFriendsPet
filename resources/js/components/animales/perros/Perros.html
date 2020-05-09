@@ -1,0 +1,128 @@
+<div>
+    <!--IMAGEN CENTRAL BIENVENIDA A PAGINA-->
+    <div class="my-5 imagen-portada portada-perro">
+    </div>
+
+
+    <!--SECTION PERROS-->
+    <section>
+        <section class="row mt-5 align-content-center">
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+            <div class="col-sm-4 text-primary text-center">
+                <p>PERROS</p>
+            </div>
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+        </section>
+
+
+        <section class="slider-categorias">
+            <div class="text-center swipe-item  d-flex flex-column align-items-center">
+                <router-link to="/categoria/perro/pienso-seco">
+                    <div class="circulo bg-dark">
+                        <img :src="comida" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">PIENSO SECO</p>
+                </router-link>
+
+            </div>
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+                <router-link to="/categoria/perro/comida-humeda">
+                    <div class="circulo bg-pink">
+                        <img :src="comida_humeda" alt="" width="80">
+                    </div>
+
+                    <p class="mt-2 text-primary">COMIDA HÚMEDA</p>
+                </router-link>
+
+            </div>
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+                <router-link to="/categoria/perro/snacks-y-huesos">
+                    <div class="circulo bg-green">
+                        <img :src="snakcs_y_huesos" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">SNACKS Y HUESOS</p>
+                </router-link>
+
+            </div>
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+                <router-link to="/categoria/perro/antiparasitarios">
+                    <div class="circulo bg-red">
+                        <img :src="antiparasitarios" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">ANTIPARASITARIOS</p>
+                </router-link>
+
+            </div>
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+
+                <router-link to="/categoria/perro/complementos">
+                    <div class="circulo bg-brown">
+                        <img :src="complementos" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">COMPLEMENTOS</p>
+                </router-link>
+
+            </div>
+
+        </section>
+
+        <!--TITULO DESTACADOS CON LINEAS TRANSVERSALES-->
+        <section class="row my-5 align-content-center">
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+            <div class="col-sm-4 text-primary text-center">
+                <p>RECOMENDADOS</p>
+            </div>
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+        </section>
+
+
+
+
+        <section class="row masvendidos justify-content-around">
+            <div class="text-center mb-5 col-sm-3 col-12">
+                <img :src="masvendido1" class="" width="120" alt="...">
+                <div class="mt-4">
+                    <h5>Dibaq sense lata Salmón</h5>
+                    <router-link to="/productos/14" class="btn btn-secondary">Ver Producto</router-link>
+                </div>
+            </div>
+
+            <div class="text-center mb-5 col-sm-3 col-12">
+                <img :src="masvendido2" class="" width="120" alt="...">
+                <div class="mt-4">
+                    <h5>Dibaq sense lata ciervo y jabalí</h5>
+                    <router-link to="/productos/7" class="btn btn-secondary">Ver Producto</router-link>
+                </div>
+            </div>
+
+            <div class="text-center mb-5 col-sm-3 col-12">
+                <img :src="masvendido3" class="" width="120" alt="...">
+                <div class="mt-4">
+                    <h5>Dibaq sense lata pollo y pato</h5>
+                    <router-link to="/productos/8" class="btn btn-secondary">Ver Producto</router-link>
+                </div>
+            </div>
+
+
+
+        </section>
+
+    </section>
+
+</div>

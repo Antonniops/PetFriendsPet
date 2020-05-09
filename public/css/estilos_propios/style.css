@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    -webkit-box-shadow: 0px 10px 0px -4px #ebe6eb;
+    box-shadow: 0px 10px 0px -4px #ebe6eb;
+}
+
+header .navegador-logo .logo {
+    max-width: 100%;
+}
+
+header .navegador-logo .sombra-logo {
+    -webkit-box-shadow: 10px 10px 0px -3px #d9d2d9;
+    box-shadow: 10px 10px 0px -3px #d9d2d9;
+}
+
+.barra-superior {
+    width: 100%;
+}
+
+header .navegador-logo form {
+    width: 100%;
+}
+
+.busqueda {
+    position: relative;
+}
+
+header .lupa {
+    position: absolute;
+    right: 13%;
+}
+
+.search-input {
+    background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
+    background-size: 24px;
+    width: 500px;
+    border: transparent;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 0 10px 30px;
+    outline: none;
+}
+
+.hideResults {
+    display: none;
+}
+
+.showResults {
+    display: block;
+}
+
+.resultado-busqueda {
+    position: absolute;
+    margin-top: 10px;
+    top: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    border: 1px solid lightgray;
+}
+
+.title-res-busqueda {
+    background-color: lightgray;
+}
+
+.resultado-busqueda li {
+    list-style-type: none;
+    text-align: center;
+    padding: 5px;
+}
+
+#carouselExampleIndicators {
+    background-color: #e9ecec;
+}
+
+#carouselExampleIndicators .contenedor-slider {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.circulo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    text-align: center;
+}
+
+
+/**---------   CIRCULO PARA DESCUENTOS O CATEGORIAS    --------**/
+
+.circulo>p {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.imagen-principal {
+    max-width: 100%;
+}
+
+footer #enlaces_footer li {
+    list-style-type: none;
+}
+
+footer #enlaces_footer li a {
+    color: white;
+}
+
+footer .eslogan_footer {
+    color: white;
+}
+
+footer .pie_depagina p {
+    color: white;
+}
+
+
+/*# sourceMappingURL=style.css.map */

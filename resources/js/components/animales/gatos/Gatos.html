@@ -1,0 +1,121 @@
+<div>
+
+
+
+
+    <!--IMAGEN CENTRAL BIENVENIDA A PAGINA-->
+    <div class="my-5 imagen-portada portada-gato">
+    </div>
+
+
+    <!--SECTION GATOS-->
+    <section>
+        <section class="row mt-5 align-content-center">
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+            <div class="col-sm-4 text-primary text-center">
+                <p>GATOS</p>
+            </div>
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+        </section>
+
+
+        <section class="slider-categorias row justify-content-center">
+
+            <div class="text-center swipe-item  d-flex flex-column align-items-center">
+                <router-link to="/gatos/pienso-seco">
+                    <div class="circulo bg-brown">
+                        <img :src="comida" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">PIENSO SECO</p>
+                </router-link>
+
+            </div>
+            </a>
+
+
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+                <router-link to="/gatos/comida-humeda">
+                    <div class="circulo bg-azulclaro">
+                        <img :src="comida_humeda" alt="" width="80">
+                    </div>
+
+                    <p class="mt-2 text-primary">COMIDA HÚMEDA</p>
+                </router-link>
+            </div>
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+                <router-link to="/gatos/arenas-y-lechos">
+                    <div class="circulo bg-azul">
+                        <img :src="arenas_y_lechos" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">ARENAS Y LECHOS</p>
+                </router-link>
+
+            </div>
+
+            <div class="text-center swipe-item d-flex flex-column align-items-center">
+                <router-link to="/gatos/complementos">
+                    <div class="circulo bg-amarilloclaro">
+                        <img :src="rascadores" alt="" width="120">
+                    </div>
+
+                    <p class="mt-2 text-primary">complementos</p>
+                </router-link>
+
+            </div>
+
+
+        </section>
+
+        <!--TITULO DESTACADOS CON LINEAS TRANSVERSALES-->
+        <section class="row my-5 align-content-center">
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+            <div class="col-sm-4 text-primary text-center">
+                <p>RECOMENDADOS</p>
+            </div>
+            <div class="d-none d-sm-block col-sm-4">
+                <hr class="bg-primary">
+            </div>
+        </section>
+
+
+
+
+        <section class="row masvendidos justify-content-around mt-5 align-items-end">
+            <div class="text-center mb-5 col-sm-6 col-12 col-md-4">
+                <img src="" class="" alt="...">
+                <div class="mt-4">
+                    <h5>Dibaq sense Lata Salmón</h5>
+                    <a href="./producto.html" class="btn btn-secondary">Ver Producto</a>
+                </div>
+            </div>
+
+            <div class="text-center mb-5 col-sm-6 col-12 col-md-4">
+                <img src="" class="" alt="...">
+                <div class="mt-4">
+                    <h5>Dibaq sense Lata Salmón</h5>
+                    <a href="./producto.html" class="btn btn-secondary">Ver Producto</a>
+                </div>
+            </div>
+
+            <div class="text-center mb-5 col-sm-6 col-12 col-md-4">
+                <img src="" class="" alt="...">
+                <div class="mt-4">
+                    <h5>Dibaq sense Lata Salmón</h5>
+                    <a href="./producto.html" class="btn btn-secondary">Ver Producto</a>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+</div>

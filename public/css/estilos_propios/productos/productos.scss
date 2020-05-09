@@ -1,0 +1,20 @@
+main {
+    form {
+        width: 120px;
+        .form-group {
+            width: 80px;
+        }
+    }
+    .descr-producto {
+        .descripcion {
+            background-color: #dcd8d8;
+            .titulo-componente {
+                font-weight: 700;
+            }
+        }
+        hr {
+            margin: 0.1px;
+            width: 400px;
+        }
+    }
+}
