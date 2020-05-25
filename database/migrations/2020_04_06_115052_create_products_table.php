@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('product_sku');
             $table->string('nombre', 255);
             $table->longText('descripcion');
 
@@ -27,10 +28,12 @@ class CreateProductsTable extends Migration
 
             $table->string('ud_peso', 4);
             $table->integer('peso_unidad');
-            $table->float('precio_kilogramo', 6, 2);
+            $table->float('precio_kilogramo', 6, 2)->nullable();
    
             $table->string('tipo_animal', 32);
             $table->boolean('destacado');
+            $table->string('edad', 32);
+          
 
         });
     }

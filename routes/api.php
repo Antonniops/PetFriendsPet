@@ -25,6 +25,13 @@ Route::group(['middleware' => 'cors'], function () {
 
     Route::resource('product', 'ProductController');
     Route::get('/product/item/{name}', 'ProductController@search')->name('product.search');
-    
+    Route::get('/checkOutSession/{products}', 'CheckoutController@checkOutSession'); 
+    Route::get('/provincias', 'ProvincesController@provincias'); 
+
+    Route::post('/login', 'AuthController@login');
+    Route::post('/register', 'AuthController@register');
+    Route::post('/shipping-information', 'AuthController@shipping_information');
+
+	Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
 });
 

@@ -44,8 +44,14 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
+        <!-- Stripe Platform -->
+        <script src="https://js.stripe.com/v3/"></script>
+
         <!--Font Awesome Icons-->
         <script src="https://kit.fontawesome.com/e7022998d8.js " crossorigin="anonymous "></script>
+
+       
+        
 
     </body>
 </html>

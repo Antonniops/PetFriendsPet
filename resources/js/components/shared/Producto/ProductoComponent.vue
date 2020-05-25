@@ -16,7 +16,7 @@
         },
         template: require('./Producto.html'),
         props: ['id'],
-        created() {
+        created() {            
 
             //En cuanto se crea el componente recibimos el producto mediante axios
             axios
@@ -31,8 +31,7 @@
                     //Agregamos atributo cantidad, uso vue set para que sea reactivo, sino es estatico
                     Vue.set(this.product, 'cantidad_producto', 0)
                     
-                    console.log(this.product);
-                    
+                   
                 })
                 .catch(function(error) {
                     console.log(error);
@@ -42,9 +41,6 @@
         },
         methods: {
 
-            checkIsNumber(){
-                return 
-            },
 
             aniadirCarrito(){
 
@@ -58,6 +54,8 @@
                     setTimeout( () => {
                         this.producto_agregado = false;
                     }, 2000)
+
+                    this.$store.commit('saveCart');
 
                 }else{
                     

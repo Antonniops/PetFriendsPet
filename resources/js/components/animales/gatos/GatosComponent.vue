@@ -10,15 +10,13 @@ export default {
             arenas_y_lechos: '/storage/arena-gatos.png',
             rascadores: '/storage/rascador.png',
             juguetes: '/storage/juguete-gato.png',
-            masvendido1: '/storage/sensehumedosalmon.jpg',
-            masvendido2: '/storage/sensehumedojavaliyciervo.jpg',
-            masvendido3: '/storage/sensehumedopolloypato.jpg'
+            masvendido1: '/storage/mongeadultricoenpollo.png',
+            masvendido2: '/storage/purityindoor.png',
+            masvendido3: '/storage/mongehumedopolloyaloe.png'
         }
     },
     template: require('./Gatos.html'),
-    mounted(){
-        console.log('Perros mounted');
-    }
+
 }
 </script>
 

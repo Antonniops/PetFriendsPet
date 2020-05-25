@@ -5,7 +5,7 @@
             <section id="enlaces_footer">
                 <ul class="row justify-content-center pt-4 pb-2">
                     <li>
-                        <a href="" class="nav-link">SOBRE NOSOTROS</a>
+                        <router-link to="/sobre-nosotros" class="nav-link">SOBRE NOSOTROS</router-link>
                     </li>
                     <li>
                         <a href="" class="nav-link">PRODUCTOS</a>
@@ -28,8 +28,8 @@
                 </p>
 
                 <div class="text-center">
-                    <i class="fab fa-facebook-f fa-2x text-white mr-3 mb-3"></i>
-                    <i class="fab fa-instagram fa-2x text-white"></i>
+                    <a href="https://www.facebook.com/PetFriend.Benalmadena/"><i class="fab fa-facebook-f fa-2x text-white mr-3 mb-3"></i></a>
+                    <a href="https://www.instagram.com/petfriendbenalmadena/?hl=es"><i class="fab fa-instagram fa-2x text-white"></i></a>
                 </div>
             </section>
 

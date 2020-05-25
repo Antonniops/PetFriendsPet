@@ -23,6 +23,17 @@
     color: white;
 }
 
+.btn-disabled {
+    background-color: gray;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+}
+
 .btn-pagar:hover {
     opacity: 0.8;
+}
+
+i {
+    color: slateblue;
 }

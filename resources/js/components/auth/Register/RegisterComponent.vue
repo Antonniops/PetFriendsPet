@@ -14,19 +14,33 @@
                 },
 
                 message: '',
-                errors: ''
+                errors: '',
+                success:false
             }
         },
 
         methods: {
             registrar(){
-
-                axios.post('register', this.input)
+                //Manda el formulario de registro a través de POST
+                axios.post('/api/register', this.input)
                     .then(result => {
 
                         this.message = result;
                         this.errors = result.data.errors;
- 
+                        
+                        
+                        if(result.data.success){
+                            
+                            this.success = true;
+
+                            setTimeout(() => {
+                                this.success = false;
+                                this.$router.push('auth-login');
+                            }, 2000);
+                   
+                            
+                        }
+                        
                     })
                     .catch(error => console.log(error));
 

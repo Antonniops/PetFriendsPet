@@ -14,7 +14,8 @@
                     marca: [],
                     edad: [],
                     formato: []
-                }
+                },
+                productsToShow: 10
             
             }
         },
@@ -45,26 +46,68 @@
             aplicarFiltros(){
                 
                 let productosFiltrados = this.productos;
+                let filt = this.filtros_activos;
 
-                console.log(productosFiltrados);
-                console.log(this.filtros_activos);
-
-                for(const filter in this.filtros_activos){
+              
+                //Se recorre el objeto de filtros activados y se devuelve una copia filtrada del array de productos
+                for(const filter in filt){
                     
-                    if (this.filtros_activos[filter].length > 0) {
+                    if (filt[filter].length > 0) {
 
-                        this.filtros_activos[filter].forEach(elem => {
+                        filt[filter].forEach(elem => {
      
-                            productosFiltrados = productosFiltrados.filter(prod => console.log(`${prod}.[${filter}]`));
-                                                    
+
+                            if (filter == "formato") {
+                                
+                                //El formato viene en forma de "2 kg" y el producto tiene la propiedad peso 2, unidad kg
+                                //Es necesario hacer split y sacar el primer valor para poder filtrarlo
+                                productosFiltrados = productosFiltrados.filter(prod => prod.peso_unidad == elem.split(" ")[0]);
+
+                            }else{
+
+                                productosFiltrados = productosFiltrados.filter(prod => prod["" + filter + ""] == elem);
+
+                            }
+                                                           
                         });
 
                     }
 
-                    console.log(filter)
                 }
 
-                console.log(productosFiltrados);
+                //Si no se ha aplicado ningun filtro se devuelve igual
+                return productosFiltrados.slice(0, this.productsToShow);
+
+            },
+
+            filtrarPrecioAscendente(){
+                let productosOrdenados = this.productos;
+
+                productosOrdenados.sort(function(a,b){
+                    return a.precio - b.precio;
+                });
+
+                return productosOrdenados;
+
+            },
+
+            filtrarPrecioDescendente(){
+                let productosOrdenados = this.productos;
+
+                productosOrdenados.sort(function(a,b){
+                    return b.precio - a.precio;
+                });
+
+                return productosOrdenados;
+
+            },
+
+            restablecerFiltros(){
+                this.filtros_activos =  {
+                    marca: [],
+                    edad: [],
+                    formato: []
+                };
 
             }
         },

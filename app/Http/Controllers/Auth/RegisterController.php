@@ -52,11 +52,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'password.required' => 'El campo contraseña es obligatorio.',
+            'student.max' =>'Las contraseñas no coinciden.'
+        ];
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ], $messages);
 
     }
 
@@ -81,8 +86,8 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         return response()->json([
-            'redirect' => 'http://localhost/login',
-            'message' => 'Registration Successful!'
+            //'redirect' => 'http://localhost/auth-login',
+            'success' => 'Registration Successful!'
             ], 201);
     }
 
