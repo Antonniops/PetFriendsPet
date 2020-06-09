@@ -6,13 +6,16 @@
 
                 <section class="d-flex flex-row barra-superior justify-content-end">
                     <div>
+                        <span class="mx-3 text-white" v-if="logged_user">{{logged_user}}</span>
+                        <router-link to="/"><i class="fas fa-sign-out-alt fa-2x text-white" @click="logout()" v-if="logged_user"></i></router-link>
                         <!-- Icono login -->
-                        <router-link to="/auth-login" class="text-right"><i class="fas fa-user text-white fa-2x"></i></router-link>
+                        <router-link to="/auth-login" class="text-right dropdown"><i v-if="logged_user == null" class="fas fa-user text-white fa-2x"></i></router-link>
+
                     </div>
 
                     <div>
                         <!-- Icono carrito -->
-                        <router-link to="/carrito" class="text-right ml-3">
+                        <router-link to="/carrito" class="text-right ml-3">                              
                                 <i class="fas fa-shopping-cart text-white fa-2x"></i>
                                 <span class="badge badge-warning">{{numero_items}}</span>
                         </router-link>
@@ -76,16 +79,25 @@ export default {
 
     data(){
         return{
-            logo_src: '/storage/logo.jpg'
+            logo_src: '/storage/logo.jpg',
         }
        
     },
     mounted() {
-        console.log('Navbar mounted.')
+        console.log(this.logged_user)
     },
     computed: {
         numero_items(){
             return this.$store.getters.getCart.length;
+        },
+        logged_user(){
+            return this.$store.getters.getUser;
+        }
+    },
+    methods: {
+        logout(){
+            this.$store.commit('logout');
+            this.$router.go(0);
         }
     },
 }

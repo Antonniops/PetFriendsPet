@@ -1,0 +1,71 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Datos de envío</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+
+                <!-- FORMULARIO PARA DATOS DE ENVÍO -->
+                <form action="" class="my-5 px-3 form-login d-flex flex-column">
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico: </label>
+                        <input type="email" placeholder="Email" class=" form-control" name="username" id="email" v-model="data.email">
+                    </div>
+
+
+                    <div class="form-group mt-4">
+                        <label for="codigo_postal">Código postal: </label>
+                        <input type="text" placeholder="Código postal" class="form-control" name="codigo_postal" id="codigo_postal" v-model="data.codigo_postal">
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label for="calle">Calle: </label>
+                        <input type="text" placeholder="Calle" class="form-control" name="calle" id="calle" v-model="data.calle">
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label for="municipio">Municipio: </label>
+                        <select placeholder="Municipio" class="form-control" name="municipio" id="municipio" v-model="data.municipio">
+                            <option value="" v-for="prov in provincias" :value="prov.nombre">{{prov.nombre}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label for="numero">Numero: </label>
+                        <input type="text" placeholder="Número" class="form-control" name="numero" id="numero" v-model="data.numero">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" @click.prevent="validarDatos()">Comprobar</button>
+
+                </form>
+
+                <div v-if="errors" class="text-danger row ml-5 mt-4">
+                    <ul>
+                        <li v-for="err in errors" class="row">
+                            <i class="fas fa-exclamation-triangle mr-3"></i>
+                            <p>{{err}}</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div v-if="success" class="text-success row ml-5 mt-4">
+                    <ul class="row">
+                        <i class="fas fa-check-circle mr-3"></i>
+                        <p>{{success_message}}</p>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" @click.prevent="guardarDatosEnvio()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

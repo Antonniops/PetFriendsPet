@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens,Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'role_id', 'promociones'
     ];
 
     /**
@@ -38,4 +39,37 @@ class User extends Authenticatable
     ];
 
     public $timestamps = false;
+
+    public static function get_id_byname($name){
+        $user = User::select('id')->where('name', $name)->get();
+        return $user;
+    }
+
+    /**
+     * Return the user role.
+     *
+     */
+    public function role(){
+
+        return $this->belongsTo(Role::class);
+
+    }
+
+    /**
+     * Override the mail body for reset password notification mail.
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new \App\Notifications\MailResetPasswordNotification($token));
+    }
+
+    /**
+     * Get the orders for a client.
+     */
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+
+
 }

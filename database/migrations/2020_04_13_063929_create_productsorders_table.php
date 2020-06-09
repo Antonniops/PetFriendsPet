@@ -21,7 +21,7 @@ class CreateProductsordersTable extends Migration
      
             $table->integer('unidades');
             $table->float('precio_unidad', 6, 2);
-            $table->integer('total');
+            $table->float('total', 6, 2);
             
 
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

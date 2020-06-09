@@ -26,7 +26,7 @@
         <section class="slider-categorias row justify-content-center">
 
             <div class="text-center swipe-item  d-flex flex-column align-items-center">
-                <router-link to="/gatos/pienso-seco">
+                <router-link to="/categoria/gato/pienso-seco">
                     <div class="circulo bg-brown">
                         <img :src="comida" alt="" width="120">
                     </div>
@@ -40,7 +40,7 @@
 
 
             <div class="text-center swipe-item d-flex flex-column align-items-center">
-                <router-link to="/gatos/comida-humeda">
+                <router-link to="/categoria/gato/comida-humeda">
                     <div class="circulo bg-azulclaro">
                         <img :src="comida_humeda" alt="" width="80">
                     </div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="text-center swipe-item d-flex flex-column align-items-center">
-                <router-link to="/gatos/arenas-y-lechos">
+                <router-link to="/categoria/gato/arenas-y-lechos">
                     <div class="circulo bg-azul">
                         <img :src="arenas_y_lechos" alt="" width="120">
                     </div>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="text-center swipe-item d-flex flex-column align-items-center">
-                <router-link to="/gatos/complementos">
+                <router-link to="/categoria/gato/complementos">
                     <div class="circulo bg-amarilloclaro">
                         <img :src="rascadores" alt="" width="120">
                     </div>
@@ -92,26 +92,26 @@
 
         <section class="row masvendidos justify-content-around mt-5 align-items-end">
             <div class="text-center mb-5 col-sm-6 col-12 col-md-4">
-                <img src="" class="" alt="...">
+                <img :src="masvendido1" class="" alt="..." width="90">
                 <div class="mt-4">
-                    <h5>Dibaq sense Lata Salmón</h5>
-                    <a href="./producto.html" class="btn btn-secondary">Ver Producto</a>
+                    <h5>Monge adulto arroz y pollo</h5>
+                    <router-link to="/productos/36" class="btn btn-secondary">Ver Producto</router-link>
                 </div>
             </div>
 
             <div class="text-center mb-5 col-sm-6 col-12 col-md-4">
-                <img src="" class="" alt="...">
+                <img :src="masvendido2" class="" alt="..." width="80">
                 <div class="mt-4">
-                    <h5>Dibaq sense Lata Salmón</h5>
-                    <a href="./producto.html" class="btn btn-secondary">Ver Producto</a>
+                    <h5>Purity indoor</h5>
+                    <router-link to="/productos/44" class="btn btn-secondary">Ver Producto</router-link>
                 </div>
             </div>
 
             <div class="text-center mb-5 col-sm-6 col-12 col-md-4">
-                <img src="" class="" alt="...">
+                <img :src="masvendido3" class="" alt="..." width="120">
                 <div class="mt-4">
-                    <h5>Dibaq sense Lata Salmón</h5>
-                    <a href="./producto.html" class="btn btn-secondary">Ver Producto</a>
+                    <h5>Monge atún y aloe</h5>
+                    <router-link to="/productos/33" class="btn btn-secondary">Ver Producto</router-link>
                 </div>
             </div>
         </section>

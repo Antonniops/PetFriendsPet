@@ -1,0 +1,28 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Precio oferta</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Formato</th>
+            <th scope="col">Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="item in productos">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.precio}}</td>
+            <td>{{item.precio_oferta}}</td>
+            <td>{{item.marca}}</td>
+            <td>{{item.categoria}}</td>
+            <td>{{item.peso_unidad}}{{item.ud_peso}}</td>
+            <td>{{item.edad}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

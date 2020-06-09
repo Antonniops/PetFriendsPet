@@ -17,7 +17,13 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name', 64);
             $table->string('email', 64)->unique();
+            $table->string('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->boolean('promociones');
+            $table->bigInteger('role_id')->unsigned();    
+            $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade');
+
 
             $table->rememberToken();
            

@@ -7,7 +7,7 @@
             </span>
             <div class="form-group mx-2 my-auto">
                 <!-- MINIMO 0 Y NO PERMITE ESCRIBIR LETRAS -->
-                <input type="text" class="form-control" :value="cantidad_producto" min="0" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                <input type="text" class="form-control" :value="cantidad_producto" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
             </div>
             <span class="modificar-cantidad" @click="increment()">
                     <i class="fas fa-plus-circle"></i>
@@ -27,7 +27,9 @@
                 this.$emit('modificarCantidad', 1, this.id_producto);
             },
             decrement(){
-                if (this.cantidad_producto > 0){
+                
+                //No permite cantidades menores a uno
+                if (this.cantidad_producto > 1){
 
                     this.$emit('modificarCantidad', -1, this.id_producto);
 

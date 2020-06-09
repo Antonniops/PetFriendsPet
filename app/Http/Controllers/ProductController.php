@@ -21,7 +21,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Product::all();
+
+        return response()
+            ->json($productos);
     }
 
     /**
@@ -31,7 +34,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -126,6 +129,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($id) {
+            $record = Product::where('id', $id);
+            $record->delete();
+        }
     }
 }

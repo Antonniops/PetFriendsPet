@@ -24,7 +24,10 @@ class Product extends Model
      */
    public static function search_product($name){
 
-        $products = Product::where('nombre', 'LIKE', '%' . $name . '%')->get();
+        //Selecciona las 10 primeras coincidencias
+        $products = Product::where('nombre', 'LIKE', '%' . $name . '%')
+                              ->take(10)
+                              ->get();
 
         return $products;
 
@@ -49,4 +52,12 @@ class Product extends Model
    }
 
    public $timestamps = false;
+
+    /**
+     * Get the product_orders for a product.
+     */
+     public function product_orders()
+     {
+        return $this->hasMany('App\ProductOrder');
+     }
 }

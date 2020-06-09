@@ -24,10 +24,13 @@ Vue.use(VueRouter);
  */
 
 
-Vue.component('navbar-component', require('./components/shared/NavbarComponent.vue').default);
+Vue.component('index-component', require('./components/Index.vue').default);
+Vue.component('navbar-component', require('./components/shared/Navbar/NavbarComponent.vue').default);
 Vue.component('footer-component', require('./components/shared/FooterComponent.vue').default);
 Vue.component('formcantidad-component', require('./components/shared/CantidadComponent.vue').default);
 Vue.component('buscador-component', require('./components/shared/BuscadorComponent.vue').default);
+Vue.component('datosenvio-component', require('./components/Carrito/DatosEnvio/DatosEnvioComponent.vue').default);
+Vue.component('dashboard-component', require('./components/admin/dashboard/DashboardComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

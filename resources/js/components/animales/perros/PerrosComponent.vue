@@ -14,9 +14,7 @@ export default {
         }
     },
     template: require('./Perros.html'),
-    mounted(){
-        console.log('Perros mounted');
-    }
+    
 }
 </script>
 
