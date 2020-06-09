@@ -48,7 +48,7 @@ class OrderController extends Controller
             ]);
         }
 
-        $order = Order::find($order_id['id'])->join('productsorders', 'order.id', '=', 'productsorders.order_id');
+        $order = Order::find($order_id['id']);
 
         Mail::to($request->input('datosEnvio.email'))->send(new ConfirmOrder($order));
 

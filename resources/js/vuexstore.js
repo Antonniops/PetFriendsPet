@@ -44,6 +44,7 @@ export const store = new Vuex.Store({
         //Guarda el carrito de compra en local storage
         saveCart(state) {
             window.localStorage.setItem('carrito', JSON.stringify(state.carrito));
+            window.localStorage.setItem('carritoCount', state.carrito.length());
         },
 
         //Guarda el token de acceso en local storage
@@ -65,7 +66,20 @@ export const store = new Vuex.Store({
         //Guarda los datos de envío en local storage
         saveShippingInformation(state, shipping_information) {
             window.localStorage.setItem('shipping_information', JSON.stringify(shipping_information));
+
         },
+        //Guarda el token de acceso en local storage
+        login(state, { token, user }) {
+            window.localStorage.setItem('access_token', token);
+            window.localStorage.setItem('access_user', user);
+        },
+
+        //Borra el token de acceso para cerrar sesión
+        logout(state) {
+            window.localStorage.removeItem('access_token');
+            window.localStorage.removeItem('access_user');
+        }
+
     },
     getters: {
 
@@ -93,5 +107,7 @@ export const store = new Vuex.Store({
         getShippingInformation: state => {
             return state.shipping_information;
         },
+
     }
+
 })

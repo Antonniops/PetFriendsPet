@@ -10,6 +10,7 @@ import CategoriaComponent from './components/shared/Categoria/CategoriaComponent
 import ProductoComponent from './components/shared/Producto/ProductoComponent.vue';
 import LoginComponent from './components/auth/Login/LoginComponent.vue';
 import RegisterComponent from './components/auth/Register/RegisterComponent.vue';
+
 import ForgotPasswordComponent from './components/auth/ResetPassword/ForgotPassword/ForgotPasswordComponent.vue';
 import ResetPasswordFormComponent from './components/auth/ResetPassword/ResetPassword/ResetPasswordFormComponent.vue';
 
@@ -19,6 +20,8 @@ import ContactoComponent from './components/contacto/ContactoComponent.vue';
 
 import DashboardComponent from './components/admin/dashboard/DashboardComponent.vue';
 import AdminProductosComponent from './components/admin/productos/ProductosComponent.vue';
+
+
 
 export const routes = [{
         path: '/',
@@ -101,9 +104,6 @@ export const routes = [{
             auth: false
         }
     }
-
-
-
 
 
 

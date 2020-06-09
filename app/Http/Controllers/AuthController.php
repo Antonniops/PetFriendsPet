@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
 use App\User;
 use DB;
 
@@ -17,14 +15,18 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
+
+
 class AuthController extends Controller
 {
+
 
     //Sobreescribe algunos metodos para adaptarlos a Vue
     use SendsPasswordResetEmails, ResetsPasswords {
         SendsPasswordResetEmails::broker insteadof ResetsPasswords;
         ResetsPasswords::credentials insteadof SendsPasswordResetEmails;
     }
+
 
     /**
      * Proccess a login request.
@@ -166,6 +168,7 @@ class AuthController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
+
         //Correo de confirmacion
         Mail::to($request->input('email'))->send(new RegisterVerification());
 
@@ -194,6 +197,7 @@ class AuthController extends Controller
             'password' => Hash::make($data['password']),
             'role_id' => '1',
             'promociones' => $data['promociones']
+
         ]);
     }
 
@@ -210,8 +214,11 @@ class AuthController extends Controller
     protected function shipping_validator(array $data)
     {
         $messages = [
+
             'codigo_postal.numeric' => 'El código postal debe contener únicamente números.',
-            'codigo_postal.digits' => 'El código postal no debe contener más de 5 digitos.'
+            'codigo_postal.digits' => 'El código postal no debe contener más de 5 digitos.',
+            'codigo_postal.numeric' => 'El codigo postal debe contener únicamente números.'
+
         ];
 
         return Validator::make($data, [
@@ -220,6 +227,7 @@ class AuthController extends Controller
             'calle' => ['required', 'string', 'max:100'],
             'municipio' => ['required', 'string'],
             'numero' => ['required', 'string'],
+
         ], $messages);
 
     }

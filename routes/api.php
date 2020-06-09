@@ -30,6 +30,7 @@ Route::group(['middleware' => 'cors'], function () {
 
     Route::post('/login', 'AuthController@login');
     Route::post('/register', 'AuthController@register');
+
     // Send reset password mail
     Route::post('/reset-password', 'AuthController@sendPasswordResetLink');
             
@@ -39,6 +40,11 @@ Route::group(['middleware' => 'cors'], function () {
     Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
     
     Route::post('/order', 'OrderController@store');
+
+
+    Route::post('/shipping-information', 'AuthController@shipping_information');
+
+	Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
 
 });
 

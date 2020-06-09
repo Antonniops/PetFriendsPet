@@ -16,6 +16,7 @@ export default {
              },
              success: false,
              success_message: ""
+
         }
     },
 
@@ -27,6 +28,7 @@ export default {
     },
     methods: {
         validarDatos(){
+
             
             axios.post('/api/shipping-information', this.data)
                         .then(res => {
@@ -36,8 +38,8 @@ export default {
                                 this.success_message = res.data.success
                             }else{
                                 this.success = false;
-                            }                                        
-                        })
+                            }  
+                        })                                      
                         .catch(err => {
                             console.log(err)
                             this.errors = err.errors
@@ -50,6 +52,7 @@ export default {
                 this.$store.commit('saveShippingInformation', this.data);
                 
             }
+
 
         }
     },
