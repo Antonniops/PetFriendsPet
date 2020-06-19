@@ -57,7 +57,6 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email
       }).then(function (res) {
         _this.message = res.data.message;
-        console.log(res.data);
       })["catch"](function (err) {
         console.log(err);
       });

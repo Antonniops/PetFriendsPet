@@ -3,13 +3,7 @@
 
   
 
-<p  align="center">
 
-<a  href="https://travis-ci.org/laravel/framework"><img  src="https://travis-ci.org/laravel/framework.svg"  alt="Build Status"></a>
-
-<a  href="https://packagist.org/packages/laravel/framework"><img  src="https://poser.pugx.org/laravel/framework/d/total.svg"  alt="Total Downloads"></a>
-
-<a  href="https://packagist.org/packages/laravel/framework"><img  src="https://poser.pugx.org/laravel/framework/v/stable.svg"  alt="Latest Stable Version"></a>
 
 <a  href="https://packagist.org/packages/laravel/framework"><img  src="https://poser.pugx.org/laravel/framework/license.svg"  alt="License"></a>
 
@@ -17,45 +11,19 @@
 
   
 
-## About PetFriends
+## Sobre PetFriends
 
   
 
-PetFriends is an online store where you can buy many animal products that will interest you.
+PetFriends es una tienda online que le ofrecerá productos de calidad para sus mascotas y servicios para el cuidado de ellas.
 
-Good prices, good service, and the most important, a trustfully shop!.
 
-  
+ - Proceso de compra sencillo
+ - Sin necesidad de registro
+ - Pida cita para la peluquería canina de forma online
+ - Reciba los productos en su casa de formá rápida
 
--  [Simple, fast routing engine](https://laravel.com/docs/routing).
 
--  [Powerful dependency injection container](https://laravel.com/docs/container).
-
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-
--  [Robust background job processing](https://laravel.com/docs/queues).
-
--  [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-  
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-  
-
-## Learning Laravel
-
-  
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-  
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
   
 
@@ -82,6 +50,10 @@ Aquí podrá encontrar la documentación necesaria para la instalación de la ti
 **Instalación:**
 
 En primer lugar descargue el directorio de archivos y cópielo en su servidor web.
+Ejecuta en la consola de comandos para instalar las dependencias:
+	-npm install
+	-composer require
+
 En el caso de Apache en C://xammp/htdocs/
 
 Configure un host virtual para su correcto funcionamiento:

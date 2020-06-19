@@ -76,6 +76,7 @@ export default {
                 .post(`/api/checkOutSession`, data)
                 .then(res => {    
                     this.session_id = res.data.id;   
+                    console.log(res.data);
                     
                      stripe.redirectToCheckout({
 

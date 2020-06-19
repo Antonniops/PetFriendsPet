@@ -2049,9 +2049,6 @@ __webpack_require__.r(__webpack_exports__);
     routeName: function routeName() {
       return this.$router.currentRoute.path;
     }
-  },
-  mounted: function mounted() {
-    console.log(this.$route.name);
   }
 });
 
@@ -2242,7 +2239,6 @@ __webpack_require__.r(__webpack_exports__);
           _this2.success = false;
         }
       })["catch"](function (err) {
-        console.log(err);
         _this2.errors = err.errors;
       });
     },
@@ -2306,7 +2302,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.txtInput.toLowerCase();
-      console.log(this.txtInput);
       axios.get("/api/product/item/".concat(this.txtInput)).then(function (res) {
         _this.resultBusqueda = res.data;
       })["catch"](function (error) {
@@ -20581,7 +20576,7 @@ var app = new Vue({
 var map = {
 	"./HomeComponent.vue": [
 		"./resources/js/components/HomeComponent.vue",
-		15
+		16
 	],
 	"./Index.vue": [
 		"./resources/js/components/Index.vue"
@@ -20594,18 +20589,18 @@ var map = {
 	],
 	"./admin/productform/ProductFormComponent.vue": [
 		"./resources/js/components/admin/productform/ProductFormComponent.vue",
-		18
+		3
 	],
 	"./admin/productformupdate/ProductFormUpdateComponent.vue": [
 		"./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue",
-		19
+		4
 	],
 	"./admin/productos/ProductosComponent.vue": [
 		"./resources/js/components/admin/productos/ProductosComponent.vue"
 	],
 	"./animales/gatos/GatosComponent.vue": [
 		"./resources/js/components/animales/gatos/GatosComponent.vue",
-		4
+		5
 	],
 	"./animales/otros/OtrosComponent.vue": [
 		"./resources/js/components/animales/otros/OtrosComponent.vue",
@@ -20613,7 +20608,7 @@ var map = {
 	],
 	"./animales/perros/PerrosComponent.vue": [
 		"./resources/js/components/animales/perros/PerrosComponent.vue",
-		5
+		6
 	],
 	"./auth/ResetPassword/forgot_password/ForgotPasswordComponent.vue": [
 		"./resources/js/components/auth/ResetPassword/forgot_password/ForgotPasswordComponent.vue",
@@ -20621,31 +20616,31 @@ var map = {
 	],
 	"./auth/ResetPassword/reset_password/ResetPasswordFormComponent.vue": [
 		"./resources/js/components/auth/ResetPassword/reset_password/ResetPasswordFormComponent.vue",
-		6
+		7
 	],
 	"./auth/login/LoginComponent.vue": [
 		"./resources/js/components/auth/login/LoginComponent.vue",
-		7
+		8
 	],
 	"./auth/register/RegisterComponent.vue": [
 		"./resources/js/components/auth/register/RegisterComponent.vue",
-		8
+		9
 	],
 	"./carrito/CarritoComponent.vue": [
 		"./resources/js/components/carrito/CarritoComponent.vue",
-		9
+		10
 	],
 	"./carrito/datos_envio/DatosEnvioComponent.vue": [
 		"./resources/js/components/carrito/datos_envio/DatosEnvioComponent.vue"
 	],
 	"./contacto/ContactoComponent.vue": [
 		"./resources/js/components/contacto/ContactoComponent.vue",
-		10
+		11
 	],
 	"./peluqueria/PeluqueriaComponent.vue": [
 		"./resources/js/components/peluqueria/PeluqueriaComponent.vue",
 		0,
-		11
+		12
 	],
 	"./shared/BuscadorComponent.vue": [
 		"./resources/js/components/shared/BuscadorComponent.vue"
@@ -20656,17 +20651,13 @@ var map = {
 	"./shared/FooterComponent.vue": [
 		"./resources/js/components/shared/FooterComponent.vue"
 	],
-	"./shared/NavbarComponent.vue": [
-		"./resources/js/components/shared/NavbarComponent.vue",
-		16
-	],
 	"./shared/PaymentSuccessComponent.vue": [
 		"./resources/js/components/shared/PaymentSuccessComponent.vue",
 		17
 	],
 	"./shared/categoria/CategoriaComponent.vue": [
 		"./resources/js/components/shared/categoria/CategoriaComponent.vue",
-		12
+		13
 	],
 	"./shared/cookies/CookiesComponent.vue": [
 		"./resources/js/components/shared/cookies/CookiesComponent.vue"
@@ -20676,11 +20667,11 @@ var map = {
 	],
 	"./shared/producto/ProductoComponent.vue": [
 		"./resources/js/components/shared/producto/ProductoComponent.vue",
-		13
+		14
 	],
 	"./sobrenosotros/SobrenosotrosComponent.vue": [
 		"./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue",
-		14
+		15
 	]
 };
 function webpackAsyncContext(req) {
@@ -21607,7 +21598,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
     //Guarda el carrito de compra en local storage
     saveCart: function saveCart(state) {
       window.localStorage.setItem('carrito', JSON.stringify(state.carrito));
-      window.localStorage.setItem('carritoCount', state.carrito.length());
+      window.localStorage.setItem('carritoCount', state.carrito.length);
     },
     //Guarda el token de acceso en local storage
     login: function login(state, _ref2) {

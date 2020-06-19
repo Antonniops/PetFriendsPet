@@ -2,11 +2,7 @@
 <script>
     export default {
         template: require('./Contacto.html'),
-        data(){
-            return {
 
-            }
-        }
     }
 </script>
 

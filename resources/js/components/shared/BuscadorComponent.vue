@@ -41,8 +41,6 @@ export default {
 
             this.txtInput.toLowerCase();
 
-            console.log(this.txtInput);
-
 
              axios
                 .get(`/api/product/item/${this.txtInput}`)

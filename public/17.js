@@ -26,11 +26,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  created: function created() {
-    var id = this.$store.getters.getUserId;
-    var carrito = this.$store.getters.getCart;
-    var shippingInformation = this.$store.getters.getShippingInformation;
-    console.log(id, carrito, shippingInformation);
+  mounted: function mounted() {
+    this.crearPedido();
+  },
+  methods: {
+    crearPedido: function crearPedido() {
+      var id = this.$store.getters.getUserId;
+      var carrito = this.$store.getters.getCart;
+      var shippingInformation = this.$store.getters.getShippingInformation;
+      axios.post('/api/order', {
+        id: id,
+        estado: 'pendiente',
+        carrito: carrito,
+        datosEnvio: shippingInformation
+      }).then(function (res) {
+        console.log(res);
+      });
+    }
   }
 });
 

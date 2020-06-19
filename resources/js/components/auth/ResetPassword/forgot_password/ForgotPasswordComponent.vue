@@ -44,7 +44,6 @@ export default {
             axios.post("/api/reset-password", {email: this.email})
                 .then(res => {
                     this.message = res.data.message;
-                    console.log(res.data);
                 })
                 .catch(err => {
                     console.log(err);

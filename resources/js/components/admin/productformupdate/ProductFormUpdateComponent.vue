@@ -35,7 +35,6 @@ export default {
             .then(res => {
                 this.producto = res.data;
                 this.temp_img = '/storage/' + this.producto.imagen;
-                console.log(this.producto);
             })
             .catch(err => {
                 console.log(err);

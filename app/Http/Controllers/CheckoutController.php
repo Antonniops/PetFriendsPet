@@ -31,7 +31,9 @@ class CheckoutController extends Controller
             'cancel_url'=> 'http://petfriendspet.com/pago/cancelado',
         ]);
 
+        
         return $session;
-    }
+
+      }
     
 }

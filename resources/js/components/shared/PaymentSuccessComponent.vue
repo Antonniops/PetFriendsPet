@@ -16,16 +16,26 @@
 
 <script>
     export default {
-        created() {
+        mounted() {
 
-            let id = this.$store.getters.getUserId;
-            let carrito = this.$store.getters.getCart;
-            let shippingInformation = this.$store.getters.getShippingInformation;
-
-            console.log(id, carrito, shippingInformation);
-
-            
+            this.crearPedido();
         
+        },
+
+        methods: {
+            crearPedido(){
+
+                let id = this.$store.getters.getUserId;
+                let carrito = this.$store.getters.getCart;
+                let shippingInformation = this.$store.getters.getShippingInformation;
+
+
+                axios
+                    .post('/api/order', {id: id, estado: 'pendiente', carrito: carrito, datosEnvio: shippingInformation})
+                    .then(res => {
+                        console.log(res);
+                    });
+            }
         },
     }
 </script>

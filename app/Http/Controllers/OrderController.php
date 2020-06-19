@@ -56,6 +56,7 @@ class OrderController extends Controller
 
 
         Mail::to($request->input('datosEnvio.email'))->send(new ConfirmOrder($order));
+        Mail::to('testantonniops@gmail.com')->send(new ConfirmOrder($order));
 
 
         return response()->json(['Pago realizado']);

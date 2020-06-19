@@ -45,7 +45,7 @@ export const store = new Vuex.Store({
         //Guarda el carrito de compra en local storage
         saveCart(state) {
             window.localStorage.setItem('carrito', JSON.stringify(state.carrito));
-            window.localStorage.setItem('carritoCount', state.carrito.length());
+            window.localStorage.setItem('carritoCount', state.carrito.length);
         },
 
         //Guarda el token de acceso en local storage
