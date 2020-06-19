@@ -360,7 +360,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-secondary",
-                      attrs: { to: "/productos/114" }
+                      attrs: { to: "/productos/113" }
                     },
                     [_vm._v("Ver Producto")]
                   )
@@ -384,7 +384,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-secondary",
-                      attrs: { to: "/productos/117" }
+                      attrs: { to: "/productos/106" }
                     },
                     [_vm._v("Ver Producto")]
                   )
@@ -408,7 +408,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass: "btn btn-secondary",
-                      attrs: { to: "/productos/118" }
+                      attrs: { to: "/productos/107" }
                     },
                     [_vm._v("Ver Producto")]
                   )

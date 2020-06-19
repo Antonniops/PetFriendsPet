@@ -110,7 +110,7 @@
                     <img :src="masvendido1" class="" width="120" alt="...">
                     <div class="mt-4">
                         <h5>Dibaq sense lata Salmón</h5>
-                        <router-link to="/productos/114" class="btn btn-secondary">Ver Producto</router-link>
+                        <router-link to="/productos/113" class="btn btn-secondary">Ver Producto</router-link>
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
                     <img :src="masvendido2" class="" width="120" alt="...">
                     <div class="mt-4">
                         <h5>Dibaq sense lata ciervo y jabalí</h5>
-                        <router-link to="/productos/117" class="btn btn-secondary">Ver Producto</router-link>
+                        <router-link to="/productos/106" class="btn btn-secondary">Ver Producto</router-link>
                     </div>
                 </div>
 
@@ -126,7 +126,7 @@
                     <img :src="masvendido3" class="" width="120" alt="...">
                     <div class="mt-4">
                         <h5>Dibaq sense lata pollo y pato</h5>
-                        <router-link to="/productos/118" class="btn btn-secondary">Ver Producto</router-link>
+                        <router-link to="/productos/107" class="btn btn-secondary">Ver Producto</router-link>
                     </div>
                 </div>
 

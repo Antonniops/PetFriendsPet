@@ -225,8 +225,7 @@ class ProductController extends Controller
             'nombre' => 'required|max:255',
             'descripcion' => 'required',
             'precio' => 'required|max:6|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
-            'precio_oferta' => 'max:6|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
-            'imagen' => 'required|image|file',
+            'precio_oferta' => 'nullable',
             'marca' => 'required|alpha|max:32',
             'categoria' => 'required|alpha_dash|max:64',
             'ud_peso' => 'required|alpha|max:4',
@@ -250,6 +249,7 @@ class ProductController extends Controller
             ->json('No se ha encontrado ese producto', 201);
         }
 
+        $filename = null;
         //Guardado de imagen
         if ($request->hasFile('imagen')) {
 
@@ -265,7 +265,7 @@ class ProductController extends Controller
 
             //Lo almacena en el espacio publico
             $file = $file->storeAs('public', $filename);
-        };
+        }
         
         //Recogemos los datos del formulario
         $product = [
@@ -273,7 +273,6 @@ class ProductController extends Controller
             'descripcion' => $request->input('descripcion'),
             'precio' => $request->input('precio'),
             'precio_oferta' => $request->input('precio_oferta'),
-            'imagen' => $filename ?: null,
             'marca' => $request->input('marca'),
             'categoria' => $request->input('categoria'),
             'ud_peso' => $request->input('ud_peso'),
@@ -286,6 +285,7 @@ class ProductController extends Controller
     
         //Si se manda true se marca como 0 en la bd
         $request->destacado ? $product['destacado'] = 1 : $product['destacado'] = 0;
+        $filename ? $product['imagen'] = $filename : $product['imagen'] = $product_finded->imagen;
 
         //Actualizamos con los datos recibidos
         $product_finded->update($product);
