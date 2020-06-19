@@ -51,6 +51,26 @@ class Product extends Model
 
    }
 
+   /**
+     * Return an recomended products
+     *
+     * @param string categoria
+     * @return Collection
+     */
+    public static function obtener_recomendados($animal, $categoria, $id_producto_excluir){
+
+     //Devuelve un listado de 3 productos recomendados como máximo 
+     //que no sean el que se está mostrando en pantall
+     $products = Product::where('tipo_animal', '=', $animal)
+                         ->where('categoria', '=', $categoria)
+                         ->where('id', '!=', $id_producto_excluir)
+                         ->take(3)
+                         ->get();
+
+     return $products;
+
+}
+
    public $timestamps = false;
 
     /**

@@ -10,6 +10,7 @@ export const store = new Vuex.Store({
 
     state: {
 
+        //Variables globales
         carrito: cart ? JSON.parse(cart) : [],
         cartCount: cartCount ? parseInt(cartCount) : 0,
         token: localStorage.getItem('access_token') || null,
@@ -49,6 +50,13 @@ export const store = new Vuex.Store({
 
         //Guarda el token de acceso en local storage
         login(state, { token, user, id }) {
+
+            //Los guardo antes en las variables porque localStorage no es reactivo
+            state.token = token;
+            state.logged_user = user;
+            state.logged_user_id = id;
+
+            //Se guardan los datos de forma persistente
             window.localStorage.setItem('access_token', token);
             window.localStorage.setItem('access_user', user);
             window.localStorage.setItem('access_user_id', id);
@@ -57,6 +65,14 @@ export const store = new Vuex.Store({
 
         //Borra el token de acceso y los datos de envío para cerrar sesión
         logout(state) {
+
+            //Borro primero el valor de las variables porque localStorage no es reactivo
+            state.token = null;
+            state.logged_user = null;
+            state.logged_user_id = null;
+            state.shipping_information = null;
+
+            //Borro los datos del localStorage
             window.localStorage.removeItem('access_token');
             window.localStorage.removeItem('access_user');
             window.localStorage.removeItem('access_user_id');
@@ -65,20 +81,14 @@ export const store = new Vuex.Store({
 
         //Guarda los datos de envío en local storage
         saveShippingInformation(state, shipping_information) {
-            window.localStorage.setItem('shipping_information', JSON.stringify(shipping_information));
+            state.shipping_information = shipping_information;
+
+            //Solo se guardarán los datos de envío si está logueado
+            if (state.token) {
+                window.localStorage.setItem('shipping_information', JSON.stringify(shipping_information));
+            }
 
         },
-        //Guarda el token de acceso en local storage
-        login(state, { token, user }) {
-            window.localStorage.setItem('access_token', token);
-            window.localStorage.setItem('access_user', user);
-        },
-
-        //Borra el token de acceso para cerrar sesión
-        logout(state) {
-            window.localStorage.removeItem('access_token');
-            window.localStorage.removeItem('access_user');
-        }
 
     },
     getters: {

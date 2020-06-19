@@ -1,28 +1,40 @@
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Precio oferta</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">Formato</th>
-            <th scope="col">Edad</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr v-for="item in productos">
-            <th scope="row">{{item.id}}</th>
-            <td>{{item.nombre}}</td>
-            <td>{{item.precio}}</td>
-            <td>{{item.precio_oferta}}</td>
-            <td>{{item.marca}}</td>
-            <td>{{item.categoria}}</td>
-            <td>{{item.peso_unidad}}{{item.ud_peso}}</td>
-            <td>{{item.edad}}</td>
+<div>
+    <router-link to="/admin/productos/formulario">
+        <button class="btn btn-success m-3">Añadir producto</button>
+    </router-link>
 
-        </tr>
+    <table class="table ml-3">
 
-    </tbody>
-</table>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Precio oferta</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Formato</th>
+                <th scope="col">Edad</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in productos">
+                <th scope="row">{{item.id}}</th>
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio}}€</td>
+                <td>{{item.precio_oferta}}</td>
+                <td>{{item.marca}}</td>
+                <td>{{item.categoria}}</td>
+                <td>{{item.peso_unidad}}{{item.ud_peso}}</td>
+                <td>{{item.edad}}</td>
+                <td class="row">
+                    <router-link :to="{ path: '/admin/productos/formulario/actualizar/' + item.id }"><i class="fas fa-edit text-warning"></i></router-link>
+                    <i class="fas fa-trash-alt mx-3 text-danger" @click="deleteProduct(item)"></i>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

@@ -153,8 +153,21 @@ a[x-apple-data-detectors] {
                   <td width="560" valign="top" align="center" style="padding:0;Margin:0;"> 
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;"> 
                      <tr style="border-collapse:collapse;"> 
-                     <td align="left" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;">Muchas gracias por su compra en PetFriends.<br>Su número de seguimiento es : {{$order->id}} <br>Le informamos de que podrá tener su producto entre 2 y 4 días.<br><br>Le invitamos a ver más productos de calidad: <br>
-                        <a href="http://localhost:8000/">Ver Tienda </a>
+                     <td align="left" style="padding:0;Margin:0;"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;">
+                      
+                      
+                      Muchas gracias por su compra en PetFriends.<br><br>
+                      Su número de seguimiento es : {{$order[0]->id}} <br>
+                      
+                      @foreach ($order as $ord)
+                          {{$ord->nombre}} | {{$ord->unidades}} uds. / {{$ord->precio_unidad}}€/ud. = {{$ord->total}}€ <br>
+                      @endforeach
+
+                      <br>
+                      Le informamos de que podrá tener su producto entre 2 y 4 días.<br>
+                      <br>Le invitamos a ver más productos de calidad: <br>
+
+                        <a href="http://petfriendspet.com/">Ver Tienda </a>
                     </p></td> 
                      </tr> 
                      

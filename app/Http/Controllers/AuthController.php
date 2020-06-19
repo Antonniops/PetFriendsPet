@@ -101,6 +101,82 @@ class AuthController extends Controller
     //-------------------------------------------------------------//
     //-------------------------------------------------------------//
 
+    /**
+     * Proccess a login request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function admin_login(Request $request)
+    {
+           
+           // Check if a user with the specified email exists
+           $user = User::where('email',request('username'))->where('role_id', '2')->first();
+
+
+            if (!$user) {
+                return response()->json([
+                    'message' => 'Email o contraseña no son válidos',
+                    'status' => 422
+                ], 422);
+            }
+
+            // If a user with the email was found - check if the specified password
+            // belongs to this user
+            
+            if (!Hash::check($request->password, $user->password)) {
+                return response()->json([
+                    'message' => 'la contraseña proporcionada no es válida',
+                    'status' => 422
+                ], 422);
+            }
+    
+            // Send an internal API request to get an access token
+            $client = DB::table('oauth_clients')
+            ->where('password_client', true)
+            ->first();
+
+            // Make sure a Password Client exists in the DB
+            if (!$client) {
+                return response()->json([
+                    'message' => 'Laravel Passport is not setup properly.',
+                    'status' => 500
+                ], 500);
+            }
+
+            $data = [
+                'grant_type' => 'password',
+                'client_id' => $client->id,
+                'client_secret' => $client->secret,
+                'username' => request('username'),
+                'password' => request('password'),
+            ];
+    
+            $request = Request::create('/oauth/token', 'POST', $data);
+            $response = app()->handle($request);
+    
+            // Check if the request was successful
+            if ($response->getStatusCode() != 200) {
+                return response()->json([
+                    'message' => 'Email o contraseña no son válidos',
+                    'status' => 422
+                ], 422);
+            }
+            // Get the data from the response
+            $data = json_decode($response->getContent());
+    
+            // Format the final response in a desirable format
+            return response()->json([
+                'token' => $data->access_token,
+                'user' => $user->getAttributes(),
+                'status' => 200
+            ]);
+
+    }
+
+    //-------------------------------------------------------------//
+    //-------------------------------------------------------------//
+
 
     /**
      * Deletes actives tokens.
@@ -114,6 +190,28 @@ class AuthController extends Controller
         });
         
         return response()->json('Ha cerrado sesión correctamente', 200);
+    }
+
+    //-------------------------------------------------------------//
+    //-------------------------------------------------------------//
+
+
+    /**
+     * Deletes actives tokens.
+     * @param  \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
+     */
+    public function check_role(Request $request)
+    {
+        $user_id = $request->input('user_id');
+
+        if( ! $user_id){
+            return response()->json($user_id);
+        };
+
+        $role = User::select('role_id')->where('id', $user_id)->get();
+        
+        return response()->json($role, 200);
     }
 
 

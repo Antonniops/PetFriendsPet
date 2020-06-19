@@ -3,7 +3,7 @@
     
     <div>
 
-        <div v-if="routeName !== '/admin'">
+
             <navbar-component></navbar-component>
             
             <main class="container">
@@ -11,14 +11,8 @@
                 </main>
 
             <footer-component></footer-component>
-        </div>
-
-        <div v-else>
-            <main>
-                    <router-view :key="$route.fullPath"></router-view>
-                </main>
-        </div>
         
+    
     </div>
 </template>
 

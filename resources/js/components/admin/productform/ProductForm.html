@@ -1,0 +1,81 @@
+<form class="m-5" enctype="multipart/form-data">
+
+    <h3 class="mb-3">Formulario de un producto</h3>
+
+    <div>
+        <ul>
+            <li v-for="err in errors" class="text-danger mb-1 ml-3">
+                {{err}}
+            </li>
+        </ul>
+    </div>
+
+    <section class="row">
+        <section class="col-6">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" v-model="producto.nombre">
+                <div class="bg-danger" v-if="errors.nombre">{{errors.nombre}}</div>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="3" name="descripcion" v-model="producto.descripcion"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="text" class="form-control" id="precio" name="precio" v-model="producto.precio">
+            </div>
+
+            <div class="form-group">
+                <label for="precio_oferta">Precio Oferta</label>
+                <input type="text" class="form-control" id="precio_oferta" name="precio_oferta" v-model="producto.precio_oferta">
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoría</label>
+                <input type="text" class="form-control" id="categoria" name="categoria" v-model="producto.categoria">
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" class="form-control" id="marca" name="marca" v-model="producto.marca">
+            </div>
+        </section>
+
+        <section class="col-6">
+            <div class="form-group">
+                <label for="peso_unidad">Peso de la unidad</label>
+                <input type="number" class="form-control" id="peso_unidad" name="peso_unidad" v-model="producto.peso_unidad">
+            </div>
+            <div class="form-group">
+                <label for="ud_peso">Unidad de peso</label>
+                <input type="text" class="form-control" id="ud_peso" name="ud_peso" min="0" v-model="producto.ud_peso">
+            </div>
+            <div class="form-group">
+                <label for="tipo_animal">Tipo animal</label>
+                <input type="text" class="form-control" id="tipo_animal" name="tipo_animal" v-model="producto.tipo_animal">
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="text" class="form-control" id="edad" name="edad" v-model="producto.edad">
+            </div>
+
+            <div class="form-group form-check text-right my-4">
+                <input type="checkbox" class="form-check-input" id="destacado" name="destacado" v-model="producto.destacado">
+                <label class="form-check-label" for="destacado">Destacado</label>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Imagen del producto</label>
+                <input type="file" class="form-control-file" id="imagen" name="imagen" v-on:change="onImageChange">
+
+                <div class="col-md-3 mt-3" v-if="producto.imagen">
+                    <img :src="temp_img" class="img-responsive" width="150">
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <button type="submit" class="btn btn-primary" @click.prevent="insertarProducto()">Crear</button>
+</form>

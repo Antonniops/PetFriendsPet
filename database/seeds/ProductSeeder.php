@@ -22,7 +22,6 @@ class ProductSeeder extends Seeder
             [
                 
 
-                'product_sku' => 'sku_001',
                 'nombre' => 'SENSE PUPPY SALMÓN Y PAVO 2KG',
                 'descripcion' => 'COMPOSICIÓN: Carne fresca de pavo 20%, salmón fresco 20%, carne deshidratada de pavo 16%, patata, guisantes pelados, aceite de pollo, concentrado de proteínas vegetales, proteína deshidratada de pollo, pulpa de remolacha, hidrolizado de hígado de pollo, verduras y frutas frescas 4% (boniato, zanahoria y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (condroitinasultato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -42,7 +41,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_002',
                 'nombre' => 'SENSE ADULTO POLLO Y PATO 2KG',
                 'descripcion' => 'COMPOSICIÓN: Carne fresca de pollo 20%, carne fresca de pato 20%, carne deshidratada de pollo 20%, guisantes pelados, patata, aceite de pollo, pulpa de remolacha, proteína deshidratada de pollo, hidrolizado de hígado de pollo, verduras y frutas frescas 4% (champiñones, arándanos, mango y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (Condroitinasulfato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -63,7 +61,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_003',
                 'nombre' => 'SENSE ADULTO SALMÓN 2KG',
                 'descripcion' => 'COMPOSICIÓN: Salmón fresco 25%, arenques frescos 22%, salmón deshidratado 20%, patata, guisantes pelados, aceite de pollo, pulpa de remolacha, zooplacton marino deshidratado, hidrolizado de salmón, verduras y frutas frescas 4% (espinacas, zanahorias, manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (condrotina sulfato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -84,7 +81,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_004',
                 'nombre' => 'SENSE ADULTO MINI CORDERO 2KG',
                 'descripcion' => 'COMPOSICIÓN: carne fresca de cordero 33%, carne deshidratada de cordero 25%, guisantes pelados, patatas, aceite de pollo, pulpa de remolacha, hidrolizado de hígado de cordero, verduras y frutas frescas 4 % (judías verdes y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (Condrotinasultato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -105,7 +101,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_005',
                 'nombre' => 'SENSE ADULTO CORDERO 2KG',
                 'descripcion' => 'COMPOSICIÓN: carne fresca de cordero 33 %, carne deshidratada de cordero 22%, guisantes pelados, patatas, aceite de pollo, pulpa de remolacha, hidrolizado de hígado de cordero, verduras y frutas frescas 4 % (judías verdes y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (Condrotinasultato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -126,7 +121,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_006',
                 'nombre' => 'SENSE ADULTO SALMÓN 12KG',
                 'descripcion' => 'COMPOSICIÓN: Salmón fresco 25%, arenques frescos 22%, salmón deshidratado 20%, patata, guisantes pelados, aceite de pollo, pulpa de remolacha, zooplacton marino deshidratado, hidrolizado de salmón, verduras y frutas frescas 4% (espinacas, zanahorias, manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (condrotina sulfato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -147,8 +141,7 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_007',
-                'nombre' => 'SENSE HUMEDO JAVALÍ Y CIERVO 380G',
+                'nombre' => 'SENSE HUMEDO JABALÍ Y CIERVO 380G',
                 'descripcion' => 'COMPONENTES ANALÍTICOS: Proteína bruta 7,5%, Aceites y grasas brutos 7%, Fibras brutas 1,5%, Materia inorgánica 1,5%, Humedad 78%.
 
 
@@ -156,7 +149,7 @@ class ProductSeeder extends Seeder
                 salmón 1% (fuente de ácidos grasos omega 3 y 6), pack protector articular 0,5% (condroitina sulfato, glucosamina sulfato y MSM), sustancias minerales,
                 plantas aromáticas con propiedades antioxidantes naturales 0,02% (romero, tomillo y orégano).',
                 'precio' => 2.75,
-                'imagen' => 'sensehumedojavaliyciervo.jpg',
+                'imagen' => 'sensehumedojabaliyciervo.jpg',
                 'marca' => 'Sense',
                 'categoria' => 'comida-humeda',
                 'ud_peso' => 'g',
@@ -169,7 +162,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_008',
                 'nombre' => 'SENSE HUMEDO POLLO Y PATO 380G',
                 'descripcion' => 'COMPONENTES ANALÍTICOS: Proteína bruta 8%, Aceites y grasas brutos 6%, Fibras brutas 1,5%, Materia inorgánica 1,5%, Humedad 78%.
 
@@ -191,7 +183,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_009',
                 'nombre' => 'SENSE ADULTO POLLO Y PATO 12KG',
                 'descripcion' => 'COMPOSICIÓN: Carne fresca de pollo 20%, carne fresca de pato 20%, carne deshidratada de pollo 20%, guisantes pelados, patata, aceite de pollo, pulpa de remolacha, proteína deshidratada de pollo, hidrolizado de hígado de pollo, verduras y frutas frescas 4% (champiñones, arándanos, mango y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (Condroitinasulfato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -211,7 +202,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_010',
                 'nombre' => 'SENSE PUPPY SALMÓN Y PAVO 12KG',
                 'descripcion' => 'COMPOSICIÓN: Carne fresca de pavo 20%, salmón fresco 20%, carne deshidratada de pavo 16%, patata, guisantes pelados, aceite de pollo, concentrado de proteínas vegetales, proteína deshidratada de pollo, pulpa de remolacha, hidrolizado de hígado de pollo, verduras y frutas frescas 4% (boniato, zanahoria y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (condroitinasultato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -231,7 +221,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_011',
                 'nombre' => 'SENSE ADULTO CORDERO 12KG',
                 'descripcion' => 'COMPOSICIÓN: carne fresca de cordero 33 %, carne deshidratada de cordero 22%, guisantes pelados, patatas, aceite de pollo, pulpa de remolacha, hidrolizado de hígado de cordero, verduras y frutas frescas 4 % (judías verdes y manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (Condrotinasultato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -251,7 +240,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_012',
                 'nombre' => 'SENSE HUMEDO CORDERO 380G',
                 'descripcion' => 'COMPONENTES ANALÍTICOS: Proteína bruta 8%, Aceites y grasas brutos 4,5%, Fibras brutas 1,5%, Materia inorgánica 1,5%, Humedad 79%.
 
@@ -272,7 +260,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_013',
                 'nombre' => 'SENSE HUMEDO PUPPY PAVO Y SALMÓN 380G',
                 'descripcion' => 'COMPONENTES ANALÍTICOS: Proteína bruta 8%, Aceites y grasas brutos 6,5%, Fibras brutas 1%, Materia inorgánica 1%, Humedad 79%.
 
@@ -292,7 +279,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_014',
                 'nombre' => 'SENSE HUMEDO SALMÓN 380G',
                 'descripcion' => 'COMPONENTES ANALÍTICOS: Proteína bruta 7%, Aceites y grasas brutos 6,5%, Fibras brutas 1,5%, Materia inorgánica 1%, Humedad 80%.
 
@@ -313,7 +299,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_015',
                 'nombre' => 'SENSE ADULTO LIGHT&SENIOR PATO Y PAVO 2KG',
                 'descripcion' => 'COMPONENTES ANALÍTICOS: Proteína bruta 24%, Grasa bruta 9%, Fibra bruta 4,8%, Materia Inorgánica 5,9%, Vitamina A 22000 UI/kg, Vitamina D3 2200 UI/kg, Vitamina E (α-tocoferol) 120 mg/kg, Ca 1,5%, P 0,9%, Na 0,11%, E.M. 3322,5 kcal/kg.
 
@@ -340,7 +325,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_016',
                 'nombre' => 'SENSE ADULTO MINI SALMÓN 2KG',
                 'descripcion' => 'COMPOSICIÓN: Salmón fresco 25%, arenques frescos 22%, salmón deshidratado 20%, patata, guisantes pelados, aceite de pollo, pulpa de remolacha, zooplacton marino deshidratado, hidrolizado de salmón, verduras y frutas frescas 4% (espinacas, zanahorias, manzana), Ceratoniasiliqua, aceite de salmón (fuente de ácidos grasos omega 3 y 6), sustancias minerales, pack protector articular (condrotina sulfato, glucosamina sulfato y MSM), yuca, raíz de achicoria (fuente de inulina-FOS), levaduras (MOS) y plantas aromáticas con propiedades antioxidantes naturales (romero, tomillo y orégano).
 
@@ -360,7 +344,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_017',
                 'nombre' => 'DICAN RAZAS PEQUEÑAS POLLO Y ARROZ 3KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de razas pequeñas.
 
@@ -397,7 +380,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_018',
                 'nombre' => 'DICAN ATÚN Y ARROZ 3KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física media alta.
 
@@ -438,7 +420,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_019',
                 'nombre' => 'DICAN CORDERO Y ARROZ 3KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física media-alta.
 
@@ -479,7 +460,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_020',
                 'nombre' => 'DICAN BAJO EN CALORIAS SENIOR PAVO Y ARROZ 3KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física baja y perros de edad avanzada, todos ellos con tendencia al sobrepeso.
 
@@ -520,7 +500,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_021',
                 'nombre' => 'DICAN COMPLETE PAVO Y CALAMAR 3KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física media alta
 
@@ -556,7 +535,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_022',
                 'nombre' => 'DICAN CORDERO Y ARROZ 14KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física media-alta.
 
@@ -597,7 +575,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_023',
                 'nombre' => 'DICAN ATÚN Y ARROZ 14KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física media alta.
 
@@ -638,7 +615,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_024',
                 'nombre' => 'DICAN COMPLETE PAVO Y CALAMAR 14KG',
                 'descripcion' => 'Alimento completo extrusionado para perros adultos de todas las razas con actividad física media alta
 
@@ -674,7 +650,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_025',
                 'nombre' => 'WOOLF FILETES DE PAVO 100G',
                 'descripcion' => 'Snack natural Woolf Filetes de Pato para perros de cualquier edad o tamaño.
 
@@ -702,7 +677,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_026',
                 'nombre' => 'WOOLF FILETES DE POLLO 100G',
                 'descripcion' => 'Snack natural Woolf Filetes de Pollo para perros de cualquier edad o tamaño.
 
@@ -730,7 +704,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_027',
                 'nombre' => 'WOOLF DADOS DE SALMÓN 100G',
                 'descripcion' => 'Snack natural Woolf dados de salmón para perros de cualquier edad o tamaño.
 
@@ -758,7 +731,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_028',
                 'nombre' => 'WOOLF TWISTER DE PATO 100G',
                 'descripcion' => 'Snack natural Woolf Twister de pato para perros de cualquier edad o tamaño.
 
@@ -786,7 +758,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_029',
                 'nombre' => 'WOOLF DADOS DE CORDERO 100G',
                 'descripcion' => 'Snack natural Woolf Dados de Cordero para perros de cualquier edad o tamaño.
 
@@ -814,7 +785,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_030',
                 'nombre' => 'WOOLF POLLO CON MARISCO 100G',
                 'descripcion' => 'Snack natural Woolf pollo con marisco para perros de cualquier edad o tamaño.
 
@@ -842,7 +812,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_031',
                 'nombre' => 'WOOLF SNACK CEPILLO DENTAL PEQUEÑO 200G',
                 'descripcion' => 'Woolf presenta sus nuevos mordedores comestibles para perros Woolfies, unos mordedores en forma de cepillo que promueven la salud dental de tu mascota ya que eliminan el sarro y la placa dental. Una divertida forma de mantener los dientes de tu mascota sin sarro, los mordedores comestibles Woolfies están fabricados con ingredientes comestibles y muy fáciles de digerir. Contribuye a la eliminación del mal aliento y a enfermedades dentales que en muchas ocasiones derivan en la pérdida de las piezas de tu mascota. Se aconseja lavar los dientes de tu mascota a menudo para poder garantizar su salud bucodental, Woolf ha diseñado estos mordedores que tu perro roerá pasando largas horas entretenido aportándole grandes beneficios.
 
@@ -888,7 +857,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_032',
                 'nombre' => 'WOOLF SNACK CEPILLO DENTAL MEDIANO 200G',
                 'descripcion' => 'Mordedores dentales para perros de tamaño mediano, los mordedores Woolfies Dental Brush contribuyen a la eliminación del sarro y la placa en los dientes de tu mascota. Un mordedor que elimina el mal aliento y evita enfermedades dentales que en algunos casos pueden provocar la pérdida de las piezas dentales de las mascotas. Woolf ha diseñado estos originales cepillos que tu mascota roerá haciendo un efecto cepillado en sus dientes y previniendo la aparición del sarro en sus dientes. Sus ingredientes son comestibles y muy digeribles. Woolfiees dental brush está indicado para perros de tamaño mediano-grande.
 
@@ -916,7 +884,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_033',
                 'nombre' => 'MONGE HUMEDO POLLO CON ALOE 80g',
                 'descripcion' => 'Composición:
 
@@ -944,7 +911,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_034',
                 'nombre' => 'MONGE HUMEDO ATUN Y MANZANA 80g',
                 'descripcion' => 'Composición:
 
@@ -972,7 +938,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_035',
                 'nombre' => 'MONGE KITTEN RICO EN POLLO 1.5KG',
                 'descripcion' => 'Composición:
 
@@ -1000,7 +965,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_036',
                 'nombre' => 'MONGE ADULT RICO EN POLLO 1.5KG',
                 'descripcion' => 'Composición:
 
@@ -1028,7 +992,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_037',
                 'nombre' => 'MONGE HAIRBALL RICO EN POLLO 1.5KG',
                 'descripcion' => 'Composición:
 
@@ -1056,7 +1019,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_038',
                 'nombre' => 'MONGE INDOOR RICO EN POLLO 1.5KG',
                 'descripcion' => 'Composición:
 
@@ -1084,7 +1046,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_039',
                 'nombre' => 'MONGE ESTERILIZADO RICO EN POLLO 1.5KG',
                 'descripcion' => 'Composición:
 
@@ -1112,7 +1073,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_040',
                 'nombre' => 'MONGE URINARIO RICO EN POLLO 1.5KG',
                 'descripcion' => 'Composición:
 
@@ -1140,7 +1100,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_041',
                 'nombre' => 'PURITY HAIRBALL 1.5KG',
                 'descripcion' => '76 % DE PROTEÍNAS DE ORIGEN ANIMAL
 
@@ -1180,7 +1139,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_042',
                 'nombre' => 'PURITY CASTRATE 1.5KG',
                 'descripcion' => '80 % DE PROTEÍNAS DE ORIGEN ANIMAL
 
@@ -1218,7 +1176,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_043',
                 'nombre' => 'PURITY DELICIOUS 1.5KG',
                 'descripcion' => '
 
@@ -1260,7 +1217,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_044',
                 'nombre' => 'PURITY INDOOR 1.5KG',
                 'descripcion' => '69% DE PROTEÍNAS DE ORIGEN ANIMAL
 
@@ -1300,7 +1256,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_045',
                 'nombre' => 'PURITY KITTEN 1.5KG',
                 'descripcion' => '86 %  DE PROTEÍNAS DE ORIGEN ANIMAL
 
@@ -1339,7 +1294,6 @@ class ProductSeeder extends Seeder
             ],
 
             [
-                'product_sku' => 'sku_046',
                 'nombre' => 'PURITY SENIOR 1.5KG',
                 'descripcion' => '7l % DE PROTEÍNAS DE ORIGEN ANIMAL
 
@@ -1379,7 +1333,6 @@ class ProductSeeder extends Seeder
 
             ],
             [
-                'product_sku' => 'sku_047',
                 'nombre' => 'PURITY URINARY 1.5KG',
                 'descripcion' => '75 % DE PROTEÍNAS DE ORIGEN ANIMAL
 

@@ -28,7 +28,7 @@ class OrderController extends Controller
             'email' => $request->input('datosEnvio.email'),
             'codigo_postal' => $request->input('datosEnvio.codigo_postal'),
             'calle' => $request->input('datosEnvio.calle'),
-            'numero' => "prueba",
+            'numero' => $request->input('datosEnvio.numero'),
             'municipio' => $request->input('datosEnvio.municipio')
         ]);
 
@@ -48,12 +48,17 @@ class OrderController extends Controller
             ]);
         }
 
-        $order = Order::find($order_id['id']);
+        $order = Order::select('orders.id', 'unidades', 'precio_unidad', 'total', 'nombre')
+                            ->join('productsorders', 'orders.id', '=', 'productsorders.order_id')
+                            ->join('products', 'productsorders.product_id', '=', 'products.id')
+                            ->where('orders.id', $order_id['id'])
+                            ->get();
+
 
         Mail::to($request->input('datosEnvio.email'))->send(new ConfirmOrder($order));
 
 
-        return response()->json(['carrito' => $carrito, 'order_id' => $order_id, 'order' => $order]);
+        return response()->json(['Pago realizado']);
 
 
 

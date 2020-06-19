@@ -20,8 +20,7 @@
         methods: {
             iniciarSesion(){
 
-                console.log(this.login);
-
+                //Manda los datos de inicio de sesión y obtiene el token de acceso
                axios.post('/api/login', this.login)
                     .then(res => {
 
@@ -31,16 +30,15 @@
                             id : res.data.user.id
                         }
                                          
+                        //Actualiza las variables requeridas
                         this.$store.commit('login', data);
 
+                        //Redirect a home
                         this.$router.push('/');
 
-                        //Fuerza a recargar toda la pagina, permite cambiar iconon de login a logout
-                        this.$router.go(0);
                     })
                     .catch(({response}) => {
-                        this.errors = response.data.message;
-                       
+                        this.errors = response.data.message;                       
                     });         
             }
         },

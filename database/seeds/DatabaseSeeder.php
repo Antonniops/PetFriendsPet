@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FilterAnimalSeeder::class);
         $this->call(ProvincesSeeder::class);
         $this->call(RolesSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

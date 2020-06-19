@@ -41,33 +41,16 @@
         </section>
 
         <section class="col-md-4 my-5">
-            <h5 class="descripcion-span d-inline-block px-3 py-1">RECOMENDADOS</h5>
-
-            <div class="row align-items-center mb-3">
-                <img :src="recomendado1" alt="" class="col-md-4 col-3">
-
-                <div class="col-md-7 col-6">
-                    <p>Dibaq Sense - Pavo y Salmón</p>
-                    <button class="bg-secondary"><router-link to="/productos/10" class="text-white">Ver Producto</router-link></button>
-                </div>
+            <div class="text-center mb-2">
+                <p class="descripcion-span d-inline-block px-3 py-1 ">RECOMENDADOS</p>
             </div>
 
-
-            <div class="row align-items-center mb-3">
-                <img :src="recomendado2" alt="" class="col-md-4 col-3">
-
-                <div class="col-md-7 col-6">
-                    <p>Sense adulto light & Senior pato y pavo</p>
-                    <button class="bg-secondary"><router-link to="/productos/15" class="text-white">Ver Producto</router-link></button>
-                </div>
-            </div>
-
-            <div class="row align-items-center mb-3">
-                <img :src="recomendado3" alt="" class="col-md-4 col-3">
+            <div class="row justify-content-center align-items-center mb-3" v-for="prod in productos_recomendados">
+                <img :src="/storage/ + prod.imagen" alt="" class="col-md-4 col-3">
 
                 <div class="col-md-7 col-6">
-                    <p>Sense húmedo cordero</p>
-                    <button class="bg-secondary"><router-link to="/productos/12" class="text-white">Ver Producto</router-link></button>
+                    <p>{{prod.nombre}}</p>
+                    <button class="bg-secondary"><router-link :to="{ path: '/productos/' + prod.id }" class="text-white">Ver Producto</router-link></button>
                 </div>
             </div>
 

@@ -25,11 +25,14 @@ Route::group(['middleware' => 'cors'], function () {
 
     Route::resource('product', 'ProductController');
     Route::get('/product/item/{name}', 'ProductController@search')->name('product.search');
-    Route::get('/checkOutSession/{products}', 'CheckoutController@checkOutSession'); 
+    Route::post('/product/recomendados', 'ProductController@obtener_recomendados');
+    Route::post('/checkOutSession', 'CheckoutController@checkOutSession'); 
     Route::get('/provincias', 'ProvincesController@provincias'); 
 
     Route::post('/login', 'AuthController@login');
+    Route::post('/admin/login', 'AuthController@admin_login');
     Route::post('/register', 'AuthController@register');
+    Route::post('/admin/check-role', 'AuthController@check_role');
 
     // Send reset password mail
     Route::post('/reset-password', 'AuthController@sendPasswordResetLink');
@@ -40,6 +43,8 @@ Route::group(['middleware' => 'cors'], function () {
     Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
     
     Route::post('/order', 'OrderController@store');
+    Route::get('/appointment', 'AppointmentController@getAppointment');
+    Route::post('/appointment', 'AppointmentController@saveAppointment');
 
 
     Route::post('/shipping-information', 'AuthController@shipping_information');

@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.info-peluqueria {
+    background-color: #e4e1df;
+}
+
+.theme-orange .vdatetime-popup__header,
+.theme-orange .vdatetime-calendar__month__day--selected>span>span,
+.theme-orange .vdatetime-calendar__month__day--selected:hover>span>span {
+    background: #FF9800;
+}
+
+.theme-orange .vdatetime-year-picker__item--selected,
+.theme-orange .vdatetime-time-picker__item--selected,
+.theme-orange .vdatetime-popup__actions__button {
+    color: #ff9800;
+}
+
+.contacto {
+    border: 1px solid lightgray;
+}
+
+.boton-confirmar {
+    border: 0;
+    background-color: #b8b5b3;
+    color: white;
+}
+
+.descr-producto .descripcion {
+    background-color: #dcd8d8;
+}
+
+.descr-producto .descripcion .titulo-componente {
+    font-weight: 700;
+}
+
+.descr-producto hr {
+    margin: 0.1px;
+    max-width: 400px;
+}
+
+.switch:hover {
+    cursor: pointer;
+}
+
+
+/*# sourceMappingURL=peluqueria.css.map */

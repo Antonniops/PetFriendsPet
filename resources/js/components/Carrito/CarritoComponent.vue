@@ -31,7 +31,6 @@ export default {
             return precio_total.toFixed(2);
         },
         shippingInformation(){
-            console.log(this.$store.getters.getShippingInformation);
             return this.$store.getters.getShippingInformation;
         }
     },
@@ -59,12 +58,27 @@ export default {
 
             let session_id = '';
 
+             if( ! this.shippingInformation){
+                
+                this.errorDatosEnvio = true;
+                setTimeout(() => {
+                    this.errorDatosEnvio = false;
+                }, 1300);
+
+                return false;
+            }
+
+            let data = {
+                'total_price' : this.precioTotal
+            };
+
             axios
-                .get(`/api/checkOutSession/${this.carrito}`, )
+                .post(`/api/checkOutSession`, data)
                 .then(res => {    
                     this.session_id = res.data.id;   
                     
                      stripe.redirectToCheckout({
+
                             
                         sessionId: this.session_id
 
@@ -85,26 +99,6 @@ export default {
   
         },
 
-        crearPedido(){
-
-            var id = this.$store.getters.getUserId;
-
-            if( ! this.shippingInformation){
-                
-                this.errorDatosEnvio = true;
-                setTimeout(() => {
-                    this.errorDatosEnvio = false;
-                }, 1300);
-
-                return false;
-            }
-
-            axios
-                .post('/api/order', {id: id, estado: 'pendiente', carrito: this.carrito, datosEnvio: this.shippingInformation})
-                .then(res => {
-                    console.log(res);
-                });
-        }
     },
 
 }

@@ -15,16 +15,17 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('fecha_cita', 0);
-            $table->string('tamanio_animal',32); 
+            $table->date('fecha_cita');
  
             $table->bigInteger('user_id')->unsigned();  
-            $table->bigInteger('hairdresser_id')->unsigned();  
+            $table->bigInteger('hairdresser_id')->unsigned()->nullable();  
+            $table->string('email', 255);
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('hairdresser_id')->references('id')->on('hairdressers')->onDelete('cascade');    
-            $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE appointments AUTO_INCREMENT = 100;");
     }
 
     /**

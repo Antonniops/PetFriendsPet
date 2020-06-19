@@ -11,7 +11,8 @@
                 recomendado3: '/storage/sensehumedocordero.png',
                 product: {},
                 producto_agregado: false,
-                ya_en_carrito: false
+                ya_en_carrito: false,
+                productos_recomendados: []
             }
         },
         template: require('./Producto.html'),
@@ -29,36 +30,42 @@
                     this.product.imagen = '/storage/' + res.data.imagen;
 
                     //Agregamos atributo cantidad, uso vue set para que sea reactivo, sino es estatico
-                    Vue.set(this.product, 'cantidad_producto', 1)
-                    
+                    Vue.set(this.product, 'cantidad_producto', 1)      
+
                    
+                   this.obtenerRecomendados();
                 })
                 .catch(function(error) {
                     console.log(error);
                 });
-
-                
+         
         },
         methods: {
 
 
             aniadirCarrito(){
 
+                //Recibe el carrito de vuex
                 let cart = this.$store.getters.getCart;
 
+                //Si no se ha encontrado el producto en el carrito lo agrega
                 if( ! cart.find(elem => elem.id === this.product.id)){
 
+                    //Vuex mutation addToCart
                     this.$store.commit('addToCart', this.product);
 
+                    //Timeout para mostrar una alerta
                     this.producto_agregado = true;
                     setTimeout( () => {
                         this.producto_agregado = false;
                     }, 2000)
 
+                    //Vuex mutation para guardar en localStorage
                     this.$store.commit('saveCart');
 
                 }else{
                     
+                    //Muestra una alerta en caso de que ya esté en el carrito
                     this.ya_en_carrito = true;
                     setTimeout( () => {
                         this.ya_en_carrito = false;
@@ -71,6 +78,27 @@
             actualizarCantidad(numero_a_modificar){
                 this.product.cantidad_producto += numero_a_modificar;
             },
+
+            //Obtiene un listado de productos recomendados para este producto
+            obtenerRecomendados(){
+
+                //Datos para obtener la consulta
+                let datos = {
+                    'animal' : this.product.tipo_animal,
+                    'categoria': this.product.categoria,
+                    'id_producto_excluir' : this.product.id
+                }
+
+                axios
+                    .post('/api/product/recomendados', datos)
+                    .then(res => {
+                        this.productos_recomendados = res.data.products;
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+
+            }
             
         },
         computed: {

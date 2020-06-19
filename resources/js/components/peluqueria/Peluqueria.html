@@ -1,0 +1,119 @@
+<!--MAIN SECTION-->
+<main class="container mt-5">
+
+    <h3>PELUQUERIA</h3>
+    <hr>
+
+    <!--CUADRO INFORMATIVO PELUQUERÍA-->
+
+    <div class="info-peluqueria row align-items-center my-5 justify-content-between">
+        <p class="col-10 col-md-7 mt-4 mt-md-0 mx-auto">
+            Bienvenido a nuestro servicio de peluquería. Contamos con un profesional que se encargará de lavar o cortar el pelo a tu perro o gato.
+        </p>
+
+        <div class="col-12 col-md-4 text-center">
+            <img :src="img_circulo" alt="">
+        </div>
+    </div>
+
+    <div class="alert alert-danger p-3" role="alert" v-if="alertLogin">
+        {{message}}
+    </div>
+
+    <div class="alert alert-success p-3" role="alert" v-if="alertSuccess">
+        {{message}}
+    </div>
+
+    <!--CALENDARIO Y CONTACTO-->
+    <section class="my-5">
+        <div class="row justify-content-around">
+            <div class="col-12 col-md-4 ml-3 mb-5">
+                <label for="startDate" slot="before">Escoja su cita:</label>
+                <datetime v-model="date" input-class="form-control" class="theme-orange" placeholder="Selecciona la fecha" :minute-step="10" input-format="DD-MM-YYYY" zone='local' value-zone='local'>
+
+                </datetime>
+
+                <button class="btn btn-secondary mt-3 text-white px-3 py-1" @click="guardarCita()">CONFIRMAR</button>
+            </div>
+
+
+
+            <div class="col-12 col-md-3">
+                <h6>CONTÁCTANOS</h6>
+
+                <div class="p-4 contacto">
+                    <p>Llámanos al:</p>
+                    <p>951 50 24 55 <i class="fas fa-phone text-primary mb-2"></i></p>
+
+                    <p>o envíanos un email a:</p>
+                    <p><a href="mailto:prueba@gmail.com"> prueba@email.com <i class="fas fa-envelope mb-2 text-primary"></i></a></p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--HORARIO Y TARIFAS-->
+
+    <section class="container descr-producto">
+        <div class="row m-0">
+            <p class="text-white bg-secondary2 px-3 py-2 mb-0 switch" @click="switchHorarioTarifa">Horarios</p>
+            <p class="text-white bg-secondary px-3 py-2 mb-0 switch" @click="switchHorarioTarifa">Tarifas</p>
+
+        </div>
+        <hr class="bg-secondary">
+
+        <section class="descripcion p-4" v-if="mostrarHorario">
+            <p>
+                Horario disponible:
+            </p>
+
+            <p>
+                Lunes: 17:00-20:00
+            </p>
+
+            <p>
+                Martes: 17:00-20:00
+            </p>
+
+            <p>
+                Miércoles: 17:00-20:00
+            </p>
+
+            <p>
+                Jueves: 17:00-20:00
+            </p>
+
+            <p>
+                Viernes: 17:00-20:00
+            </p>
+
+
+        </section>
+
+        <section class="descripcion p-4" v-else>
+            <p>
+                Tarifas disponibles:
+            </p>
+
+            <p>
+                Mini: 15€
+            </p>
+
+            <p>
+                Medio: 20€
+            </p>
+
+            <p>
+                Grande: 25€
+            </p>
+
+
+        </section>
+    </section>
+</main>

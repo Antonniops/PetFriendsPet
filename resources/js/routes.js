@@ -1,97 +1,121 @@
 //Rutas
-import Index from './components/Index.vue';
-import HomeComponent from './components/HomeComponent.vue';
-
-
-import PerrosComponent from './components/animales/perros/PerrosComponent.vue';
-import GatosComponent from './components/animales/gatos/GatosComponent.vue';
-import OtrosComponent from './components/animales/otros/OtrosComponent.vue';
-import CategoriaComponent from './components/shared/Categoria/CategoriaComponent.vue';
-import ProductoComponent from './components/shared/Producto/ProductoComponent.vue';
-import LoginComponent from './components/auth/Login/LoginComponent.vue';
-import RegisterComponent from './components/auth/Register/RegisterComponent.vue';
-
-import ForgotPasswordComponent from './components/auth/ResetPassword/ForgotPassword/ForgotPasswordComponent.vue';
-import ResetPasswordFormComponent from './components/auth/ResetPassword/ResetPassword/ResetPasswordFormComponent.vue';
-
-import CarritoComponent from './components/Carrito/CarritoComponent.vue';
-import SobrenosotrosComponent from './components/sobrenosotros/SobrenosotrosComponent.vue';
-import ContactoComponent from './components/contacto/ContactoComponent.vue';
-
 import DashboardComponent from './components/admin/dashboard/DashboardComponent.vue';
 import AdminProductosComponent from './components/admin/productos/ProductosComponent.vue';
+
+
+//Lazy Loading solo se cargara el componente cuando entre a la ruta
+function lazyLoad(view) {
+    return () =>
+        import (`./components/${view}.vue`)
+}
+
+function guardMyRoute(to, from, next) {
+
+    if (localStorage.getItem('access_token'))
+        next();
+    else
+        next('/admin/acceso');
+}
 
 
 
 export const routes = [{
         path: '/',
-        component: HomeComponent,
+        component: lazyLoad('HomeComponent'),
         name: 'home'
     },
 
     {
         path: '/perros',
-        component: PerrosComponent,
+        component: lazyLoad('animales/perros/PerrosComponent'),
         name: 'perros'
     },
 
     {
         path: '/gatos',
-        component: GatosComponent,
+        component: lazyLoad('animales/gatos/GatosComponent'),
         name: 'gatos'
     },
     {
         path: '/otros',
-        component: OtrosComponent,
+        component: lazyLoad('animales/otros/OtrosComponent'),
         name: 'otros',
 
     },
     {
+        path: '/peluqueria',
+        component: lazyLoad('peluqueria/PeluqueriaComponent'),
+        name: 'peluqueria',
+
+    },
+    {
         path: '/productos/:id',
-        component: ProductoComponent,
+        component: lazyLoad('shared/producto/ProductoComponent'),
         props: true
     },
     {
         path: '/carrito',
-        component: CarritoComponent,
+        component: lazyLoad('carrito/CarritoComponent'),
         props: true
     },
 
     {
         path: '/categoria/:animal/:producto',
-        component: CategoriaComponent,
+        component: lazyLoad('shared/categoria/CategoriaComponent'),
         props: true
     },
 
     {
         path: '/auth-login',
-        component: LoginComponent
+        component: lazyLoad('auth/login/LoginComponent'),
+        name: 'login',
     },
 
     {
         path: '/auth-register',
-        component: RegisterComponent
+        component: lazyLoad('auth/register/RegisterComponent'),
+        name: 'register',
     },
     {
         path: '/sobre-nosotros',
-        component: SobrenosotrosComponent
+        component: lazyLoad('sobrenosotros/SobrenosotrosComponent'),
+        name: 'sobre-nosotros',
     },
     {
         path: '/contacto',
-        component: ContactoComponent
+        component: lazyLoad('contacto/ContactoComponent')
     },
-    {
-        path: '/admin',
-        component: DashboardComponent
-    },
+
+
+    // {
+    //     path: '/admin',
+    //     component: lazyLoad('admin/dashboard/DashboardComponent'),
+    // },
     {
         path: '/admin/productos',
-        component: AdminProductosComponent
+        component: lazyLoad('admin/productos/ProductosComponent'),
+        name: 'dashboard-component',
+
     },
+
+
+    {
+        path: '/admin/productos/formulario',
+        component: lazyLoad('admin/productform/ProductFormComponent'),
+        name: 'admin-product-form',
+    },
+    {
+        path: '/admin/productos/formulario/actualizar/:id',
+        component: lazyLoad('admin/productformupdate/ProductFormUpdateComponent'),
+        name: 'admin-product-form-update',
+        props: true
+    },
+
+
     {
         path: '/reset-password',
         name: 'reset-password',
-        component: ForgotPasswordComponent,
+        component: lazyLoad('auth/ResetPassword/forgot_password/ForgotPasswordComponent'),
         meta: {
             auth: false
         }
@@ -99,11 +123,15 @@ export const routes = [{
     {
         path: '/reset-password/:token',
         name: 'reset-password-form',
-        component: ResetPasswordFormComponent,
+        component: lazyLoad('auth/ResetPassword/reset_password/ResetPasswordFormComponent'),
         meta: {
             auth: false
         }
-    }
+    },
+    {
+        path: '/pago/confirmacion',
+        component: lazyLoad('shared/PaymentSuccessComponent')
+    },
 
 
 

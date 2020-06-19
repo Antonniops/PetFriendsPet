@@ -119,7 +119,7 @@
                     </div>
                 </div>
 
-                <button class="btn-pagar my-4" v-if="precioTotal >= 20" @click.prevent="crearPedido()">PAGAR</button>
+                <button class="btn-pagar my-4" v-if="precioTotal >= 20" @click.prevent="procesarPago()">PAGAR</button>
                 <button class="btn-disabled my-4" v-else disabled>PAGAR</button>
                 <h5 class="text-danger text-center mt-2" v-if="precioTotal < 20">Solo tramitamos importes mayores a 20€.</h5>
 

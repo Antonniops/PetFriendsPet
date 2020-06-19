@@ -1,5 +1,7 @@
 <template>
     <div>
+
+        <cookies-component></cookies-component>
         
         <!--IMAGEN CENTRAL BIENVENIDA A PAGINA-->
         <div class="container mt-1">
@@ -34,7 +36,7 @@
                         <div class="col-md-5 text-center col-sm-6 col-12">
                             <h3>Dibaq Sense Pollo y Pavo</h3>
                             <p>Uno de nuestros mejores productos pensados en la salud de tu perro</p>
-                            <router-link to="/productos/15" class="btn btn-dark">Ver Producto</router-link>
+                            <router-link to="/productos/115" class="btn btn-dark">Ver Producto</router-link>
                         </div>
 
                         <div class="bg-primary col-md-3 col-3 d-none d-md-flex circulo">
@@ -50,7 +52,7 @@
                         <div class="col-md-5 text-center col-sm-6 col-12">
                             <h3>Dibaq Sense Pavo y salmón</h3>
                             <p>Uno de nuestros mejores productos pensados en la salud de tu perro</p>
-                            <router-link to="/productos/1" class="btn btn-dark">Ver Producto</router-link>
+                            <router-link to="/productos/100" class="btn btn-dark">Ver Producto</router-link>
                         </div>
 
                         <div class="bg-primary col-md-3 col-3 d-none d-md-flex circulo">
@@ -65,7 +67,7 @@
                         <div class="col-md-5 text-center col-sm-6 col-12">
                             <h3>Dibaq Sense Húmedo Cordero</h3>
                             <p>Uno de nuestros mejores productos pensados en la salud de tu perro</p>
-                            <router-link to="/productos/12" class="btn btn-dark">Ver Producto</router-link>
+                            <router-link to="/productos/112" class="btn btn-dark">Ver Producto</router-link>
                         </div>
 
                         <div class="bg-primary col-md-3 col-3 d-none d-md-flex circulo">
@@ -108,7 +110,7 @@
                     <img :src="masvendido1" class="" width="120" alt="...">
                     <div class="mt-4">
                         <h5>Dibaq sense lata Salmón</h5>
-                        <router-link to="/productos/14" class="btn btn-secondary">Ver Producto</router-link>
+                        <router-link to="/productos/114" class="btn btn-secondary">Ver Producto</router-link>
                     </div>
                 </div>
 
@@ -116,7 +118,7 @@
                     <img :src="masvendido2" class="" width="120" alt="...">
                     <div class="mt-4">
                         <h5>Dibaq sense lata ciervo y jabalí</h5>
-                        <router-link to="/productos/7" class="btn btn-secondary">Ver Producto</router-link>
+                        <router-link to="/productos/117" class="btn btn-secondary">Ver Producto</router-link>
                     </div>
                 </div>
 
@@ -124,7 +126,7 @@
                     <img :src="masvendido3" class="" width="120" alt="...">
                     <div class="mt-4">
                         <h5>Dibaq sense lata pollo y pato</h5>
-                        <router-link to="/productos/8" class="btn btn-secondary">Ver Producto</router-link>
+                        <router-link to="/productos/118" class="btn btn-secondary">Ver Producto</router-link>
                     </div>
                 </div>
 
@@ -132,6 +134,8 @@
 
             </section>
         </section>
+
+        
     </div>
 </template>
 
@@ -144,7 +148,7 @@
             destacado2: '/storage/sensesalmonypavo.png',
             destacado3: '/storage/sensehumedocordero.png',
             masvendido1: '/storage/sensehumedosalmon.jpg',
-            masvendido2: '/storage/sensehumedojavaliyciervo.jpg',
+            masvendido2: '/storage/sensehumedojabaliyciervo.jpg',
             masvendido3: '/storage/sensehumedopolloypato.jpg'
         }
     },

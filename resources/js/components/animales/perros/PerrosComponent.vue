@@ -9,7 +9,7 @@ export default {
             antiparasitarios: '/storage/antiparasitario.png',
             complementos: '/storage/camaperro.png',
             masvendido1: '/storage/sensehumedosalmon.jpg',
-            masvendido2: '/storage/sensehumedojavaliyciervo.jpg',
+            masvendido2: '/storage/sensehumedojabaliyciervo.jpg',
             masvendido3: '/storage/sensehumedopolloypato.jpg'
         }
     },

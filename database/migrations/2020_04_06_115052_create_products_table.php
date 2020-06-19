@@ -15,7 +15,6 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('product_sku');
             $table->string('nombre', 255);
             $table->longText('descripcion');
 
@@ -36,6 +35,8 @@ class CreateProductsTable extends Migration
           
 
         });
+
+        DB::statement("ALTER TABLE products AUTO_INCREMENT = 100;");
     }
 
     /**
