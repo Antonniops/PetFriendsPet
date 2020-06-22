@@ -225,7 +225,6 @@ class ProductController extends Controller
             'nombre' => 'required|max:255',
             'descripcion' => 'required',
             'precio' => 'required|max:6|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
-            'precio_oferta' => 'nullable',
             'marca' => 'required|alpha|max:32',
             'categoria' => 'required|alpha_dash|max:64',
             'ud_peso' => 'required|alpha|max:4',
@@ -272,7 +271,7 @@ class ProductController extends Controller
             'nombre' => $request->input('nombre'),
             'descripcion' => $request->input('descripcion'),
             'precio' => $request->input('precio'),
-            'precio_oferta' => $request->input('precio_oferta'),
+            'precio_oferta' => $request->input('precio_oferta') ?: null,
             'marca' => $request->input('marca'),
             'categoria' => $request->input('categoria'),
             'ud_peso' => $request->input('ud_peso'),
@@ -288,7 +287,7 @@ class ProductController extends Controller
         $filename ? $product['imagen'] = $filename : $product['imagen'] = $product_finded->imagen;
 
         //Actualizamos con los datos recibidos
-        $product_finded->update($product);
+        Product::where('id', $id)->update($product);
       
 
         return response()
