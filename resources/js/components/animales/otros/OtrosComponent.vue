@@ -25,7 +25,7 @@
             </section>
 
 
-            <section class="slider-categorias mb-5 row justify-content-center">
+            <section class="slider-categorias d-md-flex flex-md-row justify-content-md-center my-5">
 
 
                 <div class="text-center swipe-item d-flex flex-column align-items-center">

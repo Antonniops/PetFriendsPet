@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col">
             <!--LOGIN-->
             <div class="login my-5 mx-auto">
                 <img :src="imglogin" alt="">

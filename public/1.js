@@ -182,7 +182,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "section",
-        { staticClass: "slider-categorias mb-5 row justify-content-center" },
+        {
+          staticClass:
+            "slider-categorias d-md-flex flex-md-row justify-content-md-center my-5"
+        },
         [
           _c(
             "div",

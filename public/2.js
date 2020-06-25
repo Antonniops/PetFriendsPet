@@ -132,7 +132,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-6" }, [
+      _c("div", { staticClass: "col" }, [
         _c("div", { staticClass: "login my-5 mx-auto" }, [
           _c("img", { attrs: { src: _vm.imglogin, alt: "" } }),
           _vm._v(" "),
