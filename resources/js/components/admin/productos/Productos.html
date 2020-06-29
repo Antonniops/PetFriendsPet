@@ -3,7 +3,7 @@
         <button class="btn btn-success m-3">Añadir producto</button>
     </router-link>
 
-    <table class="table ml-3">
+    <table class="table table-sm table-responsive">
 
         <thead class="thead-dark">
             <tr>
@@ -11,11 +11,12 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Precio oferta</th>
+                <th scope="col">Animal</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Categoría</th>
                 <th scope="col">Formato</th>
                 <th scope="col">Edad</th>
-                <th scope="col"></th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -24,13 +25,14 @@
                 <td>{{item.nombre}}</td>
                 <td>{{item.precio}}€</td>
                 <td>{{item.precio_oferta}}</td>
+                <td>{{item.tipo_animal}}</td>
                 <td>{{item.marca}}</td>
                 <td>{{item.categoria}}</td>
                 <td>{{item.peso_unidad}}{{item.ud_peso}}</td>
                 <td>{{item.edad}}</td>
-                <td class="row">
+                <td class="row m-0 ml-3">
                     <router-link :to="{ path: '/admin/productos/formulario/actualizar/' + item.id }"><i class="fas fa-edit text-warning"></i></router-link>
-                    <i class="fas fa-trash-alt mx-3 text-danger" @click="deleteProduct(item)"></i>
+                    <i class="fas fa-trash-alt text-danger col" @click="deleteProduct(item)"></i>
                 </td>
 
             </tr>

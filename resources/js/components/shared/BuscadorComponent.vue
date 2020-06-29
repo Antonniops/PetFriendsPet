@@ -1,5 +1,5 @@
 <template>
-    <div class="busqueda">
+    <div class="busqueda" >
         
         <!-- Formulario busqueda de productos -->
         <form class="form-inline my-2 my-lg-0 justify-content-center">
@@ -17,7 +17,7 @@
                     RESULTADO DE BÚSQUEDA
                 </li>
                 <li v-for="prod in resultBusqueda" :key="prod.id">
-                    <router-link :to="{ path: '/productos/' + prod.id }" >{{prod.nombre}}</router-link>
+                    <router-link :to="{ path: '/productos/' + prod.id }">{{prod.nombre}}</router-link>
                 </li>
             </ul>
         </div>
@@ -52,6 +52,8 @@ export default {
                 .catch(function(error) {
                     console.log(error);
                 });
+            
+           
         },
         limpiarBusqueda(){
             this.txtInput = ''; 

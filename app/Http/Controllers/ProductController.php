@@ -60,12 +60,11 @@ class ProductController extends Controller
             'nombre' => 'required|max:255',
             'descripcion' => 'required',
             'precio' => 'required|max:6|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
-            'precio_oferta' => 'max:6|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
             'imagen' => 'required|image|file',
             'marca' => 'required|alpha|max:32',
             'categoria' => 'required|alpha_dash|max:64',
             'ud_peso' => 'required|alpha|max:4',
-            'peso_unidad' => 'required|numeric|max:11',
+            'peso_unidad' => 'required|numeric',
             'tipo_animal' => 'required|alpha|max:32',
             'destacado' => 'required',
             'edad' => 'required|alpha|max:32'
@@ -96,16 +95,29 @@ class ProductController extends Controller
             'nombre' => $request->input('nombre'),
             'descripcion' => $request->input('descripcion'),
             'precio' => $request->input('precio'),
-            'precio_oferta' => $request->input('precio_oferta'),
             'imagen' => $filename ?: null,
             'marca' => $request->input('marca'),
             'categoria' => $request->input('categoria'),
             'ud_peso' => $request->input('ud_peso'),
             'peso_unidad' => $request->input('peso_unidad'),
-            'precio_kilogramo' => $request->input('precio_kilogramo'),
             'tipo_animal' => $request->input('tipo_animal'),
             'edad' => $request->input('edad'),
         ];
+
+         //Establece el precio/kilogramo de un producto
+         if ($product['ud_peso'] != 'g'){
+            $product['precio_kilogramo'] = $product['precio'] / $product['peso_unidad'];
+        }else{
+            $product['precio_kilogramo'] = null;
+        }
+
+        //Establece el precio_oferta (por validator no es compatible nullable y regex)
+        if(isset($request->precio_oferta) && !preg_match('/^-?[0-9]+(?:\.[0-9]{1,2})?$/', $request->precio_oferta)){
+            $product['precio_oferta'] = null;
+        }else{
+            $product['precio_oferta'] = $request->precio_oferta;
+        }
+    
 
         //Si se manda true se marca como 0 en la bd
         $request->destacado ? $product['destacado'] = 1 : $product['destacado'] = 0;
@@ -228,7 +240,7 @@ class ProductController extends Controller
             'marca' => 'required|alpha|max:32',
             'categoria' => 'required|alpha_dash|max:64',
             'ud_peso' => 'required|alpha|max:4',
-            'peso_unidad' => 'required|numeric|max:11',
+            'peso_unidad' => 'required|numeric',
             'tipo_animal' => 'required|alpha|max:32',
             'destacado' => 'required',
             'edad' => 'required|alpha|max:32'
@@ -271,16 +283,27 @@ class ProductController extends Controller
             'nombre' => $request->input('nombre'),
             'descripcion' => $request->input('descripcion'),
             'precio' => $request->input('precio'),
-            'precio_oferta' => $request->input('precio_oferta') ?: null,
             'marca' => $request->input('marca'),
             'categoria' => $request->input('categoria'),
             'ud_peso' => $request->input('ud_peso'),
             'peso_unidad' => $request->input('peso_unidad'),
-            'precio_kilogramo' => $request->input('precio_kilogramo') ?: null,
             'tipo_animal' => $request->input('tipo_animal'),
             'edad' => $request->input('edad'),
         ];
 
+        //Establece el precio/kilogramo de un producto
+        if ($product['ud_peso'] != 'g'){
+            $product['precio_kilogramo'] = $product['precio'] / $product['peso_unidad'];
+        }else{
+            $product['precio_kilogramo'] = null;
+        }
+
+        //Establece el precio_oferta (por validator no es compatible nullable y regex)
+        if(isset($request->precio_oferta) && !preg_match('/^-?[0-9]+(?:\.[0-9]{1,2})?$/', $request->precio_oferta)){
+            $product['precio_oferta'] = null;
+        }else{
+            $product['precio_oferta'] = $request->precio_oferta;
+        }
     
         //Si se manda true se marca como 0 en la bd
         $request->destacado ? $product['destacado'] = 1 : $product['destacado'] = 0;

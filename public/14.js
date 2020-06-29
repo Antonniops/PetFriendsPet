@@ -52,6 +52,10 @@ __webpack_require__.r(__webpack_exports__);
         //Vuex mutation addToCart
         this.$store.commit('addToCart', this.product); //Timeout para mostrar una alerta
 
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
         this.producto_agregado = true;
         setTimeout(function () {
           _this2.producto_agregado = false;
@@ -60,6 +64,10 @@ __webpack_require__.r(__webpack_exports__);
         this.$store.commit('saveCart');
       } else {
         //Muestra una alerta en caso de que ya esté en el carrito
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
         this.ya_en_carrito = true;
         setTimeout(function () {
           _this2.ya_en_carrito = false;
