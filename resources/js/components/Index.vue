@@ -1,32 +1,12 @@
 <template>
-
-    
-    <div>
-
-
-            <navbar-component></navbar-component>
-            
-            <main class="container">
-                    <router-view :key="$route.fullPath"></router-view>
-                </main>
-
-            <footer-component></footer-component>
-        
-    
+   <div>
+        <!-- Cargará o el área de clientes o el área de administración -->
+        <router-view></router-view>
     </div>
 </template>
 
-
-
-
 <script>
 export default {
-
-    computed:{
-         routeName(){
-            return this.$router.currentRoute.path
-        }
-    },
 
 }
 </script>

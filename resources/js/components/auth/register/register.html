@@ -1,0 +1,43 @@
+<!--LOGIN-->
+<div class="login my-5 mx-auto">
+
+
+    <img :src="imglogin" alt="">
+
+    <div class="d-flex justify-content-center" v-if="success">
+        <div class="spinner-border text-success mx-auto" role="status"></div>
+    </div>
+
+
+
+
+    <form action="" class="my-3 px-3 form-login text-center d-flex flex-column">
+
+        <input type="text" placeholder="Nombre" class="form-control" name="name" required v-model="input.name">
+
+        <input type="email" placeholder="Email" class="form-control mt-5" name="email" required v-model="input.email">
+
+        <input type="password" placeholder="Contraseña" class="form-control my-5" name="password" required v-model="input.password">
+
+        <input type="password" placeholder="Repite la contraseña" class="form-control" name="password_confirmation" required v-model="input.password_confirmation">
+
+        <div class="row text-center mt-5 justify-content-center px-3">
+            <input type="checkbox" name="promociones" class="mr-1 col-1" v-model="input.promociones"><span class="text-muted mt-2 mt-md-0 col-10">Deseo recibir ofertas y novedades en mi correo</span>
+        </div>
+
+        <div v-if="errors" class="text-danger row ml-5 mt-4">
+            <ul>
+                <li v-for="err in errors" class="row">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>
+                    <p>{{err}}</p>
+                </li>
+            </ul>
+        </div>
+
+        <button type="submit" class="bg-primary border-0 text-white my-5 py-2 px-4" @click.prevent="registrar()">REGISTRARSE</button>
+
+        <router-link to="/auth-login"><small class="mt-2 text-muted">¿Ya tienes cuenta? Inicia sesión</small></router-link>
+    </form>
+
+
+</div>

@@ -18,8 +18,8 @@
     export default {
         mounted() {
 
-            this.crearPedido();
-        
+            //this.crearPedido();
+
         },
 
         methods: {

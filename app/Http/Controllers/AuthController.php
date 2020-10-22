@@ -195,6 +195,64 @@ class AuthController extends Controller
     //-------------------------------------------------------------//
     //-------------------------------------------------------------//
 
+    /**
+     * Check if request token belongs to an admin.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function check_admin_token($user_id)
+    {
+
+        // Query
+        $user = User::select('*')
+                    ->join('oauth_access_tokens', 'users.id', '=', 'oauth_access_tokens.user_id')
+                    ->where('users.id', $user_id)
+                    ->first();
+
+        
+        // Si no tiene nigun token no accede
+        if( ! $user){
+            return response()->json(['admin' => false]);
+        }
+
+        // Return if tokens belongs to an admin
+        ($user->role_id == 2) ? $is_admin = true : $is_admin = false;
+
+        // Return response
+        return response()->json(['admin_token' => $is_admin]);
+        
+    }
+
+
+    //-------------------------------------------------------------//
+    //-------------------------------------------------------------//
+
+    /**
+     * Check if request token belongs to an admin.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function admin_logout(Request $request)
+    {
+
+        $user_id = $request->user_id;
+
+        // Query
+        $user = User::select('*')
+                    ->join('oauth_access_tokens', 'users.id', '=', 'oauth_access_tokens.user_id')
+                    ->where('users.id', $user_id)
+                    ->first();
+
+       
+
+        // Return response
+        return response()->json(['admin_token' => $is_admin]);
+        
+    }
+
+    //-------------------------------------------------------------//
+    //-------------------------------------------------------------//
+
 
     /**
      * Deletes actives tokens.

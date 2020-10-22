@@ -40,14 +40,65 @@ Vue.component('admin-login-component', require('./components/admin/login/LoginCo
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ 
 
 const router = new VueRouter({
     mode: 'history',
     routes
 })
 
+
+// Auth para las rutas
+router.beforeEach((to, from, next) => {
+
+  // Cmprueba que la ruta requiera autenticacion
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+      
+      // Comprueba que tenga un token almacenado
+      if (store.getters.getToken === null) {
+
+        // Redireccion a login
+        next({
+          name: 'admin-login'
+        })
+
+      } else {
+
+        // Id del usuario logueado
+        let id = store.getters.getUserId;
+
+        // Comprueba que el token es de un usuario administrador
+        axios
+          .get('/api/check-admin-token/' + id)
+          .then(res => {
+
+            // Si es administrador continua
+            if(res.data.admin_token){
+
+              next();
+
+            }else{
+
+              // Redireccion a login
+              next({name: 'admin-login'})
+
+            } 
+
+          })
+
+      }
+    } else {
+
+      next() 
+      
+    }
+  })
+
+
+
 const app = new Vue({
     el: '#app',
     router,
     store
 })
+

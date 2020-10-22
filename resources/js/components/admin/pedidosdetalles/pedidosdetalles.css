@@ -1,0 +1,27 @@
+
+.pedidos-title{
+    border: 1px solid black;
+    max-width: 300px;
+}
+
+img{
+    max-width: 70px;
+}
+
+hr{
+    height: 3px;
+    background-color: black;
+}
+
+.total{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+span{
+    font-size: 25px;
+}
+
+i{
+    cursor: pointer;
+}

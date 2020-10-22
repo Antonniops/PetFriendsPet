@@ -1,117 +1,590 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[20],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      img1: '/storage/sobrenosotros1.png',
-      img2: '/storage/sobrenosotros2.png',
-      img3: '/storage/sobrenosotros3.png'
+      imagen_bienvenida: '/storage/Bienvenido_a_petfriend.png',
+      destacado1: '/storage/senseadultopatoypavo.png',
+      destacado2: '/storage/sensesalmonypavo.png',
+      destacado3: '/storage/sensehumedocordero.png',
+      masvendido1: '/storage/sensehumedosalmon.jpg',
+      masvendido2: '/storage/sensehumedojabaliyciervo.jpg',
+      masvendido3: '/storage/sensehumedopolloypato.jpg'
     };
-  },
-  template: __webpack_require__(/*! ./Sobrenosotros.html */ "./resources/js/components/sobrenosotros/Sobrenosotros.html")
+  }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".destacado[data-v-e4f53472] {\r\n    font-weight: bold;\r\n    font-size: 22px;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!./Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true&":
-/*!**************************************************************************************************************************!*\
-  !*** ./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true& ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!./Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("cookies-component"),
+      _vm._v(" "),
+      _c("div", { staticClass: "container mt-1" }, [
+        _c("img", {
+          staticClass: "imagen-principal",
+          attrs: { src: _vm.imagen_bienvenida, alt: "" }
+        })
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "carousel slide",
+          attrs: { id: "carouselExampleIndicators", "data-ride": "carousel" }
+        },
+        [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-inner" }, [
+            _c("div", { staticClass: "carousel-item active py-5" }, [
+              _c(
+                "section",
+                {
+                  staticClass:
+                    "row justify-content-sm-between justify-content-center align-items-center contenedor-slider"
+                },
+                [
+                  _c("img", {
+                    staticClass: "d-block col-md-3 col-sm-4 col-6",
+                    attrs: { src: _vm.destacado1, width: "150", alt: "..." }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-5 text-center col-sm-6 col-12" },
+                    [
+                      _c("h3", [_vm._v("Dibaq Sense Pollo y Pavo")]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "Uno de nuestros mejores productos pensados en la salud de tu perro"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-dark",
+                          attrs: { to: "/productos/115" }
+                        },
+                        [_vm._v("Ver Producto")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "carousel-item py-5" }, [
+              _c(
+                "section",
+                {
+                  staticClass:
+                    "row justify-content-sm-between justify-content-center align-items-center contenedor-slider"
+                },
+                [
+                  _c("img", {
+                    staticClass: "d-block col-md-3 col-sm-4 col-6",
+                    attrs: { src: _vm.destacado2, width: "150", alt: "..." }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-5 text-center col-sm-6 col-12" },
+                    [
+                      _c("h3", [_vm._v("Dibaq Sense Pavo y salmón")]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "Uno de nuestros mejores productos pensados en la salud de tu perro"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-dark",
+                          attrs: { to: "/productos/100" }
+                        },
+                        [_vm._v("Ver Producto")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(3)
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "carousel-item py-5" }, [
+              _c(
+                "section",
+                {
+                  staticClass:
+                    "row justify-content-sm-between justify-content-center align-items-center contenedor-slider"
+                },
+                [
+                  _c("img", {
+                    staticClass: "d-block col-md-3 col-sm-4 col-6",
+                    attrs: { src: _vm.destacado3, width: "150", alt: "..." }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-md-5 text-center col-sm-6 col-12" },
+                    [
+                      _c("h3", [_vm._v("Dibaq Sense Húmedo Cordero")]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "Uno de nuestros mejores productos pensados en la salud de tu perro"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-dark",
+                          attrs: { to: "/productos/112" }
+                        },
+                        [_vm._v("Ver Producto")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(4)
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _vm._m(6)
+        ]
+      ),
+      _vm._v(" "),
+      _c("section", [
+        _vm._m(7),
+        _vm._v(" "),
+        _c(
+          "section",
+          { staticClass: "row masvendidos justify-content-around" },
+          [
+            _c("div", { staticClass: "text-center mb-5 col-sm-3 col-12" }, [
+              _c("img", {
+                attrs: { src: _vm.masvendido1, width: "120", alt: "..." }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-4" },
+                [
+                  _c("h5", [_vm._v("Dibaq sense lata Salmón")]),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { to: "/productos/113" }
+                    },
+                    [_vm._v("Ver Producto")]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-center mb-5 col-sm-3 col-12" }, [
+              _c("img", {
+                attrs: { src: _vm.masvendido2, width: "120", alt: "..." }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-4" },
+                [
+                  _c("h5", [_vm._v("Dibaq sense lata ciervo y jabalí")]),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { to: "/productos/106" }
+                    },
+                    [_vm._v("Ver Producto")]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-center mb-5 col-sm-3 col-12" }, [
+              _c("img", {
+                attrs: { src: _vm.masvendido3, width: "120", alt: "..." }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-4" },
+                [
+                  _c("h5", [_vm._v("Dibaq sense lata pollo y pato")]),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { to: "/productos/107" }
+                    },
+                    [_vm._v("Ver Producto")]
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "row mt-5 align-content-center" }, [
+      _c("div", { staticClass: "d-none d-sm-block col-sm-4" }, [
+        _c("hr", { staticClass: "bg-primary" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-4 text-primary text-center" }, [
+        _c("p", [_vm._v("DESTACADOS")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d-none d-sm-block col-sm-4" }, [
+        _c("hr", { staticClass: "bg-primary" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "0"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "1"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "2"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "bg-primary col-md-3 col-3 d-none d-md-flex circulo" },
+      [_c("p", [_vm._v("DESCUENTO 10%")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "bg-primary col-md-3 col-3 d-none d-md-flex circulo" },
+      [_c("p", [_vm._v("DESCUENTO 10%")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "bg-primary col-md-3 col-3 d-none d-md-flex circulo" },
+      [_c("p", [_vm._v("DESCUENTO 10%")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "prev"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "next"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "row mt-5 align-content-center" }, [
+      _c("div", { staticClass: "d-none d-sm-block col-sm-4" }, [
+        _c("hr", { staticClass: "bg-primary" })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-sm-4 text-primary text-center" }, [
+        _c("p", [_vm._v("MÁS VENDIDOS")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "d-none d-sm-block col-sm-4" }, [
+        _c("hr", { staticClass: "bg-primary" })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
 
 /***/ }),
 
-/***/ "./resources/js/components/sobrenosotros/Sobrenosotros.html":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/sobrenosotros/Sobrenosotros.html ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <section class=\"row mt-5 align-content-center\">\r\n        <div class=\"d-none d-sm-block col-sm-4\">\r\n            <hr class=\"bg-primary\">\r\n        </div>\r\n        <div class=\"col-sm-4 text-primary text-center\">\r\n            <p>SOBRE NOSOTROS</p>\r\n        </div>\r\n        <div class=\"d-none d-sm-block col-sm-4\">\r\n            <hr class=\"bg-primary\">\r\n        </div>\r\n    </section>\r\n\r\n    <section class=\"row justify-content-between my-5\">\r\n        <div class=\"col-12 col-sm-4 d-flex flex-column align-items-center\">\r\n            <img :src=\"img1\" alt=\"\" class=\"circulo\">\r\n\r\n            <div class=\"mt-3 text-center\">\r\n                <p class=\"destacado\">TU MASCOTA es lo más importante para nosotros.</p>\r\n\r\n                <p>\r\n                    Sabemos lo importante que son para ti tus mascotas. Por eso en PetFriend día a día nos preocupamos por acercarte los mejores productos y servicios. Hacemos envíos a domicilio SIN CARGO.\r\n                </p>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-12 col-sm-4 d-flex flex-column align-items-center\">\r\n            <img :src=\"img2\" alt=\"\" class=\"circulo\">\r\n            <div class=\"mt-3 text-center\">\r\n                <p class=\"destacado\">Te ofrecemos la mejor alimentación acorde a las necesidades de tu mascota.</p>\r\n\r\n                <p>\r\n                    Tenemos piensos para perros y gatos...trabajamos con las mejores marcas, las de siempre y además con piensos naturales y grain free. Tenemos alimentación para roedores, aves, peces, tortugas, etc.\r\n                </p>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-12 col-sm-4 d-flex flex-column align-items-center\">\r\n            <img :src=\"img3\" alt=\"\" class=\"circulo\">\r\n            <div class=\"mt-3 text-center\">\r\n                <p class=\"destacado\">La mejor tienda de mascotas</p>\r\n\r\n                <p>\r\n                    Ofrecemos servicios de peluquería y autolavado. Disponemos de todos los artículos de tienda: comidas, accesorios, higiene y peluquería, snacks, antiparasitarios, ropa, collares, etc. Y lo que no tenemos....TE LO CONSEGUIMOS!!!\r\n                </p>\r\n            </div>\r\n        </div>\r\n    </section>\r\n</div>";
-
-/***/ }),
-
-/***/ "./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue":
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue ***!
-  \**************************************************************************/
+/***/ "./resources/js/components/HomeComponent.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/HomeComponent.vue ***!
+  \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SobrenosotrosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SobrenosotrosComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Sobrenosotros_css_vue_type_style_index_0_id_e4f53472_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true& */ "./resources/js/components/sobrenosotros/Sobrenosotros.css?vue&type=style&index=0&id=e4f53472&lang=css&scoped=true&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
+/* harmony import */ var _HomeComponent_vue_vue_type_template_id_782dcf83_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true& */ "./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true&");
+/* harmony import */ var _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/HomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -120,34 +593,52 @@ var render, staticRenderFns
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SobrenosotrosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
-  render,
-  staticRenderFns,
+  _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _HomeComponent_vue_vue_type_template_id_782dcf83_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HomeComponent_vue_vue_type_template_id_782dcf83_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "e4f53472",
+  "782dcf83",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/sobrenosotros/SobrenosotrosComponent.vue"
+component.options.__file = "resources/js/components/HomeComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************/
+/***/ "./resources/js/components/HomeComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/HomeComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SobrenosotrosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SobrenosotrosComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SobrenosotrosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_template_id_782dcf83_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeComponent.vue?vue&type=template&id=782dcf83&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_template_id_782dcf83_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_template_id_782dcf83_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ })
 

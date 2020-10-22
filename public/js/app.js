@@ -2030,27 +2030,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  computed: {
-    routeName: function routeName() {
-      return this.$router.currentRoute.path;
-    }
-  }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -2066,30 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   template: __webpack_require__(/*! ./Dashboard.html */ "./resources/js/components/admin/dashboard/Dashboard.html"),
   data: function data() {
-    return {
-      logged: false
-    };
-  },
-  created: function created() {
-    var _this = this;
-
-    var user_id = {
-      'user_id': localStorage.getItem('access_user_id')
-    };
-    axios.post('/api/admin/check-role', user_id).then(function (res) {
-      if (res.data[0].role_id === 2) {
-        _this.logged = true;
-      }
-    })["catch"](function (err) {
-      console.log(err);
-    });
-  },
-  methods: {
-    //Cierra sesión y elimina las variables de login
-    logout: function logout() {
-      this.$store.commit('logout');
-      this.logged = false;
-    }
+    return {};
   }
 });
 
@@ -2582,7 +2539,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "*[data-v-5654088f] {\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style: none;\r\n    font-family: 'Lato', sans-serif;\r\n    line-height: 1;\n}\nbody[data-v-5654088f] {\r\n    background-color: #F5F6F8;\r\n    overflow: hidden;\n}\n.sidebar-navigation[data-v-5654088f] {\r\n    display: inline-block;\r\n    min-height: 100vh;\r\n    width: 80px;\r\n    background-color: #313443;\n}\n.sidebar-navigation ul[data-v-5654088f] {\r\n    text-align: center;\r\n    color: white;\n}\n.sidebar-navigation ul li[data-v-5654088f] {\r\n    padding: 28px 0;\r\n    cursor: pointer;\r\n    transition: all ease-out 120ms;\n}\n.sidebar-navigation ul li i[data-v-5654088f] {\r\n    display: block;\r\n    font-size: 24px;\r\n    transition: all ease 450ms;\n}\n.sidebar-navigation ul li .tooltip[data-v-5654088f] {\r\n    display: inline-block;\r\n    position: absolute;\r\n    background-color: #313443;\r\n    padding: 8px 15px;\r\n    border-radius: 3px;\r\n    margin-top: -26px;\r\n    left: 90px;\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    font-size: 13px;\r\n    letter-spacing: .5px;\n}\n.sidebar-navigation ul li .tooltip[data-v-5654088f]:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    left: -4px;\r\n    top: 10px;\r\n    transform: rotate(45deg);\r\n    width: 10px;\r\n    height: 10px;\r\n    background-color: inherit;\n}\n.sidebar-navigation ul li[data-v-5654088f]:hover {\r\n    background-color: #22252E;\n}\n.sidebar-navigation ul li:hover .tooltip[data-v-5654088f] {\r\n    visibility: visible;\r\n    opacity: 1;\n}\n.sidebar-navigation ul li.active[data-v-5654088f] {\r\n    background-color: #22252E;\n}\n.sidebar-navigation ul li.active i[data-v-5654088f] {\r\n    color: #98D7EC;\n}", ""]);
+exports.push([module.i, "p[data-v-5654088f]{\r\n    color: white;\n}\nsmall[data-v-5654088f]{\r\n    color: #9D91B8;\n}\n#card[data-v-5654088f]{\r\n    background: rgb(118,107,162);\r\n    background: linear-gradient(90deg, rgba(118,107,162,1) 0%, rgba(87,24,233,1) 100%, rgba(157,145,184,1) 100%, rgba(89,46,199,1) 100%);\n}\n.title[data-v-5654088f]{\r\n    font-size: 25px;\n}\n.paragraph[data-v-5654088f]{\r\n    line-height: 0.8cm;\n}\n.percent[data-v-5654088f]{\r\n    font-size: 36px;\n}\n.box[data-v-5654088f]{\r\n    padding: 20px;\n}\n#box1[data-v-5654088f]{\r\n    border-right: 1px solid #9D91B8;\r\n    border-bottom: 1px solid #9D91B8;\n}\n#box2[data-v-5654088f]{\r\n    border-bottom: 1px solid #9D91B8;\n}\n#box3[data-v-5654088f]{\r\n    border-right: 1px solid #9D91B8;\n}\n.card-body[data-v-5654088f]{\r\n    padding: 80px 70px;\n}\n.card-button[data-v-5654088f]{\r\n    background-color: #8D84B6;\n}\n.card-button[data-v-5654088f]:hover{\r\n    background-color: #9687cf;\n}", ""]);
 
 // exports
 
@@ -3875,22 +3832,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("navbar-component"),
-      _vm._v(" "),
-      _c(
-        "main",
-        { staticClass: "container" },
-        [_c("router-view", { key: _vm.$route.fullPath })],
-        1
-      ),
-      _vm._v(" "),
-      _c("footer-component")
-    ],
-    1
-  )
+  return _c("div", [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -20557,6 +20499,38 @@ Vue.component('admin-login-component', __webpack_require__(/*! ./components/admi
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: _routes__WEBPACK_IMPORTED_MODULE_1__["routes"]
+}); // Auth para las rutas
+
+router.beforeEach(function (to, from, next) {
+  // Cmprueba que la ruta requiera autenticacion
+  if (to.matched.some(function (record) {
+    return record.meta.requiresAuth;
+  })) {
+    // Comprueba que tenga un token almacenado
+    if (_vuexstore__WEBPACK_IMPORTED_MODULE_2__["store"].getters.getToken === null) {
+      // Redireccion a login
+      next({
+        name: 'admin-login'
+      });
+    } else {
+      // Id del usuario logueado
+      var id = _vuexstore__WEBPACK_IMPORTED_MODULE_2__["store"].getters.getUserId; // Comprueba que el token es de un usuario administrador
+
+      axios.get('/api/check-admin-token/' + id).then(function (res) {
+        // Si es administrador continua
+        if (res.data.admin_token) {
+          next();
+        } else {
+          // Redireccion a login
+          next({
+            name: 'admin-login'
+          });
+        }
+      });
+    }
+  } else {
+    next();
+  }
 });
 var app = new Vue({
   el: '#app',
@@ -20574,9 +20548,17 @@ var app = new Vue({
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./AdminTemplateComponent.vue": [
+		"./resources/js/components/AdminTemplateComponent.vue",
+		1
+	],
+	"./ClientTemplateComponent.vue": [
+		"./resources/js/components/ClientTemplateComponent.vue",
+		19
+	],
 	"./HomeComponent.vue": [
 		"./resources/js/components/HomeComponent.vue",
-		16
+		20
 	],
 	"./Index.vue": [
 		"./resources/js/components/Index.vue"
@@ -20587,60 +20569,68 @@ var map = {
 	"./admin/login/LoginComponent.vue": [
 		"./resources/js/components/admin/login/LoginComponent.vue"
 	],
+	"./admin/pedidos/PedidosComponent.vue": [
+		"./resources/js/components/admin/pedidos/PedidosComponent.vue",
+		4
+	],
+	"./admin/pedidosdetalles/PedidosDetallesComponent.vue": [
+		"./resources/js/components/admin/pedidosdetalles/PedidosDetallesComponent.vue",
+		5
+	],
 	"./admin/productform/ProductFormComponent.vue": [
 		"./resources/js/components/admin/productform/ProductFormComponent.vue",
-		3
+		6
 	],
 	"./admin/productformupdate/ProductFormUpdateComponent.vue": [
 		"./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue",
-		4
+		7
 	],
 	"./admin/productos/ProductosComponent.vue": [
 		"./resources/js/components/admin/productos/ProductosComponent.vue"
 	],
 	"./animales/gatos/GatosComponent.vue": [
 		"./resources/js/components/animales/gatos/GatosComponent.vue",
-		5
+		8
 	],
 	"./animales/otros/OtrosComponent.vue": [
 		"./resources/js/components/animales/otros/OtrosComponent.vue",
-		1
+		2
 	],
 	"./animales/perros/PerrosComponent.vue": [
 		"./resources/js/components/animales/perros/PerrosComponent.vue",
-		6
+		9
 	],
 	"./auth/ResetPassword/forgot_password/ForgotPasswordComponent.vue": [
 		"./resources/js/components/auth/ResetPassword/forgot_password/ForgotPasswordComponent.vue",
-		2
+		3
 	],
 	"./auth/ResetPassword/reset_password/ResetPasswordFormComponent.vue": [
 		"./resources/js/components/auth/ResetPassword/reset_password/ResetPasswordFormComponent.vue",
-		7
+		10
 	],
 	"./auth/login/LoginComponent.vue": [
 		"./resources/js/components/auth/login/LoginComponent.vue",
-		8
+		11
 	],
 	"./auth/register/RegisterComponent.vue": [
 		"./resources/js/components/auth/register/RegisterComponent.vue",
-		9
+		12
 	],
 	"./carrito/CarritoComponent.vue": [
 		"./resources/js/components/carrito/CarritoComponent.vue",
-		10
+		13
 	],
 	"./carrito/datos_envio/DatosEnvioComponent.vue": [
 		"./resources/js/components/carrito/datos_envio/DatosEnvioComponent.vue"
 	],
 	"./contacto/ContactoComponent.vue": [
 		"./resources/js/components/contacto/ContactoComponent.vue",
-		11
+		14
 	],
 	"./peluqueria/PeluqueriaComponent.vue": [
 		"./resources/js/components/peluqueria/PeluqueriaComponent.vue",
 		0,
-		12
+		15
 	],
 	"./shared/BuscadorComponent.vue": [
 		"./resources/js/components/shared/BuscadorComponent.vue"
@@ -20653,11 +20643,11 @@ var map = {
 	],
 	"./shared/PaymentSuccessComponent.vue": [
 		"./resources/js/components/shared/PaymentSuccessComponent.vue",
-		17
+		21
 	],
 	"./shared/categoria/CategoriaComponent.vue": [
 		"./resources/js/components/shared/categoria/CategoriaComponent.vue",
-		13
+		16
 	],
 	"./shared/cookies/CookiesComponent.vue": [
 		"./resources/js/components/shared/cookies/CookiesComponent.vue"
@@ -20667,11 +20657,11 @@ var map = {
 	],
 	"./shared/producto/ProductoComponent.vue": [
 		"./resources/js/components/shared/producto/ProductoComponent.vue",
-		14
+		17
 	],
 	"./sobrenosotros/SobrenosotrosComponent.vue": [
 		"./resources/js/components/sobrenosotros/SobrenosotrosComponent.vue",
-		15
+		18
 	]
 };
 function webpackAsyncContext(req) {
@@ -20788,7 +20778,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n\r\n    <div v-if=\"logged\" class=\"row\">\r\n        <nav class=\"sidebar-navigation row col-1\">\r\n            <ul>\r\n                <li class=\"mb-5 dropdown\">\r\n                    <div class=\"dropdown-toggle\" data-toggle=\"dropdown\" id=\"dropdownMenuButton\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                        <i class=\"fas fa-user\"></i>\r\n                        <span class=\"tooltip\">Perfil</span>\r\n                    </div>\r\n                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n                        <button class=\"btn dropdown-item p-3\" @click=\"logout()\">Cerrar Sesión</button>\r\n                    </div>\r\n\r\n                </li>\r\n\r\n                <li class=\"mb-5\">\r\n                    <router-link to=\"/admin/productos\">\r\n                        <i class=\"fas fa-bone\"></i>\r\n                        <span class=\"tooltip\">Productos</span>\r\n                    </router-link>\r\n                </li>\r\n                <li class=\"mb-5\">\r\n                    <i class=\"fas fa-calendar-week\"></i>\r\n                    <span class=\"tooltip\">Peluquería</span>\r\n                </li>\r\n                <li class=\"mb-5\">\r\n                    <i class=\"fa fa-newspaper-o\"></i>\r\n                    <span class=\"tooltip\">Pedidos</span>\r\n                </li>\r\n                <li class=\"mb-5\">\r\n                    <i class=\"fas fa-chart-pie\"></i>\r\n                    <span class=\"tooltip\">Estadísticas</span>\r\n                </li>\r\n                <li class=\"mb-5\">\r\n                    <i class=\"fa fa-sliders\"></i>\r\n                    <span class=\"tooltip\">Settings</span>\r\n                </li>\r\n            </ul>\r\n\r\n\r\n        </nav>\r\n\r\n        <div class=\"col-10 mx-auto\">\r\n            <router-view></router-view>\r\n        </div>\r\n    </div>\r\n\r\n    <div v-if=\" ! logged\">\r\n        <admin-login-component></admin-login-component>\r\n    </div>\r\n\r\n</div>";
+module.exports = "<div class=\"mt-5\">\r\n\r\n    <div id=\"card\" class=\"rounded\">\r\n        <div class=\"card-body row\">\r\n            <div class=\"col-12 col-md-6\">\r\n                <p class=\"title\">\r\n                    Marketing\r\n                </p>\r\n    \r\n                <p class=\"paragraph\">\r\n                    Elevate your marketing campaigns, with connective creative unlike any other \r\n                    - that continiously driving reach and revenue up.\r\n                </p>\r\n\r\n                <button class=\"card-button btn rounded mt-3\">\r\n                    <p class=\"m-0 py-2 px-2\">\r\n                        READ OUR CASES\r\n                    </p>                  \r\n                </button>\r\n            </div>\r\n\r\n            <div class=\"col-12 col-md-6\">\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-6 box\" id=\"box1\">\r\n                        <p class=\"percent\">\r\n                            +45%\r\n                            <i class=\"fas fa-level-up-alt text-success\"></i>\r\n                        </p>\r\n                        <small>\r\n                            CLIENT REVENUE\r\n                        </small>\r\n                    </div>\r\n                    <div class=\"col-6 box\" id=\"box2\">\r\n                        <p class=\"percent\">\r\n                            +45%\r\n                            <i class=\"fas fa-level-up-alt text-success\"></i>\r\n                        </p>\r\n                        <small>\r\n                            AD SPEND\r\n                        </small>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"row\">\r\n                    <div class=\"col-6 box\" id=\"box3\">\r\n                        <p class=\"percent\">\r\n                            +12%\r\n                            <i class=\"fas fa-level-down-alt text-danger\"></i>\r\n                        </p>\r\n                        <small>\r\n                            MAUS\r\n                        </small>\r\n                    </div>\r\n                    <div class=\"col-6 box\" id=\"box4\">\r\n                        <p class=\"percent\">\r\n                            +18%\r\n                            <i class=\"fas fa-level-down-alt text-danger\"></i>\r\n                        </p>\r\n                        <small>\r\n                            OVERAL ROI\r\n                        </small>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            \r\n        </div>\r\n        \r\n    </div>\r\n\r\n</div>";
 
 /***/ }),
 
@@ -20851,7 +20841,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--LOGIN-->\r\n<div class=\"login my-5 mx-auto\">\r\n    <img :src=\"imglogin\" alt=\"\">\r\n\r\n    <form action=\"\" class=\"my-5 px-3 form-login text-center d-flex flex-column\">\r\n        <input type=\"email\" placeholder=\"Email\" class=\" form-control\" name=\"username\" v-model=\"login.username\" required>\r\n\r\n        <input type=\"password\" placeholder=\"Contraseña\" class=\"mt-4 form-control\" name=\"password\" v-model=\"login.password\" required>\r\n\r\n        <div v-if=\"errors\" class=\"text-danger row ml-5 mt-5\">\r\n            <ul>\r\n                <li class=\"row\">\r\n                    <i class=\"fas fa-exclamation-triangle mr-3\"></i>\r\n                    <p>{{errors}}</p>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"bg-primary border-0 text-white my-5 py-2 px-4\" @click.prevent=\"iniciarSesion()\">INICIAR SESIÓN</button>\r\n\r\n        <router-link to=\"/reset-password\"><small class=\"mt-5 text-muted\">¿Contraseña olvidada?</small></router-link>\r\n\r\n    </form>\r\n\r\n\r\n</div>";
+module.exports = "<!--LOGIN-->\r\n<div class=\"login my-5 mx-auto\">\r\n    <img :src=\"imglogin\" alt=\"\">\r\n\r\n    <form action=\"\" class=\"my-5 px-3 form-login text-center d-flex flex-column\">\r\n        <input type=\"email\" placeholder=\"Email\" class=\" form-control\" name=\"username\" v-model=\"login.username\" required>\r\n\r\n        <input type=\"password\" placeholder=\"Contraseña\" class=\"mt-4 form-control\" name=\"password\" v-model=\"login.password\" required>\r\n\r\n        <div v-if=\"errors\" class=\"text-danger row ml-5 mt-5\">\r\n            <ul>\r\n                <li class=\"row\">\r\n                    <i class=\"fas fa-exclamation-triangle mr-3 text-danger\"></i>\r\n                    <p>{{errors}}</p>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n\r\n        <button type=\"submit\" class=\"bg-primary border-0 text-white my-5 py-2 px-4\" @click.prevent=\"iniciarSesion()\">INICIAR SESIÓN</button>\r\n\r\n        <router-link to=\"/reset-password\"><small class=\"mt-5 text-muted\">¿Contraseña olvidada?</small></router-link>\r\n\r\n    </form>\r\n\r\n\r\n</div>";
 
 /***/ }),
 
@@ -21382,7 +21372,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\r\n    <!-- Nav del logo, buscador, y carrito -->\r\n    <div class=\"bg-primary\">\r\n        <nav class=\"navbar mx-auto row container navegador-logo\">\r\n\r\n            <section class=\"d-flex flex-row barra-superior justify-content-end\">\r\n                <div>\r\n                    <span class=\"mx-3 text-white\" v-if=\"logged_user\">{{logged_user}}</span>\r\n                    <router-link to=\"/\"><i class=\"fas fa-sign-out-alt fa-2x text-white\" @click=\"logout()\" v-if=\"logged_user\"></i></router-link>\r\n                    <!-- Icono login -->\r\n                    <router-link to=\"/auth-login\" class=\"text-right dropdown\"><i v-if=\"logged_user == null\" class=\"fas fa-user text-white fa-2x\"></i></router-link>\r\n\r\n                </div>\r\n\r\n                <div>\r\n                    <!-- Icono carrito -->\r\n                    <router-link to=\"/carrito\" class=\"text-right ml-3\">\r\n                        <i class=\"fas fa-shopping-cart text-white fa-2x\"></i>\r\n                        <span class=\"badge badge-warning\">{{numero_items}}</span>\r\n                    </router-link>\r\n                </div>\r\n            </section>\r\n\r\n        </nav>\r\n    </div>\r\n\r\n\r\n    <!--Nav con enlaces de la tienda-->\r\n    <nav class=\"navbar navbar-expand-lg container pt-3\">\r\n\r\n        <div class=\"navbar-brand col-3\">\r\n            <!-- Imagen logo -->\r\n            <router-link to=\"/\"><img :src=\"logo_src\" alt=\" \" class=\"logo sombra-logo \"></router-link>\r\n        </div>\r\n\r\n        <div class=\"busqueda p-0 col-12 col-sm-6 ml-sm-3 col-lg-4 order-1 order-sm-0\">\r\n            <buscador-component></buscador-component>\r\n        </div>\r\n\r\n\r\n        <button class=\"navbar-toggler order-0 order-sm-1\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <i class=\"fas fa-bars navbar-toggler-icon\" style=\"color:gray; font-size:28px;\"></i>\r\n          </button>\r\n\r\n        <!--Se aplica color de texto primario(naranja principal)-->\r\n        <div class=\"collapse navbar-collapse col-12 col-md-6 mt-3\" id=\"navbarSupportedContent\">\r\n            <ul class=\"navbar-nav\">\r\n                <!--Enlace de perros-->\r\n                <li class=\" nav-item\">\r\n                    <router-link to=\"/perros\" class=\"nav-link text-primary \">PERROS</router-link>\r\n                </li>\r\n                <!--Enlace de gatos-->\r\n                <li class=\"nav-item \">\r\n                    <router-link to=\"/gatos\" class=\"nav-link text-primary \">GATOS</router-link>\r\n                </li>\r\n                <!--Enlace de otros-->\r\n                <li class=\"nav-item \">\r\n                    <router-link to=\"/otros\" class=\"nav-link text-primary \">OTROS</router-link>\r\n                </li>\r\n                <!--Enlace de peluquería-->\r\n                <li class=\"nav-item \">\r\n                    <router-link to=\"/peluqueria\" class=\"nav-link text-primary \">PELUQUERÍA</router-link>\r\n                </li>\r\n\r\n            </ul>\r\n\r\n        </div>\r\n    </nav>\r\n\r\n\r\n\r\n</header>";
+module.exports = "<header>\r\n    <!-- Nav del logo, buscador, y carrito -->\r\n    <div class=\"bg-primary\">\r\n        <nav class=\"navbar mx-auto row container navegador-logo\">\r\n\r\n            <section class=\"d-flex flex-row barra-superior justify-content-end\">\r\n                <div>\r\n                    <span class=\"mx-3 text-white\" v-if=\"logged_user\">{{logged_user}}</span>\r\n                    <router-link to=\"/home\"><i class=\"fas fa-sign-out-alt fa-2x text-white\" @click=\"logout()\" v-if=\"logged_user\"></i></router-link>\r\n                    <!-- Icono login -->\r\n                    <router-link to=\"/auth-login\" class=\"text-right dropdown\"><i v-if=\"logged_user == null\" class=\"fas fa-user text-white fa-2x\"></i></router-link>\r\n\r\n                </div>\r\n\r\n                <div>\r\n                    <!-- Icono carrito -->\r\n                    <router-link to=\"/carrito\" class=\"text-right ml-3\">\r\n                        <i class=\"fas fa-shopping-cart text-white fa-2x\"></i>\r\n                        <span class=\"badge badge-warning\">{{numero_items}}</span>\r\n                    </router-link>\r\n                </div>\r\n            </section>\r\n\r\n        </nav>\r\n    </div>\r\n\r\n\r\n    <!--Nav con enlaces de la tienda-->\r\n    <nav class=\"navbar navbar-expand-lg container pt-3\">\r\n\r\n        <div class=\"navbar-brand col-3\">\r\n            <!-- Imagen logo -->\r\n            <router-link to=\"/home\"><img :src=\"logo_src\" alt=\" \" class=\"logo sombra-logo \"></router-link>\r\n        </div>\r\n\r\n        <div class=\"busqueda p-0 col-12 col-sm-6 ml-sm-3 col-lg-4 order-1 order-sm-0\">\r\n            <buscador-component></buscador-component>\r\n        </div>\r\n\r\n\r\n        <button class=\"navbar-toggler order-0 order-sm-1\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <i class=\"fas fa-bars navbar-toggler-icon\" style=\"color:gray; font-size:28px;\"></i>\r\n          </button>\r\n\r\n        <!--Se aplica color de texto primario(naranja principal)-->\r\n        <div class=\"collapse navbar-collapse col-12 col-md-6 mt-3\" id=\"navbarSupportedContent\">\r\n            <ul class=\"navbar-nav\">\r\n                <!--Enlace de perros-->\r\n                <li class=\" nav-item\">\r\n                    <router-link to=\"/perros\" class=\"nav-link text-primary \">PERROS</router-link>\r\n                </li>\r\n                <!--Enlace de gatos-->\r\n                <li class=\"nav-item \">\r\n                    <router-link to=\"/gatos\" class=\"nav-link text-primary \">GATOS</router-link>\r\n                </li>\r\n                <!--Enlace de otros-->\r\n                <li class=\"nav-item \">\r\n                    <router-link to=\"/otros\" class=\"nav-link text-primary \">OTROS</router-link>\r\n                </li>\r\n                <!--Enlace de peluquería-->\r\n                <li class=\"nav-item \">\r\n                    <router-link to=\"/peluqueria\" class=\"nav-link text-primary \">PELUQUERÍA</router-link>\r\n                </li>\r\n\r\n            </ul>\r\n\r\n        </div>\r\n    </nav>\r\n\r\n\r\n\r\n</header>";
 
 /***/ }),
 
@@ -21458,91 +21448,120 @@ function lazyLoad(view) {
   };
 }
 
-function guardMyRoute(to, from, next) {
-  if (localStorage.getItem('access_token')) next();else next('/admin/acceso');
-}
-
-var routes = [{
-  path: '/',
-  component: lazyLoad('HomeComponent'),
-  name: 'home'
-}, {
-  path: '/perros',
-  component: lazyLoad('animales/perros/PerrosComponent'),
-  name: 'perros'
-}, {
-  path: '/gatos',
-  component: lazyLoad('animales/gatos/GatosComponent'),
-  name: 'gatos'
-}, {
-  path: '/otros',
-  component: lazyLoad('animales/otros/OtrosComponent'),
-  name: 'otros'
-}, {
-  path: '/peluqueria',
-  component: lazyLoad('peluqueria/PeluqueriaComponent'),
-  name: 'peluqueria'
-}, {
-  path: '/productos/:id',
-  component: lazyLoad('shared/producto/ProductoComponent'),
-  props: true
-}, {
-  path: '/carrito',
-  component: lazyLoad('carrito/CarritoComponent'),
-  props: true
-}, {
-  path: '/categoria/:animal/:producto',
-  component: lazyLoad('shared/categoria/CategoriaComponent'),
-  props: true
-}, {
-  path: '/auth-login',
-  component: lazyLoad('auth/login/LoginComponent'),
-  name: 'login'
-}, {
-  path: '/auth-register',
-  component: lazyLoad('auth/register/RegisterComponent'),
-  name: 'register'
-}, {
-  path: '/sobre-nosotros',
-  component: lazyLoad('sobrenosotros/SobrenosotrosComponent'),
-  name: 'sobre-nosotros'
-}, {
-  path: '/contacto',
-  component: lazyLoad('contacto/ContactoComponent')
-}, // {
-//     path: '/admin',
-//     component: lazyLoad('admin/dashboard/DashboardComponent'),
-// },
+var routes = [//Rutas para el area de clientes
 {
-  path: '/admin/productos',
-  component: lazyLoad('admin/productos/ProductosComponent'),
-  name: 'dashboard-component'
-}, {
-  path: '/admin/productos/formulario',
-  component: lazyLoad('admin/productform/ProductFormComponent'),
-  name: 'admin-product-form'
-}, {
-  path: '/admin/productos/formulario/actualizar/:id',
-  component: lazyLoad('admin/productformupdate/ProductFormUpdateComponent'),
-  name: 'admin-product-form-update',
-  props: true
-}, {
-  path: '/reset-password',
-  name: 'reset-password',
-  component: lazyLoad('auth/ResetPassword/forgot_password/ForgotPasswordComponent'),
+  path: '/',
+  component: lazyLoad('ClientTemplateComponent'),
+  name: 'client',
+  children: [{
+    path: 'home',
+    component: lazyLoad('HomeComponent'),
+    name: 'home'
+  }, {
+    path: 'perros',
+    component: lazyLoad('animales/perros/PerrosComponent'),
+    name: 'perros'
+  }, {
+    path: 'gatos',
+    component: lazyLoad('animales/gatos/GatosComponent'),
+    name: 'gatos'
+  }, {
+    path: 'otros',
+    component: lazyLoad('animales/otros/OtrosComponent'),
+    name: 'otros'
+  }, {
+    path: 'peluqueria',
+    component: lazyLoad('peluqueria/PeluqueriaComponent'),
+    name: 'peluqueria'
+  }, {
+    path: 'productos/:id',
+    component: lazyLoad('shared/producto/ProductoComponent'),
+    props: true
+  }, {
+    path: 'carrito',
+    component: lazyLoad('carrito/CarritoComponent'),
+    props: true
+  }, {
+    path: 'categoria/:animal/:producto',
+    component: lazyLoad('shared/categoria/CategoriaComponent'),
+    props: true
+  }, {
+    path: 'auth-login',
+    component: lazyLoad('auth/login/LoginComponent'),
+    name: 'login'
+  }, {
+    path: 'auth-register',
+    component: lazyLoad('auth/register/RegisterComponent'),
+    name: 'register'
+  }, {
+    path: 'sobre-nosotros',
+    component: lazyLoad('sobrenosotros/SobrenosotrosComponent'),
+    name: 'sobre-nosotros'
+  }, {
+    path: 'contacto',
+    component: lazyLoad('contacto/ContactoComponent')
+  }, {
+    path: 'reset-password',
+    name: 'reset-password',
+    component: lazyLoad('auth/ResetPassword/forgot_password/ForgotPasswordComponent'),
+    meta: {
+      auth: false
+    }
+  }, {
+    path: 'reset-password/:token',
+    name: 'reset-password-form',
+    component: lazyLoad('auth/ResetPassword/reset_password/ResetPasswordFormComponent'),
+    meta: {
+      auth: false
+    }
+  }, {
+    path: 'pago/:token/confirmacion',
+    component: lazyLoad('shared/PaymentSuccessComponent')
+  }]
+}, //Rutas para el área de administración
+{
+  path: '/admin',
+  component: lazyLoad('AdminTemplateComponent'),
   meta: {
-    auth: false
-  }
+    requiresAuth: true
+  },
+  children: [{
+    path: 'dashboard',
+    component: lazyLoad('admin/dashboard/DashboardComponent'),
+    name: 'dashboard-component'
+  }, {
+    path: 'productos',
+    component: lazyLoad('admin/productos/ProductosComponent'),
+    name: 'productos-component'
+  }, {
+    path: 'pedidos',
+    component: lazyLoad('admin/pedidos/PedidosComponent'),
+    name: 'pedidos'
+  }, {
+    path: 'pedidos/detalles/:id',
+    component: lazyLoad('admin/pedidosdetalles/PedidosDetallesComponent'),
+    name: 'pedidos-detalles',
+    props: true
+  }, {
+    path: 'productos/formulario',
+    component: lazyLoad('admin/productform/ProductFormComponent'),
+    name: 'admin-product-form'
+  }, {
+    path: 'productos/formulario/actualizar/:id',
+    component: lazyLoad('admin/productformupdate/ProductFormUpdateComponent'),
+    name: 'admin-product-form-update',
+    props: true
+  }, {
+    path: '*',
+    component: lazyLoad('admin/dashboard/DashboardComponent')
+  }]
 }, {
-  path: '/reset-password/:token',
-  name: 'reset-password-form',
-  component: lazyLoad('auth/ResetPassword/reset_password/ResetPasswordFormComponent'),
-  meta: {
-    auth: false
-  }
+  path: '/admin-login',
+  component: lazyLoad('admin/login/LoginComponent'),
+  name: 'admin-login'
 }, {
-  path: '/pago/confirmacion',
-  component: lazyLoad('shared/PaymentSuccessComponent')
+  path: '*',
+  redirect: 'home'
 }];
 
 /***/ }),
@@ -21595,32 +21614,32 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
 
       state.carrito[prodIndex].cantidad_producto += qty;
     },
-    //Guarda el carrito de compra en local storage
+    // Guarda el carrito de compra en local storage
     saveCart: function saveCart(state) {
       window.localStorage.setItem('carrito', JSON.stringify(state.carrito));
       window.localStorage.setItem('carritoCount', state.carrito.length);
     },
-    //Guarda el token de acceso en local storage
+    // Guarda el token de acceso en local storage
     login: function login(state, _ref2) {
       var token = _ref2.token,
           user = _ref2.user,
           id = _ref2.id;
-      //Los guardo antes en las variables porque localStorage no es reactivo
+      // Los guardo antes en las variables porque localStorage no es reactivo
       state.token = token;
       state.logged_user = user;
-      state.logged_user_id = id; //Se guardan los datos de forma persistente
+      state.logged_user_id = id; // Se guardan los datos de forma persistente
 
       window.localStorage.setItem('access_token', token);
       window.localStorage.setItem('access_user', user);
       window.localStorage.setItem('access_user_id', id);
     },
-    //Borra el token de acceso y los datos de envío para cerrar sesión
+    // Borra el token de acceso y los datos de envío para cerrar sesión
     logout: function logout(state) {
-      //Borro primero el valor de las variables porque localStorage no es reactivo
+      // Borro primero el valor de las variables porque localStorage no es reactivo
       state.token = null;
       state.logged_user = null;
       state.logged_user_id = null;
-      state.shipping_information = null; //Borro los datos del localStorage
+      state.shipping_information = null; // Borro los datos del localStorage
 
       window.localStorage.removeItem('access_token');
       window.localStorage.removeItem('access_user');

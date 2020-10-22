@@ -1,0 +1,12 @@
+td{
+    text-align: center;
+}
+
+.pedidos-title{
+    border: 1px solid black;
+    max-width: 200px;
+}
+
+i{
+    cursor: pointer;
+}

@@ -1,0 +1,76 @@
+<div class="mt-5">
+
+
+    <div :class="notification_style" class="p-2">
+        <p>El producto se ha agregado al carrito correctamente</p>
+    </div>
+
+    <div :class="ya_en_carrito_style" class="p-2">
+        <p>El producto ya se encuentra actualmente en el carrito</p>
+    </div>
+
+
+    <section class="row justify-content-around">
+
+        <section class="row my-5 col-md-7 justify-content-between">
+            <div class="col-sm-4 text-center">
+                <img :src="product.imagen" class="img-product" alt="">
+            </div>
+
+            <div class="col-sm-8 text-center ml-3 mt-4 ml-sm-0 mt-sm-0">
+                <p>{{product.nombre}}</p>
+                <p class="m-0">FORMATO</p>
+                <span class="bg-black p-1 text-white">{{product.peso_unidad}}{{product.ud_peso}} <small>({{product.precio_kilogramo}}€/{{product.ud_peso}})</small> </span>
+
+                <p class="m-0 mt-3">PRECIO UNIDAD</p>
+                <span class="bg-black p-1 text-white">{{product.precio}}€ </span>
+
+
+                <div class="d-flex flex-column align-items-center">
+                    <p class="mt-3">CANTIDAD</p>
+                    <form>
+                        <!-- MUESTRA EL INPUT DE LA CANTIDAD Y LOS BOTONES DE MAS Y MENOS -->
+                        <formcantidad-component :cantidad_producto="cantidad_producto" @modificarCantidad="actualizarCantidad"></formcantidad-component>
+
+                        <button @click.prevent="aniadirCarrito()" class="btn btn-secondary mt-3">Añadir al carrito</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="col-md-4 my-5">
+            <div class="text-center mb-2">
+                <p class="descripcion-span d-inline-block px-3 py-1 ">RECOMENDADOS</p>
+            </div>
+
+            <div class="row justify-content-center align-items-center mb-3" v-for="prod in productos_recomendados">
+                <img :src="/storage/ + prod.imagen" alt="" class="col-md-4 col-3">
+
+                <div class="col-md-7 col-6">
+                    <p>{{prod.nombre}}</p>
+                    <button class="bg-secondary"><router-link :to="{ path: '/productos/' + prod.id }" class="text-white">Ver Producto</router-link></button>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+
+    <section class="container descr-producto">
+        <span class="text-white bg-secondary2 px-2">Descripción</span>
+        <hr class="bg-secondary">
+
+        <section class="descripcion p-4">
+
+            {{product.descripcion}}
+
+        </section>
+
+
+
+    </section>
+
+
+</div>

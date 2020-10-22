@@ -27,6 +27,7 @@ Route::group(['middleware' => 'cors'], function () {
     Route::get('/product/item/{name}', 'ProductController@search')->name('product.search');
     Route::post('/product/recomendados', 'ProductController@obtener_recomendados');
     Route::post('/checkOutSession', 'CheckoutController@checkOutSession'); 
+    Route::post('/webhook', 'CheckoutController@check_order_status'); 
     Route::get('/provincias', 'ProvincesController@provincias'); 
 
     Route::post('/login', 'AuthController@login');
@@ -42,14 +43,23 @@ Route::group(['middleware' => 'cors'], function () {
     Route::post('/shipping-information', 'AuthController@shipping_information');
     Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
     
+   
     Route::post('/order', 'OrderController@store');
+    Route::post('/order/complete', 'OrderController@complete_order');
+    Route::post('/order/details', 'OrderController@show');
+    
     Route::get('/appointment', 'AppointmentController@getAppointment');
     Route::post('/appointment', 'AppointmentController@saveAppointment');
 
 
     Route::post('/shipping-information', 'AuthController@shipping_information');
+    Route::get('/check-admin-token/{id}', 'AuthController@check_admin_token');
 
-	Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
+    Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
+    
+    Route::group(['middleware' => 'auth:api'], function() {
+        Route::get('/order', 'OrderController@index');
+    });
 
 });
 

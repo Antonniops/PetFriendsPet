@@ -1,0 +1,48 @@
+<div class="mt-5">
+
+    <div class="pedidos-title rounded text-center mb-3">
+        <h4 class="my-auto">Pedidos</h4>
+    </div>
+  
+    <table class="table table-sm table-responsive">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Email</th>
+                <th scope="col">CP</th>
+                <th scope="col">Calle</th>
+                <th scope="col">Número</th>
+                <th scope="col">Municipio</th>
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in pedidos">
+                <th scope="row">{{item.id}}</th>
+                <td v-if="item.estado == 'pendiente'" class="badge badge-pill badge-warning">
+                    {{item.estado}}
+                </td>
+                <td v-else class="badge badge-pill badge-success">
+                    {{item.estado}}
+                </td>
+                <td>{{item.fecha_pedido}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.codigo_postal}}</td>
+                <td>{{item.calle}}</td>
+                <td>{{item.numero}}</td>
+                <td>{{item.municipio}}</td>
+                <td>{{item.total}} €</td>
+                <td class="row m-0 ml-3">
+                    <i class="fas fa-check text-success col" data-toggle="tooltip" data-placement="right" title="Marcar como realizado" @click="completeOrder(item.id)"></i>
+                    <router-link :to="{ path: '/admin/pedidos/detalles/' + item.id }"><i class="fas fa-info-circle text-warning"></i></router-link>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

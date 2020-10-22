@@ -42,37 +42,37 @@ export const store = new Vuex.Store({
 
         },
 
-        //Guarda el carrito de compra en local storage
+        // Guarda el carrito de compra en local storage
         saveCart(state) {
             window.localStorage.setItem('carrito', JSON.stringify(state.carrito));
             window.localStorage.setItem('carritoCount', state.carrito.length);
         },
 
-        //Guarda el token de acceso en local storage
+        // Guarda el token de acceso en local storage
         login(state, { token, user, id }) {
 
-            //Los guardo antes en las variables porque localStorage no es reactivo
+            // Los guardo antes en las variables porque localStorage no es reactivo
             state.token = token;
             state.logged_user = user;
             state.logged_user_id = id;
 
-            //Se guardan los datos de forma persistente
+            // Se guardan los datos de forma persistente
             window.localStorage.setItem('access_token', token);
             window.localStorage.setItem('access_user', user);
             window.localStorage.setItem('access_user_id', id);
 
         },
 
-        //Borra el token de acceso y los datos de envío para cerrar sesión
+        // Borra el token de acceso y los datos de envío para cerrar sesión
         logout(state) {
 
-            //Borro primero el valor de las variables porque localStorage no es reactivo
+            // Borro primero el valor de las variables porque localStorage no es reactivo
             state.token = null;
             state.logged_user = null;
             state.logged_user_id = null;
             state.shipping_information = null;
 
-            //Borro los datos del localStorage
+            // Borro los datos del localStorage
             window.localStorage.removeItem('access_token');
             window.localStorage.removeItem('access_user');
             window.localStorage.removeItem('access_user_id');

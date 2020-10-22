@@ -1,0 +1,27 @@
+<!--LOGIN-->
+<div class="login my-5 mx-auto">
+    <img :src="imglogin" alt="">
+
+    <form action="" class="my-5 px-3 form-login text-center d-flex flex-column">
+        <input type="email" placeholder="Email" class=" form-control" name="username" v-model="login.username" required>
+
+        <input type="password" placeholder="Contraseña" class="mt-4 form-control" name="password" v-model="login.password" required>
+
+        <div v-if="errors" class="text-danger row ml-5 mt-5">
+            <ul>
+                <li class="row">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>
+                    <p>{{errors}}</p>
+                </li>
+            </ul>
+        </div>
+
+        <button type="submit" class="bg-primary border-0 text-white my-5 py-2 px-4" @click.prevent="iniciarSesion()">INICIAR SESIÓN</button>
+
+        <router-link to="/reset-password"><small class="mt-5 text-muted">¿Contraseña olvidada?</small></router-link>
+
+        <router-link to="/auth-register"><small class="mt-2 text-muted">¿No tienes ninguna cuenta? Regístrate</small></router-link>
+    </form>
+
+
+</div>

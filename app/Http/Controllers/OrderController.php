@@ -8,9 +8,44 @@ use App\ProductOrder;
 use App\User;
 use App\Mail\ConfirmOrder;
 use Illuminate\Support\Facades\Mail;
+use Log;
 
 class OrderController extends Controller
 {
+
+    /**
+     * Shows a list of orders.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //Recibe todos los pedidos para mostrarlos
+        $orders = Order::getOrders();
+
+        return response()->json($orders, 201);
+
+    }
+
+    /**
+     * Shows details of order.
+     *
+     * @param  \Illuminate\Http\Request
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Request $request)
+    {
+
+        $id = $request->input('id');
+
+        //Recibe todos los pedidos para mostrarlos
+        $order = Order::getOrder($id);
+
+        return response()->json($order, 201);
+
+    }
+
+
     /**
      * Store a newly order.
      *
@@ -19,49 +54,71 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        // Datos de envío
+        $datos_envio = $request->input('datosEnvio');
 
-        //Creacion del pedido
-        Order::create([
-            'user_id' => $request->input('id'),
-            'estado' => $request->input('estado'),
-            'fecha_pedido' => date('Y-m-d'),
-            'email' => $request->input('datosEnvio.email'),
-            'codigo_postal' => $request->input('datosEnvio.codigo_postal'),
-            'calle' => $request->input('datosEnvio.calle'),
-            'numero' => $request->input('datosEnvio.numero'),
-            'municipio' => $request->input('datosEnvio.municipio')
-        ]);
+        // Control de datos de envío
+        if(empty($datos_envio)){
+            return response()->json(['Debes proporcionar los datos de envío'], 400);
+        }
 
-        //Datos para los detalles del pedidio
-        $order_id = Order::select('id')->latest('id')->first();
+        // Instancia de Order nueva
+        $order = new Order;
+        $order->user_id = $request->input('id');
+        $order->estado = $request->input('estado');
+        $order->fecha_pedido = date('Y-m-d');
+        $order->email = $datos_envio['email'];
+        $order->codigo_postal = $datos_envio['codigo_postal'];
+        $order->calle = $datos_envio['calle'];
+        $order->numero = $datos_envio['numero'];
+        $order->municipio =$datos_envio['municipio'];
+
+        // La guardamos y obtenemos el id insertado
+        $order->save();
+        $order_id = $order->id;
+
+        // Datos del carrito
         $carrito = $request->input('carrito');
 
-        //Insercion de lineas de detalle del producto
+        // Insercion de lineas de detalles del producto
         foreach ($carrito as $product) {
-            # code...
+          
             ProductOrder::create([
-                'order_id' => $order_id['id'],
+                'order_id' => $order_id,
                 'product_id' => $product['id'],
                 'unidades' => $product['cantidad_producto'],
                 'precio_unidad' => $product['precio'],
                 'total' => $product['cantidad_producto'] * $product['precio']
             ]);
+            
         }
 
-        $order = Order::select('orders.id', 'unidades', 'precio_unidad', 'total', 'nombre')
-                            ->join('productsorders', 'orders.id', '=', 'productsorders.order_id')
-                            ->join('products', 'productsorders.product_id', '=', 'products.id')
-                            ->where('orders.id', $order_id['id'])
-                            ->get();
+        // Return response
+        $response = [
+            'msg' => 'Pedido realizado',
+            'order_id' => $order_id
+        ];
 
-
-        Mail::to($request->input('datosEnvio.email'))->send(new ConfirmOrder($order));
-        Mail::to('testantonniops@gmail.com')->send(new ConfirmOrder($order));
-
-
-        return response()->json(['Pago realizado']);
-
-
+        return response()->json($response);
 
     }
+
+    /**
+     * Marks a order as completed.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function complete_order(Request $request)
+    {
+        //Id del pedido
+        $order_id = $request->input('order_id');
+
+        //Se marca el pedido como completado en la bd
+        $response = Order::complete_order($order_id);
+
+        return response()->json($response, 201);
+
+    }
+
+
 }

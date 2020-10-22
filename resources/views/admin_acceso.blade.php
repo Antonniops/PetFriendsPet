@@ -24,7 +24,7 @@
     <body>
         
         <div id="app">  
-                <admin-login-component></admin-login-component>                
+                {{-- <admin-login-component></admin-login-component>                 --}}
         </div>
 
 

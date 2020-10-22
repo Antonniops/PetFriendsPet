@@ -1,111 +1,57 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/pedidos/PedidosComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/admin/pedidos/PedidosComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  template: __webpack_require__(/*! ./FormUpdate.html */ "./resources/js/components/admin/productformupdate/FormUpdate.html"),
-  props: ['id'],
+  template: __webpack_require__(/*! ./Pedidos.html */ "./resources/js/components/admin/pedidos/Pedidos.html"),
   data: function data() {
     return {
-      producto: {
-        nombre: "",
-        descripcion: "",
-        precio: null,
-        precio_oferta: null,
-        categoria: "",
-        marca: "",
-        peso_unidad: null,
-        ud_peso: "",
-        tipo_animal: "",
-        destacado: false,
-        edad: "",
-        imagen: ""
-      },
-      //Imagen previsualizacion
-      temp_img: null,
-      errors: []
+      pedidos: []
     };
   },
   created: function created() {
     var _this = this;
 
-    console.log('id', this.id);
-    axios.get("/api/product/".concat(this.id)).then(function (res) {
-      _this.producto = res.data;
-      _this.temp_img = '/storage/' + _this.producto.imagen;
-    })["catch"](function (err) {
-      console.log(err);
+    axios.get('/api/order').then(function (res) {
+      _this.pedidos = res.data;
     });
   },
   methods: {
-    actualizarProducto: function actualizarProducto() {
+    completeOrder: function completeOrder(order_id) {
       var _this2 = this;
 
-      //Header para el envio en la peticion
-      var config = {
-        headers: {
-          "content-type": "multipart/form-data"
-        }
-      }; //Creacion de objeto de envio, para el formato correcto de imagen
+      var conf = confirm("¿Marcar pedido como realizado?");
 
-      var data = new FormData();
+      if (conf) {
+        axios.post("/api/order/complete", {
+          order_id: order_id
+        }).then(function (res) {
+          var pedido = _this2.pedidos.find(function (elem) {
+            return elem.id == order_id;
+          });
 
-      for (var prop in this.producto) {
-        data.append(prop, this.producto[prop]);
+          pedido = _this2.pedidos.indexOf(pedido);
+          _this2.pedidos[pedido].estado = "completado";
+        });
       }
-
-      data.append('_method', 'put'); //Envio de datos
-
-      axios.post("/api/product/".concat(this.id), data, config).then(function (res) {
-        //Si no hay errores redirige al listado de productos
-        if (res.data.success) {
-          _this2.$router.push("/admin/productos");
-        } //Formateo de la respuesta de errores
-
-
-        _this2.errors = res.data.errors;
-        _this2.errors = Object.values(res.data);
-        _this2.errors = _this2.errors.flat();
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    onImageChange: function onImageChange(e) {
-      //Captura la imagen del formulario
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length) return; //Asigna la imagen al objeto de envio
-
-      this.producto.imagen = files[0];
-      this.createImage(files[0]);
-    },
-    //Crea la imagen de previsualizacion
-    createImage: function createImage(file) {
-      var _this3 = this;
-
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        _this3.temp_img = e.target.result;
-      };
-
-      reader.readAsDataURL(file);
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -114,22 +60,22 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "td{\n    text-align: center;\n}\n.pedidos-title{\n    border: 1px solid black;\n    max-width: 200px;\n}\ni{\n    cursor: pointer;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!./formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true&");
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!./pedidos.css?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -151,28 +97,28 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/productformupdate/FormUpdate.html":
-/*!*************************************************************************!*\
-  !*** ./resources/js/components/admin/productformupdate/FormUpdate.html ***!
-  \*************************************************************************/
+/***/ "./resources/js/components/admin/pedidos/Pedidos.html":
+/*!************************************************************!*\
+  !*** ./resources/js/components/admin/pedidos/Pedidos.html ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"m-5\" enctype=\"multipart/form-data\">\r\n\r\n    <h3 class=\"mb-3\">Formulario de un producto</h3>\r\n\r\n    <div>\r\n        <ul>\r\n            <li v-for=\"err in errors\" class=\"text-danger mb-1 ml-3\">\r\n                {{err}}\r\n            </li>\r\n        </ul>\r\n    </div>\r\n\r\n    <section class=\"row\">\r\n        <section class=\"col-6\">\r\n            <div class=\"form-group\">\r\n                <label for=\"nombre\">Nombre</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\" v-model=\"producto.nombre\">\r\n                <div class=\"bg-danger\" v-if=\"errors.nombre\">{{errors.nombre}}</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"descripcion\">Descripción</label>\r\n                <textarea class=\"form-control\" id=\"descripcion\" rows=\"3\" name=\"descripcion\" v-model=\"producto.descripcion\"></textarea>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"precio\">Precio</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"precio\" name=\"precio\" v-model=\"producto.precio\">\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"precio_oferta\">Precio Oferta</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"precio_oferta\" name=\"precio_oferta\" v-model=\"producto.precio_oferta\">\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"categoria\">Categoría</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"categoria\" name=\"categoria\" v-model=\"producto.categoria\">\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"marca\">Marca</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"marca\" name=\"marca\" v-model=\"producto.marca\">\r\n            </div>\r\n        </section>\r\n\r\n        <section class=\"col-6\">\r\n            <div class=\"form-group\">\r\n                <label for=\"peso_unidad\">Peso de la unidad</label>\r\n                <input type=\"number\" class=\"form-control\" id=\"peso_unidad\" name=\"peso_unidad\" v-model=\"producto.peso_unidad\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"ud_peso\">Unidad de peso</label>\r\n                <select class=\"form-control\" id=\"ud_peso\" name=\"ud_peso\" min=\"0\" v-model=\"producto.ud_peso\">\r\n                  <option value=\"g\">Gramos</option>\r\n                  <option value=\"kg\">Kilogramos</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"tipo_animal\">Tipo animal</label>\r\n                <select class=\"form-control\" id=\"tipo_animal\" name=\"tipo_animal\" v-model=\"producto.tipo_animal\">\r\n                  <option value=\"perro\">Perro</option>\r\n                  <option value=\"gato\">Gato</option>\r\n                  <option value=\"pez\">Pez</option>\r\n                  <option value=\"roedor\">Roedor</option>\r\n                  <option value=\"pajaro\">Pájaro</option>\r\n                  <option value=\"reptil\">Reptil</option>\r\n                </select>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"edad\">Edad</label>\r\n                <select class=\"form-control\" id=\"edad\" name=\"edad\" v-model=\"producto.edad\">\r\n                  <option disabled>Perros</option>\r\n                  <option value=\"puppy\">Puppy</option>\r\n                  <option value=\"adult\">Adult</option>\r\n                  <option value=\"senior\">Senior</option>\r\n                  <option disabled>Gatos</option>\r\n                  <option value=\"kitten\">Kitten</option>\r\n                  <option value=\"adult\">Adult</option>\r\n                  <option value=\"senior\">Senior</option>\r\n                  <option disabled>Otros</option>\r\n                  <option value=\"roedor\">Estándar</option>\r\n\r\n                </select>\r\n            </div>\r\n            <div class=\"form-group form-check text-right my-4\">\r\n                <input type=\"checkbox\" class=\"form-check-input\" id=\"destacado\" name=\"destacado\" v-model=\"producto.destacado\">\r\n                <label class=\"form-check-label\" for=\"destacado\">Destacado</label>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n                <label for=\"imagen\">Imagen del producto</label>\r\n                <input type=\"file\" class=\"form-control-file\" id=\"imagen\" name=\"imagen\" v-on:change=\"onImageChange\" value=\"ss\">\r\n\r\n                <div class=\"col-md-3 mt-3\" v-if=\"producto.imagen\">\r\n                    <img :src=\"temp_img\" class=\"img-responsive\" width=\"150\">\r\n                </div>\r\n            </div>\r\n        </section>\r\n    </section>\r\n\r\n\r\n    <button type=\"submit\" class=\"btn btn-primary\" @click.prevent=\"actualizarProducto()\">Actualizar</button>\r\n</form>";
+module.exports = "<div class=\"mt-5\">\n\n    <div class=\"pedidos-title rounded text-center mb-3\">\n        <h4 class=\"my-auto\">Pedidos</h4>\n    </div>\n  \n    <table class=\"table table-sm table-responsive\">\n\n        <thead class=\"thead-dark\">\n            <tr>\n                <th scope=\"col\">Id</th>\n                <th scope=\"col\">Estado</th>\n                <th scope=\"col\">Fecha</th>\n                <th scope=\"col\">Email</th>\n                <th scope=\"col\">CP</th>\n                <th scope=\"col\">Calle</th>\n                <th scope=\"col\">Número</th>\n                <th scope=\"col\">Municipio</th>\n                <th scope=\"col\">Total</th>\n                <th scope=\"col\"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr v-for=\"item in pedidos\">\n                <th scope=\"row\">{{item.id}}</th>\n                <td v-if=\"item.estado == 'pendiente'\" class=\"badge badge-pill badge-warning\">\n                    {{item.estado}}\n                </td>\n                <td v-else class=\"badge badge-pill badge-success\">\n                    {{item.estado}}\n                </td>\n                <td>{{item.fecha_pedido}}</td>\n                <td>{{item.email}}</td>\n                <td>{{item.codigo_postal}}</td>\n                <td>{{item.calle}}</td>\n                <td>{{item.numero}}</td>\n                <td>{{item.municipio}}</td>\n                <td>{{item.total}} €</td>\n                <td class=\"row m-0 ml-3\">\n                    <i class=\"fas fa-check text-success col\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Marcar como realizado\" @click=\"completeOrder(item.id)\"></i>\n                    <router-link :to=\"{ path: '/admin/pedidos/detalles/' + item.id }\"><i class=\"fas fa-info-circle text-warning\"></i></router-link>\n                </td>\n\n            </tr>\n\n        </tbody>\n    </table>\n</div>";
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue ***!
-  \****************************************************************************************/
+/***/ "./resources/js/components/admin/pedidos/PedidosComponent.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/admin/pedidos/PedidosComponent.vue ***!
+  \********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ProductFormUpdateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductFormUpdateComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true& */ "./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true&");
+/* harmony import */ var _PedidosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PedidosComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/pedidos/PedidosComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pedidos.css?vue&type=style&index=0&lang=css& */ "./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 var render, staticRenderFns
 
@@ -183,50 +129,50 @@ var render, staticRenderFns
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ProductFormUpdateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
+  _PedidosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"],
   render,
   staticRenderFns,
   false,
   null,
-  "8df73202",
+  null,
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue"
+component.options.__file = "resources/js/components/admin/pedidos/PedidosComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************/
+/***/ "./resources/js/components/admin/pedidos/PedidosComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/admin/pedidos/PedidosComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductFormUpdateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ProductFormUpdateComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/productformupdate/ProductFormUpdateComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductFormUpdateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PedidosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./PedidosComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/admin/pedidos/PedidosComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PedidosComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true&":
-/*!*********************************************************************************************************************************!*\
-  !*** ./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true& ***!
-  \*********************************************************************************************************************************/
+/***/ "./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css& ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!./formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/productformupdate/formupdate.css?vue&type=style&index=0&id=8df73202&lang=css&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_formupdate_css_vue_type_style_index_0_id_8df73202_lang_css_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!./pedidos.css?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./resources/js/components/admin/pedidos/pedidos.css?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_pedidos_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ })
 

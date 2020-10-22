@@ -1,0 +1,39 @@
+<div class="mt-5">
+    <div class="pedidos-title rounded text-center mb-3">
+        <h4 class="my-auto">Detalles del pedido</h4>
+    </div>
+   
+
+
+    <i class="fas fa-arrow-circle-left fa-2x my-3 text-success bg-gradient-primary" @click="retroceder()"></i>
+
+    <table class="table table-borderless">
+        <thead class="bg-dark text-white">
+          <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio Unidad</th>
+            <th scope="col">Unidades</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in order" :key="index">
+            <th scope="row">
+                <img :src="/storage/ + item.imagen" alt="">
+            </th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.precio_unidad}}€</td>
+            <td>{{item.unidades}}</td>
+            <td>{{item.total}}€</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <div class="text-right">
+          <span class="total">Total: </span>
+          <span class="btn btn-outline-success">{{ total }} €</span>
+      </div>
+</div>
