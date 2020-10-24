@@ -4,7 +4,8 @@ export default {
     template: require('./Pedidos.html'),
     data() {
         return {
-            pedidos: []
+            pedidos: [],
+            completedOrder : null
         }
     },
 
@@ -30,6 +31,15 @@ export default {
                         pedido = this.pedidos.indexOf(pedido);
                         
                         this.pedidos[pedido].estado = "completado";
+                    })
+                    .catch((error)  => {
+
+                        this.completedOrder = error.response.data.msg;
+
+                        setTimeout(() => {
+                            this.completedOrder = null;
+                        }, 3000);
+                        
                     });
             }
         },

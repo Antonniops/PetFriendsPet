@@ -73,15 +73,25 @@ class Order extends Model
      */
     public static function complete_order($order_id){
 
+        // Comprobamos que haya una id valida
         if(!$order_id){
-            return response()->json("No se ha encontrado un producto con esa id");
+            return false;
         }
 
+        // Encontramos el pedidod solicitado
         $order = Order::find($order_id);
+
+        // Comprobar estado del pedido
+        if($order->estado == "pendiente_pago"){
+            return false;
+        }
+
+        // Marcamos como completado
         $order->estado = "completado";
         $order->save();
         
-        return response()->json("Se ha completado el pedido");
+        // Respuesta json
+        return true;
 
     }
 }

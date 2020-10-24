@@ -116,7 +116,13 @@ class OrderController extends Controller
         //Se marca el pedido como completado en la bd
         $response = Order::complete_order($order_id);
 
-        return response()->json($response, 201);
+        // Comprobamos si se ha podido completar el pedido
+        if( ! $response){
+            return response()->json(['msg' => "No se ha podido completar el pedido. Comprueba que esté pagado"], 401);
+        }
+
+        // Respuesta json
+        return response()->json(['msg' => "Se ha completado el pedido correctamente"], 201);
 
     }
 

@@ -14,7 +14,8 @@ __webpack_require__.r(__webpack_exports__);
   template: __webpack_require__(/*! ./Pedidos.html */ "./resources/js/components/admin/pedidos/Pedidos.html"),
   data: function data() {
     return {
-      pedidos: []
+      pedidos: [],
+      completedOrder: null
     };
   },
   created: function created() {
@@ -41,6 +42,11 @@ __webpack_require__.r(__webpack_exports__);
 
           pedido = _this2.pedidos.indexOf(pedido);
           _this2.pedidos[pedido].estado = "completado";
+        })["catch"](function (error) {
+          _this2.completedOrder = error.response.data.msg;
+          setTimeout(function () {
+            _this2.completedOrder = null;
+          }, 3000);
         });
       }
     }
@@ -61,7 +67,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "td{\n    text-align: center;\n}\n.pedidos-title{\n    border: 1px solid black;\n    max-width: 200px;\n}\ni{\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, "td{\n    text-align: center;\n}\n.pedidos-title{\n    border: 1px solid black;\n    max-width: 200px;\n}\ni{\n    cursor: pointer;\n}\n.status{\n    padding: 0.25em 0.4em;\n    font-size: 75%;\n    font-weight: 700;\n    line-height: 1;\n    text-align: center;\n    white-space: nowrap;\n    vertical-align: baseline;\n    border-radius: 0.25rem;\n    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}", ""]);
 
 // exports
 
@@ -105,7 +111,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-5\">\n\n    <div class=\"pedidos-title rounded text-center mb-3\">\n        <h4 class=\"my-auto\">Pedidos</h4>\n    </div>\n  \n    <table class=\"table table-sm table-responsive\">\n\n        <thead class=\"thead-dark\">\n            <tr>\n                <th scope=\"col\">Id</th>\n                <th scope=\"col\">Estado</th>\n                <th scope=\"col\">Fecha</th>\n                <th scope=\"col\">Email</th>\n                <th scope=\"col\">CP</th>\n                <th scope=\"col\">Calle</th>\n                <th scope=\"col\">Número</th>\n                <th scope=\"col\">Municipio</th>\n                <th scope=\"col\">Total</th>\n                <th scope=\"col\"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr v-for=\"item in pedidos\">\n                <th scope=\"row\">{{item.id}}</th>\n                <td v-if=\"item.estado == 'pendiente'\" class=\"badge badge-pill badge-warning\">\n                    {{item.estado}}\n                </td>\n                <td v-else class=\"badge badge-pill badge-success\">\n                    {{item.estado}}\n                </td>\n                <td>{{item.fecha_pedido}}</td>\n                <td>{{item.email}}</td>\n                <td>{{item.codigo_postal}}</td>\n                <td>{{item.calle}}</td>\n                <td>{{item.numero}}</td>\n                <td>{{item.municipio}}</td>\n                <td>{{item.total}} €</td>\n                <td class=\"row m-0 ml-3\">\n                    <i class=\"fas fa-check text-success col\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Marcar como realizado\" @click=\"completeOrder(item.id)\"></i>\n                    <router-link :to=\"{ path: '/admin/pedidos/detalles/' + item.id }\"><i class=\"fas fa-info-circle text-warning\"></i></router-link>\n                </td>\n\n            </tr>\n\n        </tbody>\n    </table>\n</div>";
+module.exports = "<div class=\"mt-5\">\n\n    <div class=\"pedidos-title rounded text-center mb-3\">\n        <h4 class=\"my-auto\">Pedidos</h4>\n\n    </div>\n\n    <div class=\"alert alert-danger\" v-if=\"completedOrder\">\n        {{completedOrder}}\n    </div>\n  \n    <table class=\"table table-responsive-sm\">\n\n        <thead class=\"thead-dark\">\n            <tr>\n                <th scope=\"col\">Id</th>\n                <th scope=\"col\">Estado</th>\n                <th scope=\"col\">Fecha</th>\n                <th scope=\"col\">Email</th>\n                <th scope=\"col\">CP</th>\n                <th scope=\"col\">Calle</th>\n                <th scope=\"col\">Número</th>\n                <th scope=\"col\">Municipio</th>\n                <th scope=\"col\">Total</th>\n                <th scope=\"col\"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr v-for=\"item in pedidos\">\n                <th scope=\"row\">{{item.id}}</th>\n                <td v-if=\"item.estado == 'pendiente'\" class=\"status badge-warning\">\n                    {{item.estado}}\n                </td>\n                <td v-else-if=\"item.estado == 'pendiente_pago'\" class=\"status badge-danger\">\n                    {{item.estado}}\n                </td>\n                <td v-else class=\"status badge-success\">\n                    {{item.estado}}\n                </td>\n                <td>{{item.fecha_pedido}}</td>\n                <td>{{item.email}}</td>\n                <td>{{item.codigo_postal}}</td>\n                <td>{{item.calle}}</td>\n                <td>{{item.numero}}</td>\n                <td>{{item.municipio}}</td>\n                <td>{{item.total}} €</td>\n                <td class=\"row m-0 ml-3 justify-content-end\">\n                    <i v-if=\"item.estado !== 'completado'\" class=\"fas fa-check text-success col\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"Marcar como realizado\" @click=\"completeOrder(item.id)\"></i>\n                    <router-link :to=\"{ path: '/admin/pedidos/detalles/' + item.id }\"><i class=\"fas fa-info-circle text-warning\"></i></router-link>\n                </td>\n\n            </tr>\n\n        </tbody>\n    </table>\n</div>";
 
 /***/ }),
 

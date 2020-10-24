@@ -2,9 +2,14 @@
 
     <div class="pedidos-title rounded text-center mb-3">
         <h4 class="my-auto">Pedidos</h4>
+
+    </div>
+
+    <div class="alert alert-danger" v-if="completedOrder">
+        {{completedOrder}}
     </div>
   
-    <table class="table table-sm table-responsive">
+    <table class="table table-responsive-sm">
 
         <thead class="thead-dark">
             <tr>
@@ -23,10 +28,13 @@
         <tbody>
             <tr v-for="item in pedidos">
                 <th scope="row">{{item.id}}</th>
-                <td v-if="item.estado == 'pendiente'" class="badge badge-pill badge-warning">
+                <td v-if="item.estado == 'pendiente'" class="status badge-warning">
                     {{item.estado}}
                 </td>
-                <td v-else class="badge badge-pill badge-success">
+                <td v-else-if="item.estado == 'pendiente_pago'" class="status badge-danger">
+                    {{item.estado}}
+                </td>
+                <td v-else class="status badge-success">
                     {{item.estado}}
                 </td>
                 <td>{{item.fecha_pedido}}</td>
@@ -36,8 +44,8 @@
                 <td>{{item.numero}}</td>
                 <td>{{item.municipio}}</td>
                 <td>{{item.total}} €</td>
-                <td class="row m-0 ml-3">
-                    <i class="fas fa-check text-success col" data-toggle="tooltip" data-placement="right" title="Marcar como realizado" @click="completeOrder(item.id)"></i>
+                <td class="row m-0 ml-3 justify-content-end">
+                    <i v-if="item.estado !== 'completado'" class="fas fa-check text-success col" data-toggle="tooltip" data-placement="right" title="Marcar como realizado" @click="completeOrder(item.id)"></i>
                     <router-link :to="{ path: '/admin/pedidos/detalles/' + item.id }"><i class="fas fa-info-circle text-warning"></i></router-link>
                 </td>
 
