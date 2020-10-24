@@ -139,17 +139,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -189,7 +178,7 @@ var render = function() {
       _c("div", { staticClass: "container mt-1" }, [
         _c("img", {
           staticClass: "imagen-principal",
-          attrs: { src: _vm.imagen_bienvenida, alt: "" }
+          attrs: { src: _vm.imagen_bienvenida, alt: "Imagen de bienvenida" }
         })
       ]),
       _vm._v(" "),
@@ -210,7 +199,7 @@ var render = function() {
                 "section",
                 {
                   staticClass:
-                    "row justify-content-sm-between justify-content-center align-items-center contenedor-slider"
+                    "row justify-content-sm-around justify-content-center align-items-center contenedor-slider"
                 },
                 [
                   _c("img", {
@@ -220,7 +209,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-md-5 text-center col-sm-6 col-12" },
+                    { staticClass: "text-center col-md-7 col-sm-6 col-12" },
                     [
                       _c("h3", [_vm._v("Dibaq Sense Pollo y Pavo")]),
                       _vm._v(" "),
@@ -240,9 +229,7 @@ var render = function() {
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _vm._m(2)
+                  )
                 ]
               )
             ]),
@@ -252,7 +239,7 @@ var render = function() {
                 "section",
                 {
                   staticClass:
-                    "row justify-content-sm-between justify-content-center align-items-center contenedor-slider"
+                    "row justify-content-sm-around justify-content-center align-items-center contenedor-slider"
                 },
                 [
                   _c("img", {
@@ -262,7 +249,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-md-5 text-center col-sm-6 col-12" },
+                    { staticClass: "text-center col-md-7 col-sm-6 col-12" },
                     [
                       _c("h3", [_vm._v("Dibaq Sense Pavo y salmón")]),
                       _vm._v(" "),
@@ -282,9 +269,7 @@ var render = function() {
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _vm._m(3)
+                  )
                 ]
               )
             ]),
@@ -294,7 +279,7 @@ var render = function() {
                 "section",
                 {
                   staticClass:
-                    "row justify-content-sm-between justify-content-center align-items-center contenedor-slider"
+                    "row justify-content-sm-around justify-content-center align-items-center contenedor-slider"
                 },
                 [
                   _c("img", {
@@ -304,7 +289,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "col-md-5 text-center col-sm-6 col-12" },
+                    { staticClass: "text-center col-md-7 col-sm-6 col-12" },
                     [
                       _c("h3", [_vm._v("Dibaq Sense Húmedo Cordero")]),
                       _vm._v(" "),
@@ -324,22 +309,20 @@ var render = function() {
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _vm._m(4)
+                  )
                 ]
               )
             ])
           ]),
           _vm._v(" "),
-          _vm._m(5),
+          _vm._m(2),
           _vm._v(" "),
-          _vm._m(6)
+          _vm._m(3)
         ]
       ),
       _vm._v(" "),
       _c("section", [
-        _vm._m(7),
+        _vm._m(4),
         _vm._v(" "),
         _c(
           "section",
@@ -469,36 +452,6 @@ var staticRenderFns = [
         }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-primary col-md-3 col-3 d-none d-md-flex circulo" },
-      [_c("p", [_vm._v("DESCUENTO 10%")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-primary col-md-3 col-3 d-none d-md-flex circulo" },
-      [_c("p", [_vm._v("DESCUENTO 10%")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-primary col-md-3 col-3 d-none d-md-flex circulo" },
-      [_c("p", [_vm._v("DESCUENTO 10%")])]
-    )
   },
   function() {
     var _vm = this

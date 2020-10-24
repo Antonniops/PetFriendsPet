@@ -5,7 +5,7 @@
         
         <!--IMAGEN CENTRAL BIENVENIDA A PAGINA-->
         <div class="container mt-1">
-            <img :src="imagen_bienvenida" alt="" class="imagen-principal">
+            <img :src="imagen_bienvenida" alt="Imagen de bienvenida" class="imagen-principal">
         </div>
 
        <!--TITULO DESTACADOS CON LINEAS TRANSVERSALES-->
@@ -30,50 +30,39 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active py-5">
-                    <section class="row justify-content-sm-between justify-content-center align-items-center contenedor-slider">
+                    <section class="row justify-content-sm-around justify-content-center align-items-center contenedor-slider">
                         <img :src="destacado1" class="d-block col-md-3 col-sm-4 col-6" width="150" alt="...">
 
-                        <div class="col-md-5 text-center col-sm-6 col-12">
+                        <div class="text-center col-md-7 col-sm-6 col-12">
                             <h3>Dibaq Sense Pollo y Pavo</h3>
                             <p>Uno de nuestros mejores productos pensados en la salud de tu perro</p>
                             <router-link to="/productos/115" class="btn btn-dark">Ver Producto</router-link>
                         </div>
 
-                        <div class="bg-primary col-md-3 col-3 d-none d-md-flex circulo">
-                            <p>DESCUENTO 10%</p>
-                        </div>
                     </section>
 
                 </div>
                 <div class="carousel-item py-5">
-                    <section class="row justify-content-sm-between justify-content-center align-items-center contenedor-slider">
+                    <section class="row justify-content-sm-around justify-content-center align-items-center contenedor-slider">
                         <img :src="destacado2" class="d-block col-md-3 col-sm-4 col-6" width="150" alt="...">
 
-                        <div class="col-md-5 text-center col-sm-6 col-12">
+                        <div class="text-center col-md-7 col-sm-6 col-12">
                             <h3>Dibaq Sense Pavo y salmón</h3>
                             <p>Uno de nuestros mejores productos pensados en la salud de tu perro</p>
                             <router-link to="/productos/100" class="btn btn-dark">Ver Producto</router-link>
                         </div>
 
-                        <div class="bg-primary col-md-3 col-3 d-none d-md-flex circulo">
-                            <p>DESCUENTO 10%</p>
-                        </div>
                     </section>
                 </div>
                 <div class="carousel-item py-5">
-                    <section class="row justify-content-sm-between justify-content-center align-items-center contenedor-slider">
+                    <section class="row justify-content-sm-around justify-content-center align-items-center contenedor-slider">
                         <img :src="destacado3" class="d-block col-md-3 col-sm-4 col-6" width="150" alt="...">
 
-                        <div class="col-md-5 text-center col-sm-6 col-12">
+                        <div class="text-center col-md-7 col-sm-6 col-12">
                             <h3>Dibaq Sense Húmedo Cordero</h3>
                             <p>Uno de nuestros mejores productos pensados en la salud de tu perro</p>
                             <router-link to="/productos/112" class="btn btn-dark">Ver Producto</router-link>
                         </div>
-
-                        <div class="bg-primary col-md-3 col-3 d-none d-md-flex circulo">
-                            <p>DESCUENTO 10%</p>
-                        </div>
-
 
                     </section>
                 </div>
@@ -142,16 +131,16 @@
 <script>
     export default {
         data(){
-        return{
-            imagen_bienvenida: '/storage/Bienvenido_a_petfriend.png',
-            destacado1: '/storage/senseadultopatoypavo.png',
-            destacado2: '/storage/sensesalmonypavo.png',
-            destacado3: '/storage/sensehumedocordero.png',
-            masvendido1: '/storage/sensehumedosalmon.jpg',
-            masvendido2: '/storage/sensehumedojabaliyciervo.jpg',
-            masvendido3: '/storage/sensehumedopolloypato.jpg'
+            return{
+                imagen_bienvenida: '/storage/Bienvenido_a_petfriend.png',
+                destacado1: '/storage/senseadultopatoypavo.png',
+                destacado2: '/storage/sensesalmonypavo.png',
+                destacado3: '/storage/sensehumedocordero.png',
+                masvendido1: '/storage/sensehumedosalmon.jpg',
+                masvendido2: '/storage/sensehumedojabaliyciervo.jpg',
+                masvendido3: '/storage/sensehumedopolloypato.jpg'
+            }
         }
-    },
     }
 </script>
 

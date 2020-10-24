@@ -5,7 +5,7 @@
         <form class="form-inline my-2 my-lg-0 justify-content-center">
             <input class="search-input" type="search" placeholder="Buscar producto" aria-label="Search" @keyup="buscarProducto()" v-model="txtInput">
             <a href="" class="lupa">
-                <i v-if="searchOrClear" class="fas fa-times-circle text-dark"  @click="limpiarBusqueda()"></i>
+                <i v-if="searchOrClear" class="fas fa-times-circle text-dark"  @click.prevent="limpiarBusqueda()"></i>
                 <i v-else class="fas fa-search text-dark"></i>          
             </a>
         </form>
@@ -16,7 +16,7 @@
                 <li class="title-res-busqueda">
                     RESULTADO DE BÚSQUEDA
                 </li>
-                <li v-for="prod in resultBusqueda" :key="prod.id">
+                <li v-for="prod in resultBusqueda" :key="prod.id" @click.prevent="limpiarBusqueda()" >
                     <router-link :to="{ path: '/productos/' + prod.id }">{{prod.nombre}}</router-link>
                 </li>
             </ul>
@@ -56,7 +56,7 @@ export default {
            
         },
         limpiarBusqueda(){
-            this.txtInput = ''; 
+            this.txtInput = '';
         }
     },
 

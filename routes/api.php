@@ -57,9 +57,7 @@ Route::group(['middleware' => 'cors'], function () {
 
     Route::middleware('auth:api')->post('/logout', 'AuthController@logout');
     
-    Route::group(['middleware' => 'auth:api'], function() {
-        Route::get('/order', 'OrderController@index');
-    });
+    Route::get('/order', 'OrderController@index');
 
 });
 

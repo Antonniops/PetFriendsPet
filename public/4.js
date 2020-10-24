@@ -20,6 +20,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
+    // Peticion
     axios.get('/api/order').then(function (res) {
       _this.pedidos = res.data;
     });

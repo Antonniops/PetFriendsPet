@@ -9,6 +9,8 @@ export default {
     },
 
     created() {
+
+        // Peticion
         axios
             .get('/api/order')
             .then(res => {

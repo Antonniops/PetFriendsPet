@@ -3896,6 +3896,7 @@ var render = function() {
                 staticClass: "fas fa-times-circle text-dark",
                 on: {
                   click: function($event) {
+                    $event.preventDefault()
                     return _vm.limpiarBusqueda()
                   }
                 }
@@ -3916,7 +3917,15 @@ var render = function() {
           _vm._l(_vm.resultBusqueda, function(prod) {
             return _c(
               "li",
-              { key: prod.id },
+              {
+                key: prod.id,
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.limpiarBusqueda()
+                  }
+                }
+              },
               [
                 _c(
                   "router-link",
