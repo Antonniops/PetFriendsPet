@@ -29,7 +29,8 @@ __webpack_require__.r(__webpack_exports__);
       },
       //Imagen previsualizacion
       temp_img: null,
-      errors: []
+      errors: [],
+      token: this.$store.getters.getToken
     };
   },
   methods: {
@@ -39,7 +40,8 @@ __webpack_require__.r(__webpack_exports__);
       //Header para el envio en la peticion
       var config = {
         headers: {
-          "content-type": "multipart/form-data"
+          "content-type": "multipart/form-data",
+          Authorization: "Bearer ".concat(this.token)
         }
       }; //Creacion de objeto de envio, para el formato correcto de imagen
 

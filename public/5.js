@@ -14,15 +14,22 @@ __webpack_require__.r(__webpack_exports__);
   props: ['id'],
   data: function data() {
     return {
-      order: []
+      order: [],
+      token: this.$store.getters.getToken
     };
   },
   created: function created() {
     var _this = this;
 
+    // Axios header
+    var config = {
+      headers: {
+        Authorization: "Bearer ".concat(this.token)
+      }
+    };
     axios.post('/api/order/details', {
       'id': this.id
-    }).then(function (res) {
+    }, config).then(function (res) {
       _this.order = res.data;
     });
   },

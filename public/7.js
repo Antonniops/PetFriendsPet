@@ -30,14 +30,20 @@ __webpack_require__.r(__webpack_exports__);
       },
       //Imagen previsualizacion
       temp_img: null,
-      errors: []
+      errors: [],
+      token: this.$store.getters.getToken
     };
   },
   created: function created() {
     var _this = this;
 
-    console.log('id', this.id);
-    axios.get("/api/product/".concat(this.id)).then(function (res) {
+    //Header para el envio en la peticion
+    var config = {
+      headers: {
+        Authorization: "Bearer ".concat(this.token)
+      }
+    };
+    axios.get("/api/product/".concat(this.id), config).then(function (res) {
       _this.producto = res.data;
       _this.temp_img = '/storage/' + _this.producto.imagen;
     })["catch"](function (err) {
@@ -51,7 +57,8 @@ __webpack_require__.r(__webpack_exports__);
       //Header para el envio en la peticion
       var config = {
         headers: {
-          "content-type": "multipart/form-data"
+          "content-type": "multipart/form-data",
+          Authorization: "Bearer ".concat(this.token)
         }
       }; //Creacion de objeto de envio, para el formato correcto de imagen
 

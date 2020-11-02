@@ -22,15 +22,18 @@ export default {
             //Imagen previsualizacion
             temp_img: null,
 
-            errors: []
+            errors: [],
+            token: this.$store.getters.getToken
+
         };
     },
 
     methods: {
         insertarProducto() {
+
             //Header para el envio en la peticion
             const config = {
-                headers: { "content-type": "multipart/form-data" }
+                headers: { "content-type": "multipart/form-data", Authorization: `Bearer ${this.token}` }
             };
 
             //Creacion de objeto de envio, para el formato correcto de imagen

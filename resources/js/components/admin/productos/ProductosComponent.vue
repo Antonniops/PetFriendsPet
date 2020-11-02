@@ -4,15 +4,23 @@ export default {
 
     data() {
         return {
-            productos: []
+            productos: [],
+            token: this.$store.getters.getToken
+
         };
     },
 
 
     created() {
+
+        // Axios header
+        const config = {
+            headers: { Authorization: `Bearer ${this.token}` }
+        };
+
         //En cuanto se crea el componente recibimos los productos mediante axios
         axios
-            .get("/api/product")
+            .get("/api/product", config)
             .then(res => {
                 this.productos = res.data;
             })
@@ -23,11 +31,18 @@ export default {
 
     methods: {
         deleteProduct(item) {
+
             var conf = confirm("¿Seguro que quieres borrar el producto?");
 
             if (conf) {
+
+                // Axios header
+                const config = {
+                    headers: { Authorization: `Bearer ${this.token}` }
+                };
+
                 axios
-                    .delete(`/api/product/${item.id}`)
+                    .delete(`/api/product/${item.id}`, config)
                     .then(res => {
                         this.productos.splice(this.productos.indexOf(item), 1);
                     })

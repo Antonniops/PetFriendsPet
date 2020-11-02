@@ -15,14 +15,21 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       pedidos: [],
-      completedOrder: null
+      completedOrder: null,
+      token: this.$store.getters.getToken
     };
   },
   created: function created() {
     var _this = this;
 
-    // Peticion
-    axios.get('/api/order').then(function (res) {
+    // Axios header
+    var config = {
+      headers: {
+        Authorization: "Bearer ".concat(this.token)
+      }
+    }; // Peticion
+
+    axios.get('/api/order', config).then(function (res) {
       _this.pedidos = res.data;
     });
   },
@@ -30,17 +37,27 @@ __webpack_require__.r(__webpack_exports__);
     completeOrder: function completeOrder(order_id) {
       var _this2 = this;
 
+      // Window confirm
       var conf = confirm("¿Marcar pedido como realizado?");
 
       if (conf) {
+        // Request Bearer Token
+        var config = {
+          headers: {
+            Authorization: "Bearer ".concat(this.token)
+          }
+        };
         axios.post("/api/order/complete", {
           order_id: order_id
-        }).then(function (res) {
+        }, config).then(function (res) {
+          // Check order id
           var pedido = _this2.pedidos.find(function (elem) {
             return elem.id == order_id;
-          });
+          }); // Get index id
 
-          pedido = _this2.pedidos.indexOf(pedido);
+
+          pedido = _this2.pedidos.indexOf(pedido); // Set as completed
+
           _this2.pedidos[pedido].estado = "completado";
         })["catch"](function (error) {
           _this2.completedOrder = error.response.data.msg;

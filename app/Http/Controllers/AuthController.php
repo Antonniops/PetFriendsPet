@@ -113,7 +113,6 @@ class AuthController extends Controller
            // Check if a user with the specified email exists
            $user = User::where('email',request('username'))->where('role_id', '2')->first();
 
-
             if (!$user) {
                 return response()->json([
                     'message' => 'Email o contraseña no son válidos',
@@ -150,6 +149,8 @@ class AuthController extends Controller
                 'client_secret' => $client->secret,
                 'username' => request('username'),
                 'password' => request('password'),
+                'name' => 'Admin Token',
+                'scope' => 'admin-status'
             ];
     
             $request = Request::create('/oauth/token', 'POST', $data);
@@ -162,6 +163,10 @@ class AuthController extends Controller
                     'status' => 422
                 ], 422);
             }
+
+            // Asignamos el ámbito del token
+            //$token = $user->createToken('Admin token', ['admin-status'])->accessToken;
+
             // Get the data from the response
             $data = json_decode($response->getContent());
     
@@ -183,13 +188,31 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function logout()
+     public function logout(Request $request)
     {
-        auth()->user()->tokens->each(function ($token, $key) {
-            $token->delete();
-        });
+        // Logged user id
+        $user_id = $request->user_id;
+
+        // Check if given user
+        if( ! $user_id){
+            return response()->json("No tiene ninguna sesión abierta ", 401);
+        }
+
+        // Token repository instance
+        $tokenRepository = app('Laravel\Passport\TokenRepository');
+
+        // Active token
+        $activeToken = $tokenRepository->forUser($user_id);
+
+        // Check if active token
+        if( ! $activeToken){
+            return response()->json("No tiene ninguna sesión abierta ", 401);
+        }
+
+        // Revoke an access token...
+        $tokenRepository->revokeAccessToken($activeToken[0]->id);
         
-        return response()->json('Ha cerrado sesión correctamente', 200);
+        return response()->json("Se ha cerrado correctamente la sesión", 200);
     }
 
     //-------------------------------------------------------------//

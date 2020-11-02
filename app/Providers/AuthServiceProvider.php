@@ -26,10 +26,25 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // Tiempo de expiración del token
         Passport::tokensExpireIn(now()->addDays(7));
 
+        // Rutas de 0Auth
         Passport::routes(function($router){
     		$router->forAccessTokens();
-		});
+        });
+        
+        // Roles de un token
+        Passport::tokensCan([
+            'admin-status' => 'Admin tasks',
+            'client-status' => 'Client tasks'
+        ]);
+
+        // Rol por defecto de un token
+        Passport::setDefaultScope([
+            'client-status'
+        ]);
+
+
     }
 }

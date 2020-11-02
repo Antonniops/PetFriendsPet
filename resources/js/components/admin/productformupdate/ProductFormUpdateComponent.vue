@@ -24,14 +24,21 @@ export default {
             //Imagen previsualizacion
             temp_img: null,
 
-            errors: []
+            errors: [],
+            token: this.$store.getters.getToken
+
         };
     },
 
     created() {
-        console.log('id', this.id);
+        
+        //Header para el envio en la peticion
+        const config = {
+            headers: { Authorization: `Bearer ${this.token}` }
+        };
+
         axios
-            .get(`/api/product/${this.id}`)
+            .get(`/api/product/${this.id}`, config)
             .then(res => {
                 this.producto = res.data;
                 this.temp_img = '/storage/' + this.producto.imagen;
@@ -45,7 +52,7 @@ export default {
         actualizarProducto() {
             //Header para el envio en la peticion
             const config = {
-                headers: { "content-type": "multipart/form-data" }
+                headers: { "content-type": "multipart/form-data", Authorization: `Bearer ${this.token}` }
             };
 
             //Creacion de objeto de envio, para el formato correcto de imagen

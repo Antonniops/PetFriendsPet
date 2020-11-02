@@ -69,7 +69,18 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     //Cierra sesión y elimina las variables de login
     logout: function logout() {
-      this.$store.commit('logout');
+      var _this = this;
+
+      var data = {
+        user_id: this.$store.getters.getUserId
+      };
+      axios.post('/api/logout', data).then(function (res) {
+        _this.$store.commit('logout');
+
+        _this.$router.push('admin-login');
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });

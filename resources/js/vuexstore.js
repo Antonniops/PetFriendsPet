@@ -118,6 +118,9 @@ export const store = new Vuex.Store({
             return state.shipping_information;
         },
 
+    },
+    actions: {
+
     }
 
 })

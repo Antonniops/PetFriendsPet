@@ -62,7 +62,23 @@ export default {
     methods: {
         //Cierra sesión y elimina las variables de login
         logout(){
-            this.$store.commit('logout');         
+ 
+            let data = {
+                user_id : this.$store.getters.getUserId
+            };
+
+            axios
+                .post('/api/logout', data)
+                .then(res => {
+
+                    this.$store.commit('logout');   
+                       
+                    this.$router.push('admin-login')      
+                
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
         }
     },
 }

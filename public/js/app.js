@@ -2091,7 +2091,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.$store.commit('login', data); //Redirect a home
 
 
-        _this.$router.go('/admin');
+        _this.$router.push('/admin');
       })["catch"](function (_ref) {
         var response = _ref.response;
         _this.errors = response.data.message;
@@ -2115,14 +2115,21 @@ __webpack_require__.r(__webpack_exports__);
   template: __webpack_require__(/*! ./Productos.html */ "./resources/js/components/admin/productos/Productos.html"),
   data: function data() {
     return {
-      productos: []
+      productos: [],
+      token: this.$store.getters.getToken
     };
   },
   created: function created() {
     var _this = this;
 
-    //En cuanto se crea el componente recibimos los productos mediante axios
-    axios.get("/api/product").then(function (res) {
+    // Axios header
+    var config = {
+      headers: {
+        Authorization: "Bearer ".concat(this.token)
+      }
+    }; //En cuanto se crea el componente recibimos los productos mediante axios
+
+    axios.get("/api/product", config).then(function (res) {
       _this.productos = res.data;
     })["catch"](function (error) {
       console.log(error);
@@ -2135,7 +2142,13 @@ __webpack_require__.r(__webpack_exports__);
       var conf = confirm("¿Seguro que quieres borrar el producto?");
 
       if (conf) {
-        axios["delete"]("/api/product/".concat(item.id)).then(function (res) {
+        // Axios header
+        var config = {
+          headers: {
+            Authorization: "Bearer ".concat(this.token)
+          }
+        };
+        axios["delete"]("/api/product/".concat(item.id), config).then(function (res) {
           _this2.productos.splice(_this2.productos.indexOf(item), 1);
         })["catch"](function (err) {
           console.log(err);
@@ -20945,7 +20958,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <router-link to=\"/admin/productos/formulario\">\r\n        <button class=\"btn btn-success m-3\">Añadir producto</button>\r\n    </router-link>\r\n\r\n    <table class=\"table table-sm table-responsive\">\r\n\r\n        <thead class=\"thead-dark\">\r\n            <tr>\r\n                <th scope=\"col\">Id</th>\r\n                <th scope=\"col\">Nombre</th>\r\n                <th scope=\"col\">Precio</th>\r\n                <th scope=\"col\">Precio oferta</th>\r\n                <th scope=\"col\">Animal</th>\r\n                <th scope=\"col\">Marca</th>\r\n                <th scope=\"col\">Categoría</th>\r\n                <th scope=\"col\">Formato</th>\r\n                <th scope=\"col\">Edad</th>\r\n                <th scope=\"col\">Acciones</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr v-for=\"item in productos\">\r\n                <th scope=\"row\">{{item.id}}</th>\r\n                <td>{{item.nombre}}</td>\r\n                <td>{{item.precio}}€</td>\r\n                <td>{{item.precio_oferta}}</td>\r\n                <td>{{item.tipo_animal}}</td>\r\n                <td>{{item.marca}}</td>\r\n                <td>{{item.categoria}}</td>\r\n                <td>{{item.peso_unidad}}{{item.ud_peso}}</td>\r\n                <td>{{item.edad}}</td>\r\n                <td class=\"row m-0 ml-3\">\r\n                    <router-link :to=\"{ path: '/admin/productos/formulario/actualizar/' + item.id }\"><i class=\"fas fa-edit text-warning\"></i></router-link>\r\n                    <i class=\"fas fa-trash-alt text-danger col\" @click=\"deleteProduct(item)\"></i>\r\n                </td>\r\n\r\n            </tr>\r\n\r\n        </tbody>\r\n    </table>\r\n</div>";
+module.exports = "<div>\r\n    <router-link to=\"/admin/productos/formulario\">\r\n        <button class=\"btn btn-success m-3\">Añadir producto</button>\r\n    </router-link>\r\n\r\n    <table class=\"table table-responsive-sm\" style=\"overflow-y:scroll;height:90vh;display:block;\">\r\n\r\n        <thead class=\"thead-dark\">\r\n            <tr>\r\n                <th scope=\"col\">Id</th>\r\n                <th scope=\"col\">Nombre</th>\r\n                <th scope=\"col\">Precio</th>\r\n                <th scope=\"col\">Precio oferta</th>\r\n                <th scope=\"col\">Animal</th>\r\n                <th scope=\"col\">Marca</th>\r\n                <th scope=\"col\">Categoría</th>\r\n                <th scope=\"col\">Formato</th>\r\n                <th scope=\"col\">Edad</th>\r\n                <th scope=\"col\">Acciones</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr v-for=\"item in productos\">\r\n                <th scope=\"row\">{{item.id}}</th>\r\n                <td>{{item.nombre}}</td>\r\n                <td>{{item.precio}}€</td>\r\n                <td>{{item.precio_oferta}}</td>\r\n                <td>{{item.tipo_animal}}</td>\r\n                <td>{{item.marca}}</td>\r\n                <td>{{item.categoria}}</td>\r\n                <td>{{item.peso_unidad}}{{item.ud_peso}}</td>\r\n                <td>{{item.edad}}</td>\r\n                <td class=\"row m-0 ml-3\">\r\n                    <router-link :to=\"{ path: '/admin/productos/formulario/actualizar/' + item.id }\"><i class=\"fas fa-edit text-warning\"></i></router-link>\r\n                    <i class=\"fas fa-trash-alt text-danger col\" @click=\"deleteProduct(item)\"></i>\r\n                </td>\r\n\r\n            </tr>\r\n\r\n        </tbody>\r\n    </table>\r\n</div>";
 
 /***/ }),
 
@@ -21685,7 +21698,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
     getShippingInformation: function getShippingInformation(state) {
       return state.shipping_information;
     }
-  }
+  },
+  actions: {}
 });
 
 /***/ }),

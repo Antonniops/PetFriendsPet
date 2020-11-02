@@ -4,13 +4,20 @@ export default {
     props: ['id'],
     data() {
         return {
-            order: []
+            order: [],
+            token: this.$store.getters.getToken
         }
     },
 
     created() {
+
+         // Axios header
+        const config = {
+            headers: { Authorization: `Bearer ${this.token}` }
+        };
+
         axios
-            .post('/api/order/details', {'id': this.id})
+            .post('/api/order/details', {'id': this.id}, config)
             .then(res => {
                 this.order = res.data;
             })

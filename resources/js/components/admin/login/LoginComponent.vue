@@ -34,7 +34,7 @@
                         this.$store.commit('login', data);
 
                         //Redirect a home
-                        this.$router.go('/admin');
+                        this.$router.push('/admin');
 
                     })
                     .catch(({response}) => {
