@@ -18,6 +18,7 @@ export const routes = [
         path: '/',
         component: lazyLoad('ClientTemplateComponent'),
         name: 'client',
+        redirect: '/home',
         children: [
             {
                 path: 'home',
@@ -119,6 +120,7 @@ export const routes = [
          meta: {
             requiresAuth: true,
         },
+        redirect: '/admin/dasboard',
 
          children: [
              {

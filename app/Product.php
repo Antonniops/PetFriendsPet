@@ -80,4 +80,27 @@ class Product extends Model
      {
         return $this->hasMany('App\ProductOrder');
      }
+
+     /**
+     * Increments visits of the product.
+     */
+    public static function increment_visits($id){
+         
+          // BUsca el producto solicitado
+          $product = Product::find($id);
+
+          // Comprueba si existe el producto
+          if( ! $product){
+               return false;
+          }
+
+          // Incrementa el contador de visitas
+          $product->increment('visitas');
+
+          // Guardamos el cambio
+          $product->save();
+
+          return true;
+
+    }
 }

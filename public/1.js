@@ -71,10 +71,17 @@ __webpack_require__.r(__webpack_exports__);
     logout: function logout() {
       var _this = this;
 
+      var token = this.$store.getters.getToken;
       var data = {
         user_id: this.$store.getters.getUserId
+      }; // Axios header
+
+      var config = {
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
       };
-      axios.post('/api/logout', data).then(function (res) {
+      axios.post('/api/logout', data, config).then(function (res) {
         _this.$store.commit('logout');
 
         _this.$router.push('admin-login');

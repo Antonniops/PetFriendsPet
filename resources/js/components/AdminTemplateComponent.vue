@@ -62,13 +62,20 @@ export default {
     methods: {
         //Cierra sesión y elimina las variables de login
         logout(){
+
+            let token = this.$store.getters.getToken;
  
             let data = {
                 user_id : this.$store.getters.getUserId
             };
 
+            // Axios header
+            const config = {
+                headers: { Authorization: `Bearer ${token}` }
+            };
+
             axios
-                .post('/api/logout', data)
+                .post('/api/logout', data, config)
                 .then(res => {
 
                     this.$store.commit('logout');   

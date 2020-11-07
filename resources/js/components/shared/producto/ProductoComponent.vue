@@ -25,6 +25,7 @@
                 .then(res => {
 
                     this.product = res.data;
+                    console.log(res);
 
                     //Agregamos path a atributo imagen
                     this.product.imagen = '/storage/' + res.data.imagen;
@@ -37,6 +38,12 @@
                 })
                 .catch(function(error) {
                     console.log(error);
+                });
+
+            axios
+                .post('/api/product/increment_visits', {id_producto: this.id})
+                .then(res => {
+                    console.log(res.msg);
                 });
          
         },

@@ -14,8 +14,6 @@
 <script>
 export default {
     mounted () {
-	let root = '/home'
-	this.$router.push({ path: root});
 }
 }
 </script>

@@ -32,6 +32,8 @@ class CreateProductsTable extends Migration
             $table->string('tipo_animal', 32);
             $table->boolean('destacado');
             $table->string('edad', 32);
+            $table->integer('visitas', 16);
+            $table->integer('ventas', 16);
           
 
         });

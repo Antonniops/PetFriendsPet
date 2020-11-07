@@ -8,12 +8,21 @@ use App\Product;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use App\Filter;
+use Illuminate\Support\Facades\Log;
 
 
 class ProductController extends Controller
 {
 
-    
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('scope:admin-status')->only('create', 'store', 'edit', 'update', 'destroy');
+    }
 
     /**
      * Display a listing of the resource.
@@ -137,7 +146,15 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        // Comprobar si hay id
+        if( ! $id){
+            return response()
+                ->json(['error' => 'Id de producto vacío']); 
+        }
+
         $product = Product::find($id);
+
+        Log::alert($product);
 
         return response() 
             ->json($product);
@@ -341,5 +358,32 @@ class ProductController extends Controller
         }
 
        
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function increment_visits(Request $request){
+
+        // Obtener id del producto solicitado
+        $id_producto = $request->id_producto;
+
+        // Comprobar si hay id de producto
+        if( ! $id_producto){
+            return response()->json(['msg' => 'Id de producto vacía'], 401);
+        }
+
+        // Aumentar el contador de visitas
+        $result = Product::increment_visits($id_producto);
+
+        if( ! $result){
+            return response()->json(['msg' => 'Error al incrementar las visitas'], 401);
+        }
+
+        return response()->json(['msg' => 'Visitas incrementadas correctamente'], 201);
+
     }
 }

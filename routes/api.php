@@ -24,6 +24,8 @@ Route::group(['middleware' => 'cors'], function () {
     Route::get('/product/categoria/{animal}/{producto}', 'ProductController@categoria')->name('product.categoria');
     Route::get('/product/item/{name}', 'ProductController@search')->name('product.search');
     Route::post('/product/recomendados', 'ProductController@obtener_recomendados');
+    Route::post('/product/increment_visits', 'ProductController@increment_visits');
+    Route::resource('product', 'ProductController');
 
     Route::post('/checkOutSession', 'CheckoutController@checkOutSession'); 
     Route::post('/webhook', 'CheckoutController@check_order_status'); 
@@ -44,6 +46,8 @@ Route::group(['middleware' => 'cors'], function () {
     Route::post('/appointment', 'AppointmentController@saveAppointment');
    
     Route::post('/order', 'OrderController@store');
+    
+
 
     // Rutas con login
     Route::group(['middleware' => 'auth:api'], function () {
@@ -52,8 +56,6 @@ Route::group(['middleware' => 'cors'], function () {
 
         // Rutas admin
         Route::group(['middleware' => 'scope:admin-status'], function () {
-
-            Route::resource('product', 'ProductController');
 
             Route::get('/order', 'OrderController@index');
             Route::post('/order/complete', 'OrderController@complete_order');

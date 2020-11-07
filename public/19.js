@@ -23,12 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    var root = '/home';
-    this.$router.push({
-      path: root
-    });
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
