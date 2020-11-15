@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\ProductOrder;
 use App\User;
+use App\Product;
 use App\Mail\ConfirmOrder;
 use Illuminate\Support\Facades\Mail;
 use Log;
+use DB;
 
 class OrderController extends Controller
 {
@@ -90,8 +92,13 @@ class OrderController extends Controller
                 'precio_unidad' => $product['precio'],
                 'total' => $product['cantidad_producto'] * $product['precio']
             ]);
+
+            // Incrementar contador de ventas del producto
+            DB::table('products')->where('id', '=', $product['id'])->increment('ventas');
             
         }
+
+        
 
         // Return response
         $response = [

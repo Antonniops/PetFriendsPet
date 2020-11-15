@@ -21,6 +21,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('auth:api')->only('create', 'store', 'edit', 'update', 'destroy');
         $this->middleware('scope:admin-status')->only('create', 'store', 'edit', 'update', 'destroy');
     }
 
@@ -266,7 +267,7 @@ class ProductController extends Controller
     
         //Mensaje json con los errores
         if ($validator->fails()) {    
-            return response()->json($validator->errors(), 200);
+            return response()->json(['errors' => $validator->errors()], 402);
         };
 
         //Buscamos el producto solicitado
@@ -274,7 +275,7 @@ class ProductController extends Controller
 
         if(!$product_finded){
             return response() 
-            ->json('No se ha encontrado ese producto', 201);
+            ->json(['errors' => 'No se ha encontrado ese producto'], 402);
         }
 
         $filename = null;

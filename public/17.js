@@ -28,8 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
     //En cuanto se crea el componente recibimos el producto mediante axios
     axios.get("/api/product/".concat(this.id)).then(function (res) {
-      _this.product = res.data;
-      console.log(res); //Agregamos path a atributo imagen
+      _this.product = res.data; //Agregamos path a atributo imagen
 
       _this.product.imagen = '/storage/' + res.data.imagen; //Agregamos atributo cantidad, uso vue set para que sea reactivo, sino es estatico
 

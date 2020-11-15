@@ -43,6 +43,7 @@ class Order extends Model
         $orders = DB::table('orders')
                             ->select(DB::raw('orders.id, estado, fecha_pedido, email, codigo_postal, calle, numero, municipio, sum(productsorders.total) as total'))
                             ->join('productsorders', 'orders.id', '=', 'productsorders.order_id')
+                            ->orderBy('fecha_pedido', 'desc')
                             ->groupBy('orders.id')
                             ->get();
 

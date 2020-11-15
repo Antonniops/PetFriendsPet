@@ -58,9 +58,10 @@ __webpack_require__.r(__webpack_exports__);
       var config = {
         headers: {
           "content-type": "multipart/form-data",
-          Authorization: "Bearer ".concat(this.token)
+          'Authorization': "Bearer ".concat(this.token)
         }
-      }; //Creacion de objeto de envio, para el formato correcto de imagen
+      };
+      console.log(config); //Creacion de objeto de envio, para el formato correcto de imagen
 
       var data = new FormData();
 
@@ -74,14 +75,14 @@ __webpack_require__.r(__webpack_exports__);
         //Si no hay errores redirige al listado de productos
         if (res.data.success) {
           _this2.$router.push("/admin/productos");
-        } //Formateo de la respuesta de errores
+        }
+      })["catch"](function (error) {
+        var error_data = error.response.data.errors; //Formateo de la respuesta de errores
 
+        error_data = Object.values(error_data);
+        error_data = error_data.flat(); // Establece los errores
 
-        _this2.errors = res.data.errors;
-        _this2.errors = Object.values(res.data);
-        _this2.errors = _this2.errors.flat();
-      })["catch"](function (err) {
-        console.log(err);
+        _this2.errors = error_data;
       });
     },
     onImageChange: function onImageChange(e) {

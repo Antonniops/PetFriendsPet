@@ -14,7 +14,7 @@ class CheckoutController extends Controller
     protected function checkOutSession(Request $request){
 
         // Set your secret key. Remember to switch to your live secret key in production!
-        \Stripe\Stripe::setApiKey('sk_test_z54RRPaXuWxGmHckqh5Sv4Rb00wUfvEEAW');
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $unique_token = md5(rand(1, 10) . microtime());
 
@@ -25,7 +25,7 @@ class CheckoutController extends Controller
                 'price_data' => [
                   'unit_amount_decimal' => $request->total_price * 100,
                   'currency' => 'eur',
-                  'product' => 'prod_HT97JPLupl6wFJ'
+                  'product' => 'prod_IOcGIx0SXfkOwf'
                 ],
                 'quantity' => 1,
               ]
@@ -53,10 +53,10 @@ class CheckoutController extends Controller
       public function check_order_status(){
         // Set your secret key. Remember to switch to your live secret key in production!
         // See your keys here: https://dashboard.stripe.com/account/apikeys
-        \Stripe\Stripe::setApiKey('sk_test_z54RRPaXuWxGmHckqh5Sv4Rb00wUfvEEAW');
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
         // You can find your endpoint's secret in your webhook settings
-        $endpoint_secret = 'whsec_3oLVJmvsRM8NLTuEi5YHTjoiFtvYAcbO';
+        $endpoint_secret = env('STRIPE_WEBHOOK_SECRET');
 
         $payload = @file_get_contents('php://input');
         $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];

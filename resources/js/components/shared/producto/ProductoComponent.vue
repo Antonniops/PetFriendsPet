@@ -25,7 +25,6 @@
                 .then(res => {
 
                     this.product = res.data;
-                    console.log(res);
 
                     //Agregamos path a atributo imagen
                     this.product.imagen = '/storage/' + res.data.imagen;

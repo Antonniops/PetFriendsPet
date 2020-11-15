@@ -125,7 +125,7 @@ export default {
             
 
             // Instancia de Stripe
-            var stripe = Stripe('pk_test_M413ZLjVzXAKFTE710tZa04o00UhE12Jhi');         
+            var stripe = Stripe('pk_test_tU4vrQRfRY3jN2QmgvwSrqzk00d1k3LRg9');         
   
         },
 

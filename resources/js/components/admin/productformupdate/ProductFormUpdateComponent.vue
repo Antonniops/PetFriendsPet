@@ -50,10 +50,16 @@ export default {
 
     methods: {
         actualizarProducto() {
+
             //Header para el envio en la peticion
             const config = {
-                headers: { "content-type": "multipart/form-data", Authorization: `Bearer ${this.token}` }
+                headers: { 
+                    "content-type": "multipart/form-data", 
+                    'Authorization': `Bearer ${this.token}` 
+                }
             };
+
+            console.log(config);
 
             //Creacion de objeto de envio, para el formato correcto de imagen
             let data = new FormData();
@@ -72,30 +78,42 @@ export default {
                     if (res.data.success) {
                         this.$router.push("/admin/productos");
                     }
-                    //Formateo de la respuesta de errores
-                    this.errors = res.data.errors;
-                    this.errors = Object.values(res.data);
-                    this.errors = this.errors.flat();
+                    
                 })
-                .catch(err => {
-                    console.log(err);
+                .catch((error) => {
+                    
+                    let error_data = error.response.data.errors;
+
+                    //Formateo de la respuesta de errores
+                    error_data = Object.values(error_data);
+                    error_data = error_data.flat();
+
+                    // Establece los errores
+                    this.errors = error_data;
                 });
         },
         onImageChange(e) {
+
             //Captura la imagen del formulario
             let files = e.target.files || e.dataTransfer.files;
+
             if (!files.length) return;
+
             //Asigna la imagen al objeto de envio
             this.producto.imagen = files[0];
             this.createImage(files[0]);
+
         },
+
         //Crea la imagen de previsualizacion
         createImage(file) {
+            
             let reader = new FileReader();
 
             reader.onload = e => {
                 this.temp_img = e.target.result;
             };
+            
             reader.readAsDataURL(file);
         }
     }
