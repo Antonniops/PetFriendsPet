@@ -63,7 +63,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.pedidos-title{\n    border: 1px solid black;\n    max-width: 300px;\n}\nimg{\n    max-width: 70px;\n}\nhr{\n    height: 3px;\n    background-color: black;\n}\n.total{\n    font-weight: bold;\n    font-size: 30px;\n}\nspan{\n    font-size: 25px;\n}\ni{\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, "\n.pedidos-title{\r\n    border: 1px solid black;\r\n    max-width: 300px;\n}\nimg{\r\n    max-width: 70px;\n}\nhr{\r\n    height: 3px;\r\n    background-color: black;\n}\n.total{\r\n    font-weight: bold;\r\n    font-size: 30px;\n}\nspan{\r\n    font-size: 25px;\n}\ni{\r\n    cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -107,7 +107,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-5\">\n    <div class=\"pedidos-title rounded text-center mb-3\">\n        <h4 class=\"my-auto\">Detalles del pedido</h4>\n    </div>\n   \n\n\n    <i class=\"fas fa-arrow-circle-left fa-2x my-3 text-success bg-gradient-primary\" @click=\"retroceder()\"></i>\n\n    <table class=\"table table-borderless\">\n        <thead class=\"bg-dark text-white\">\n          <tr>\n            <th scope=\"col\">Imagen</th>\n            <th scope=\"col\">Nombre</th>\n            <th scope=\"col\">Precio Unidad</th>\n            <th scope=\"col\">Unidades</th>\n            <th scope=\"col\">Total</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr v-for=\"(item, index) in order\" :key=\"index\">\n            <th scope=\"row\">\n                <img :src=\"/storage/ + item.imagen\" alt=\"\">\n            </th>\n            <td>{{item.nombre}}</td>\n            <td>{{item.precio_unidad}}€</td>\n            <td>{{item.unidades}}</td>\n            <td>{{item.total}}€</td>\n          </tr>\n        </tbody>\n      </table>\n\n      <hr>\n\n      <div class=\"text-right\">\n          <span class=\"total\">Total: </span>\n          <span class=\"btn btn-outline-success\">{{ total }} €</span>\n      </div>\n</div>";
+module.exports = "<div class=\"mt-5\">\r\n    <div class=\"pedidos-title rounded text-center mb-3\">\r\n        <h4 class=\"my-auto\">Detalles del pedido</h4>\r\n    </div>\r\n   \r\n\r\n\r\n    <i class=\"fas fa-arrow-circle-left fa-2x my-3 text-success bg-gradient-primary\" @click=\"retroceder()\"></i>\r\n\r\n    <table class=\"table table-borderless\">\r\n        <thead class=\"bg-dark text-white\">\r\n          <tr>\r\n            <th scope=\"col\">Imagen</th>\r\n            <th scope=\"col\">Nombre</th>\r\n            <th scope=\"col\">Precio Unidad</th>\r\n            <th scope=\"col\">Unidades</th>\r\n            <th scope=\"col\">Total</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr v-for=\"(item, index) in order\" :key=\"index\">\r\n            <th scope=\"row\">\r\n                <img :src=\"/storage/ + item.imagen\" alt=\"\">\r\n            </th>\r\n            <td>{{item.nombre}}</td>\r\n            <td>{{item.precio_unidad}}€</td>\r\n            <td>{{item.unidades}}</td>\r\n            <td>{{item.total}}€</td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n\r\n      <hr>\r\n\r\n      <div class=\"text-right\">\r\n          <span class=\"total\">Total: </span>\r\n          <span class=\"btn btn-outline-success\">{{ total }} €</span>\r\n      </div>\r\n</div>";
 
 /***/ }),
 

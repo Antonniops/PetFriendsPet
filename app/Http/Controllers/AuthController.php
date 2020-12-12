@@ -125,7 +125,7 @@ class AuthController extends Controller
             
             if (!Hash::check($request->password, $user->password)) {
                 return response()->json([
-                    'message' => 'la contraseña proporcionada no es válida',
+                    'message' => 'La contraseña proporcionada no es válida',
                     'status' => 422
                 ], 422);
             }
